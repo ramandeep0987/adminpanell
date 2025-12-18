@@ -2,7 +2,7 @@
 
 <style>
   .form-container {
-    max-width: 600px;
+    max-width: 721px;
     margin: 60px auto;
     background: rgba(0, 30, 255, 0.329);
     padding: 40px 45px;
@@ -25,7 +25,7 @@
   }
 
   .input-field {
-    width: 100%;
+    width: 102%;
     padding: 14px 12px;
     border: 1.8px solid #13131594;
     border-radius: 10px;
@@ -161,14 +161,13 @@
         
           <div class="input-group">
   <select id="services" name="services" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> Select</option>
+      <option value="" class="floating-label" disabled selected hidden> Were you satisfied with the hospital services?/  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?</option>
       <option value="Satisfied">Satisfied/ ਸੰਤੁਸ਼ਟ</option>
       <option value="Unsatisfied">Unsatisfied/ ਅਸੰਤੁਸ਼ਟ</option>
       
       
   </select>
-  <label class="floating-label">Were you satisfied with the hospital services?/  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?  
-</label>
+
 </div>
 
     
@@ -176,7 +175,7 @@
 
         <div class="input-group">
   <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> Select</option>
+      <option value="" class="floating-label" disabled selected hidden> As per your experience, which of our areas/services need improvements?/ ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?</option>
       <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
       <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
        <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
@@ -208,8 +207,10 @@
       <option value="Any Other">Any Other/ਹੋਰ ਕੋਈ</option>
       
   </select>
-  <label class="floating-label"> Please select the facilities which need better management </label>
+  
 </div>
+
+
 
  <div class="input-group">
           <textarea type="text" id="Suggestion" name="Suggestion" class="input-field" placeholder=" " ></textarea>
@@ -231,7 +232,7 @@
 
 
 <!-- Select Box -->
-<div class="input-group">
+<!-- <div class="input-group">
   <select id="Ayushmanid" class="input-field">
       <option value="" disabled selected hidden>Select</option>
       <option value="yes">Yes</option>
@@ -239,10 +240,10 @@
   </select>
   
   <label class="floating-label">Do you have your ABHA ID (Ayushman Bharat Health Account) number?</label>
-</div>
+</div> -->
 
 <!-- ABHA Box (Hidden by default) -->
-<div id="abhaBox" style="display:none; margin-top:10px;">
+<!-- <div id="abhaBox" style="display:none; margin-top:10px;">
   <p>Please enter your 14 digit ABHA ID number.</p>
    <input type="text" maxlength="14" class="input-field" name="abhaid" placeholder="Enter ABHA ID Number">
   <p>
@@ -253,9 +254,9 @@
   </p>
 
  
-</div>
+</div> -->
 
-<script>
+<!-- <script>
 document.getElementById("Ayushmanid").addEventListener("change", function() {
     let value = this.value;
     let abhaBox = document.getElementById("abhaBox");
@@ -266,7 +267,7 @@ document.getElementById("Ayushmanid").addEventListener("change", function() {
         abhaBox.style.display = "block";
     }
 });
-</script>
+</script> -->
 
          
 

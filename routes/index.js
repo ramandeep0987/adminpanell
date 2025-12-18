@@ -125,8 +125,8 @@ router.post('/updateBooking', booking_controller.updateBooking)
 router.delete('/deleteBooking/:id', booking_controller.deleteBooking)
 
 ////////////////////// CMS //////////////////////////
-router.post('/Create', cms_controller.Create)
-router.get('/Aboutus', session,  cms_controller.Aboutus)
+router.post('/Create', cms_controller.Create) 
+router.get('/Aboutus', session,  cms_controller.Aboutus) 
 router.post('/Update_aboutus', cms_controller.Update_aboutus)
 router.get('/terms_condition', session,  cms_controller.terms_condition)
 router.post('/Update_terms', cms_controller.Update_terms)
