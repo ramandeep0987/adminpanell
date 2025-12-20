@@ -16,23 +16,22 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
-                <div class="card-header">
-                  <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=user%>
-                    </h2>
-                    <p class="card-text">Parking</p>
-                  </div>
-                  <div class="avatar bg-light-primary p-50 m-0">
-                    <div class="avatar-content">
-                      <i class="ph-fill ph-users"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+         <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="dashboard-card" onclick="location.href=''" style="cursor:pointer;">
+    <div class="dashboard-card-header">
+      <div>
+        <h2 class="dashboard-title">
+          <%= user %>
+        </h2>
+        <p class="dashboard-subtitle">Parking</p>
+      </div>
+
+      <div class="dashboard-avatar">
+        <i class="ph-fill ph-users"></i>
+      </div>
+    </div>
+  </div>
+</div>
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
@@ -367,3 +366,60 @@
   }, 2000);
 </script>
 
+
+<style>
+  /* Card background */
+.dashboard-card {
+  background: linear-gradient(135deg, #e56746, #6366f1); /* main color */
+  border-radius: 66px;
+  padding: 25px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.dashboard-card:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Header layout */
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Subtitle */
+.dashboard-subtitle {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+/* Icon background */
+.dashboard-avatar {
+  width: 45px;
+  height: 45px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon color */
+.dashboard-avatar i {
+  font-size: 22px;
+  color: #4f46e5;
+}
+
+</style>

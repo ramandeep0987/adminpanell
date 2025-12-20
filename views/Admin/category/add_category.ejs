@@ -4,7 +4,7 @@
   .form-container {
     max-width: 721px;
     margin: 60px auto;
-    background: rgba(0, 30, 255, 0.329);
+    background: rgba(47, 132, 212, 0.711);
     padding: 40px 45px;
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
@@ -25,11 +25,11 @@
   }
 
   .input-field {
-    width: 102%;
-    padding: 14px 12px;
-    border: 1.8px solid #13131594;
-    border-radius: 10px;
-    font-size: 16px;
+    width: 101%;
+    padding: 17px 12px;
+    border: 1.8px solid #0a0412e0;
+    border-radius: 4px;
+    font-size: 19px;
     outline: none;
     background: transparent;
     transition: all 0.2s ease;
@@ -96,7 +96,7 @@
   .submit-btn {
     width: 100%;
     padding: 14px 0;
-    background: #27324a;
+    background: #000505ba;
     color: white;
     border: none;
     border-radius: 10px;
@@ -113,11 +113,73 @@
     from { opacity:0; transform: translateY(10px); }
     to { opacity:1; transform: translateY(0); }
   }
+
+
+ .logo-center {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center (if height defined) */
+  width: 100%;
+  padding-top: 2px;
+}
+
+
+.big_img {
+  height: 139px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.floating-label {
+  color: black !important;       /* make text black */
+  background-color: transparent !important;
+  padding: 0 !important;
+  font-size: 16px;               /* optional: adjust size */
+  pointer-events: none;          /* ensures you can click the textarea */
+  transition: 0.2s ease all;     /* smooth floating effect */
+}
+
+/* When textarea is focused or has text, you can also set color if needed */
+.input-field:focus + .floating-label,
+.input-field:not(:placeholder-shown) + .floating-label {
+  color: black !important;       /* keep it black when floating */
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  background: white;
+  padding: 0 4px;
+}
+
+/* show all words */
+
+.input-field {
+  width: 100%;             /* full width */
+  font-size: 14px;         /* adjust if needed */
+  white-space: normal;     /* allow wrapping inside options */
+ 
+}
+
+/* calender */
+
+
+
+
 </style>
+
+
 
 <div class="form-container">
 
-    <h2 class="form-title">Feedback Form - OPD Services ਫੀਡਬੈਕ ਫਾਰਮ - ਓਪੀਡੀ  ਸੇਵਾਵਾਂ</h2>
+
+  <li class="nav-item logo-center">
+  <img class="big_img" src="/app-assets/1 (4).png" alt="Logo">
+</li>
+
+
+
+    <h2 class="form-title">Feedback Form - OPD Services </h2>
+    <h1 class="form-title">ਫੀਡਬੈਕ ਫਾਰਮ - ਓਪੀਡੀ  ਸੇਵਾਵਾਂ</h1>
 
     <form id="profile" action="/Create_category" method="POST" enctype="multipart/form-data">
 
@@ -133,17 +195,15 @@
           <input type="number" id="name" name="mrdnumber" class="input-field" placeholder=" " />
           <label class="floating-label">MRD Number/ ਐਮ ਆਰ ਡੀ ਨੰਬਰ  
 </label>
-        </div>   <div class="input-group">
+        </div>  
+        
+  <div class="input-group">
+  <input type="date" id="visitDate" name="date" class="input-field" placeholder=" " />
+  <label class="floating-label" for="visitDate">
+    Date Of OPD Visit / ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
+  </label>
+</div>
 
-          
-
-
-
-
-          <input type="text" id="name" name="date" class="input-field" placeholder=" " />
-          <label class="floating-label">Date Of OPD Visit/ ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
-</label>
-        </div> 
         
 
         <div class="input-group">
@@ -157,25 +217,40 @@
           <input type="text" id="name" name="doctorname" class="input-field" placeholder=" " />
           <label class="floating-label">Doctor Name/ ਡਾਕਟਰ ਦਾ ਨਾਮ
 </label>
-        </div>   
+        </div>  
         
+        
+
           <div class="input-group">
   <select id="services" name="services" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> Were you satisfied with the hospital services?/  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?</option>
-      <option value="Satisfied">Satisfied/ ਸੰਤੁਸ਼ਟ</option>
-      <option value="Unsatisfied">Unsatisfied/ ਅਸੰਤੁਸ਼ਟ</option>
-      
+      <option value="" class="floating-label" disabled selected hidden> Select OPD Types</option>
+      <option value="Gernal">General</option>
+      <option value="Private">Private</option>
+      <option value="Evening">Evening</option>
       
   </select>
-
+ 
 </div>
+        
+<div class="input-group">
+  <select id="services" name="services" class="input-field">
+      <option value="" disabled selected hidden>
+        Were You Satisfied With The Hospital Services/ ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
+
+      </option>
+      <option value="Satisfied">Satisfied / ਸੰਤੁਸ਼ਟ</option>
+      <option value="Unsatisfied">Unsatisfied / ਅਸੰਤੁਸ਼ਟ</option>  
+  </select>
+</div>
+
 
     
 
 
         <div class="input-group">
   <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> As per your experience, which of our areas/services need improvements?/ ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?</option>
+      <option value="" class="floating-label" disabled selected hidden>As Per Your Experience, Which Of Our Areas/Services Need Improvement? / ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
+
       <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
       <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
        <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
@@ -212,10 +287,13 @@
 
 
 
- <div class="input-group">
-          <textarea type="text" id="Suggestion" name="Suggestion" class="input-field" placeholder=" " ></textarea>
-          <label class="floating-label">Please Mention Your Suggestion For Improvment As Par Your Experience/ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।</label>
-        </div>
+<div class="input-group">
+  <textarea id="Suggestion" name="Suggestion" class="input-field" placeholder=" "></textarea>
+  <label for="Suggestion" class="floating-label">
+   Please Mention Your Suggestion For Improvement As Per Your Experience / ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।
+
+  </label>
+</div>
 
          <!-- <div class="input-group">
 
