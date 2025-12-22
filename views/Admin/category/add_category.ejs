@@ -4,10 +4,10 @@
   .form-container {
     max-width: 721px;
     margin: 60px auto;
-    background:rgb(115 174 230 / 71%);
+    background:rgbrgb(143 189 233 / 71%);
     padding: 40px 45px;
     border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgb(0 0 0 / 78%);
     animation: fadeIn 0.6s ease;
   }
 
@@ -144,7 +144,7 @@
 .input-field:focus + .floating-label,
 .input-field:not(:placeholder-shown) + .floating-label {
   color: black !important;       /* keep it black when floating */
-  top: -8px;
+  top: -22px;
   left: 8px;
   font-size: 12px;
   background: white;
@@ -232,9 +232,10 @@
   </select>
  
 </div>
-        
+      
+<!-- ramam -->
 <div class="input-group">
-  <select id="services" name="services" class="input-field">
+  <select id="services" name="services" class="input-field" onchange="mark(this.value)">
       <option value="" disabled selected hidden>
         Were You Satisfied With The Hospital Services/ ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
 
@@ -244,11 +245,10 @@
   </select>
 </div>
 
-
     
 
 
-        <div class="input-group">
+        <div class="input-group" id="parking" style="display: none;">
   <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
       <option value="" class="floating-label" disabled selected hidden>As Per Your Experience, Which Of Our Areas/Services Need Improvement? / ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
 
@@ -364,6 +364,11 @@ document.getElementById("Ayushmanid").addEventListener("change", function() {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+function mark(value){
+  document.getElementById("parking").style.display= value === 'Unsatisfied' ? "block" : "none";
+
+}
+
 document.getElementById("profile").addEventListener("submit", function(e){
     e.preventDefault(); // stop normal submit
 
