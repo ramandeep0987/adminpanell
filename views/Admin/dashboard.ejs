@@ -16,7 +16,9 @@
             </div>
           </div>
           <div class="row">
-         <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+
+
+         <!-- <div class="col-lg-3 col-md-5 col-sm-5 col-12">
   <div class="dashboard-card" onclick="location.href=''" style="cursor:pointer;">
     <div class="dashboard-card-header">
       <div>
@@ -31,7 +33,27 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+  <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                      <%=user%>
+                    </h2>
+                    <p class="card-text">Parking</p>
+                  </div>
+                  <div class="avatar bg-light-primary p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-users"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
@@ -49,6 +71,8 @@
                 </div>
               </div>
             </div>
+
+            
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
@@ -368,58 +392,68 @@
 
 
 <style>
-  /* Card background */
-.dashboard-card {
-  background: linear-gradient(135deg, #e56746, #6366f1); /* main color */
-  border-radius: 66px;
-  padding: 25px;
-  color: #ffffff;
+  /* Dashboard card styling */
+.card {
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  background: #ffffff;
 }
 
 /* Hover effect */
-.dashboard-card:hover {
-  background: linear-gradient(135deg, #4338ca, #4f46e5);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: #2563eb;
 }
 
-/* Header layout */
-.dashboard-card-header {
+/* Card header layout */
+.card .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: transparent;
+  border-bottom: none;
+  padding: 18px 20px;
 }
 
-/* Title */
-.dashboard-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0;
+/* Number text */
+.card .fw-bolder {
+  font-size: 26px;
+  color: #111827;
 }
 
-/* Subtitle */
-.dashboard-subtitle {
-  margin: 0;
-  opacity: 0.85;
+/* Subtitle text */
+.card .card-text {
   font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
 }
 
-/* Icon background */
-.dashboard-avatar {
-  width: 45px;
-  height: 45px;
-  background-color: #ffffff;
-  border-radius: 10px;
+/* Avatar circle */
+.card .avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Icon color */
-.dashboard-avatar i {
+/* Icon inside avatar */
+.card .avatar i {
   font-size: 22px;
-  color: #4f46e5;
+  color: #2563eb;
+}
+
+/* Change avatar background on hover */
+.card:hover .avatar {
+  background-color: #2563eb !important;
+}
+
+.card:hover .avatar i {
+  color: #ffffff;
 }
 
 </style>
