@@ -1273,7 +1273,7 @@ select.form-control:not([size]):not([multiple]) {
 .table:not(.table-sm) thead th {
   border-bottom: none;
   background-color: rgba(0, 0, 0, 0.04);
-  color: #666;
+  color: #000000;
   padding-top: 15px;
   padding-bottom: 15px;
 }

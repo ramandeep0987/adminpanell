@@ -41,13 +41,40 @@
 
                      
                       <td>
+                        
                         <!-- <a href="/activity_view/<%=data._id%>" class="btn btn-sm bg-light-primary"><i data-feather='eye'></i></a> -->
-                        <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
+                        <!-- <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
                          <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" fill="#444"/>
 </svg>
 
-                        </a>
+                        </a> -->
+
+                        <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
+  <svg
+    width="20px"
+    height="20px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 20h9"
+      stroke="#444"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"
+      stroke="#444"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</a>
+
                         <button onclick="confirmDelete('<%=data._id%>')" class="btn btn-sm bg-danger"> 
                           <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4V4zm2 2h6V4H9v2zM6.074 8l.857 12H17.07l.857-12H6.074zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1z" fill="#0D0D0D"/></svg>
                         </button>

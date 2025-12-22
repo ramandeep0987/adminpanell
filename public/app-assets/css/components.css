@@ -895,7 +895,7 @@ footer.footer-border {
 }
 
 .main-menu.menu-light .navigation > li.active > a {
-  background: var(--theme);
+  background: #0c5079cc;
   box-shadow: none;
   color: #ffffff;
   font-weight: 400;
