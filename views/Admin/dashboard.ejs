@@ -1,6 +1,117 @@
 <%- include('common/header'); -%>
 <%- include('common/sidebar'); -%>
 
+
+
+
+<style>
+
+/* Common dashboard card */
+.dashboard-card {
+  border-radius: 14px;
+  border: none !important;
+}
+
+.dashboard-card .card-header {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Text + icon */
+.dashboard-card h2,
+.dashboard-card p,
+.dashboard-card i {
+  color: #fff !important;
+}
+
+/* 🟡 Yellow - Parking */
+.card-yellow {
+  background: linear-gradient(135deg, #facc15, #ca8a04) !important;
+}
+.card-grey {
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af) !important;
+}
+
+.card-red {
+  background: linear-gradient(135deg, #ef4444, #991b1b) !important;
+}
+
+/* 🤎 Brown - Wheel Chair */
+.card-brown {
+  background: linear-gradient(135deg, #8b5a2b, #4e2a0a) !important;
+}
+
+/* 🟣 Green + Purple - Wheel Chair */
+.card-orange {
+  background: linear-gradient(135deg, #093959, #7c3aed) !important;
+}
+
+/* 🟢 Green - Wheel Chair */
+.card-green {
+  background: linear-gradient(135deg, #22c55e, #166534) !important;
+}
+/* 🟥 Maroon - Wheel Chair */
+.card-orange1 {
+  background: linear-gradient(135deg, #800000, #4b0000) !important;
+}
+.card-orange {
+  background: linear-gradient(135deg, #fed7aa, #fb923c) !important;
+}
+/* 🌸 Pink - Wheel Chair */
+.card-pink {
+  background: linear-gradient(135deg, #f472b6, #ec4899) !important;
+}
+
+/* 💖 Magenta */
+.card-magenta {
+  background: linear-gradient(135deg, #ff00ff, #c100c1) !important;
+}
+
+/* ☁️ Sky Blue */
+.card-skyblue {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8) !important;
+}
+
+/* 💜 Purple */
+.card-purple {
+  background: linear-gradient(135deg, #9333ea, #7e22ce) !important;
+}
+
+/* 🟡 Golden */
+.card-golden {
+  background: linear-gradient(135deg, #facc15, #eab308) !important;
+}
+
+/* 🍒 Cherry */
+.card-cherry {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+}
+
+/* 🐪 Camel */
+.card-camel {
+  background: linear-gradient(135deg, #d2b48c, #bfa06b) !important;
+}
+
+/* 🔵 Blue */
+.card-blue {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+}
+/* 🍑 Peach */
+.card-peach {
+  background: linear-gradient(135deg, #ffd1b3, #ffb380) !important;
+}
+
+/* 🖤 Light Black / Dark Gray */
+.card-lightblack {
+  background: linear-gradient(135deg, #4b4b4b, #1f1f1f) !important;
+}
+
+/* 🌲 Dark Green */
+.card-darkgreen {
+  background: linear-gradient(135deg, #065f46, #064e3b) !important;
+}
+
+</style>
 <!-- BEGIN: Content-->
 <div class="app-content content ">
   <div class="content-wrapper container-xxl p-0">
@@ -36,7 +147,7 @@
 </div> -->
 
   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-yellow" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -55,7 +166,7 @@
 
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-grey" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -74,7 +185,7 @@
 
             
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-red" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -91,7 +202,7 @@
               </div>
             </div>
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href='' " style="cursor: pointer;">
+              <div class="card dashboard-card card-brown" onclick="location.href='' " style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -108,7 +219,7 @@
               </div>
             </div>
                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href='' " style="cursor: pointer;">
+              <div class="card dashboard-card card-orange" onclick="location.href='' " style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -127,7 +238,7 @@
 
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href='/dashboard' " style="cursor: pointer;">
+              <div class="card dashboard-card card-green" onclick="location.href='/dashboard' " style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -145,7 +256,7 @@
             </div>
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href='/dashboard'" style="cursor: pointer;">
+              <div class="card dashboard-card card-orange1" onclick="location.href='/dashboard'" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -164,7 +275,7 @@
 
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-orange" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -185,7 +296,7 @@
 
 
                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-pink" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -201,8 +312,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div>   
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-magenta" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -218,8 +330,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div> 
+              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-skyblue" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -235,8 +348,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div>   
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-purple" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -252,8 +366,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div> 
+              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-golden" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -269,8 +384,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div>
+               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-cherry" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -287,8 +403,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div> 
+              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-camel" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -305,8 +422,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div>  
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-blue" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -322,8 +440,9 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+            </div> 
+              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card dashboard-card card-peach" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -340,7 +459,7 @@
                 </div>
               </div>
             </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-lightblack" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -358,7 +477,7 @@
                 </div>
               </div>
             </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card" onclick="location.href=''" style="cursor: pointer;">
+              <div class="card dashboard-card card-darkgreen" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0">
@@ -390,70 +509,3 @@
   }, 2000);
 </script>
 
-
-<style>
-  /* Dashboard card styling */
-.card {
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  background: #ffffff;
-}
-
-/* Hover effect */
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-  border-color: #2563eb;
-}
-
-/* Card header layout */
-.card .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: transparent;
-  border-bottom: none;
-  padding: 18px 20px;
-}
-
-/* Number text */
-.card .fw-bolder {
-  font-size: 26px;
-  color: #111827;
-}
-
-/* Subtitle text */
-.card .card-text {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 4px;
-}
-
-/* Avatar circle */
-.card .avatar {
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Icon inside avatar */
-.card .avatar i {
-  font-size: 22px;
-  color: #2563eb;
-}
-
-/* Change avatar background on hover */
-.card:hover .avatar {
-  background-color: #2563eb !important;
-}
-
-.card:hover .avatar i {
-  color: #ffffff;
-}
-
-</style>
