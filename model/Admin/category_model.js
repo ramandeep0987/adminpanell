@@ -13,6 +13,10 @@ const categorySchema = new mongoose.Schema({
     type: String,
    
   },
+      service: {
+    type: String,
+   
+  },
  facilities: {
     type: String,
     

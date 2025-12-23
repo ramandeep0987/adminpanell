@@ -1,7 +1,43 @@
 
 <%-include('../common/header');-%>
 <%-include('../common/sidebar');-%>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.dataTables.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.print.min.js"></script>
+
+<style>
+
+.dt-layout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dt-search {
+  margin-left: auto;
+}
+
+#myTable th,
+#myTable td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+</style>
 <div class="app-content content ">
   <div class="content-overlay"></div>
   <div class="header-navbar-shadow"></div>
@@ -97,11 +133,7 @@
 
 <%- include('../common/footer'); -%>
 
-<script>
-  $(document).ready(function () {
-    $('#myTable').DataTable();
-  });
-</script>
+
 
 <script>
   setTimeout(function () {
@@ -212,3 +244,111 @@
   padding: 20px 25px;
 }
 </style>
+
+
+
+<!-- <script>
+  $(document).ready(function () {
+    new DataTable('#myTable', {
+      layout: {
+        topStart: {
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+        }
+      }
+    });
+  });
+</script> -->
+
+
+<script>
+  $(document).ready(function () {
+    new DataTable('#myTable', {
+      layout: {
+        topStart: {
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+          pageLength: true
+        },
+        topEnd: {
+          search: true
+        },
+        bottomStart: {
+          info: true
+        },
+        bottomEnd: {
+          paging: true
+        }
+      }
+    });
+  });
+</script>
+
+
+<style>
+  /* ===== DataTable Buttons Container ===== */
+.dt-buttons {
+  margin-bottom: 15px;
+}
+
+/* ===== Individual Buttons ===== */
+.dt-button {
+  background-color: #7367f0 !important; /* primary theme color */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
+  margin-right: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hover Effect ===== */
+.dt-button:hover {
+  background-color: #5e50ee !important;
+  color: #ffffff !important;
+}
+
+/* ===== Focus / Active ===== */
+.dt-button:focus,
+.dt-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== Print Button (optional different color) ===== */
+.dt-button.buttons-print {
+  background-color: #28c76f !important;
+}
+
+/* ===== PDF Button ===== */
+.dt-button.buttons-pdf {
+  background-color: #ea5455 !important;
+}
+
+/* ===== Excel Button ===== */
+.dt-button.buttons-excel {
+  background-color: #00cfe8 !important;
+}
+
+/* ===== CSV Button ===== */
+.dt-button.buttons-csv {
+  background-color: #ff9f43 !important;
+}
+
+/* ===== Copy Button ===== */
+.dt-button.buttons-copy {
+  background-color: #1e9ff2 !important;
+}
+
+/* ===== Responsive Fix ===== */
+@media (max-width: 768px) {
+  .dt-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+</style>
+

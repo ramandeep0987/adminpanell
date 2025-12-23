@@ -96,11 +96,11 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 .bg-warning {
-  background-color: #7226ffd3 !important;
+  background-color:#266affd3 !important;
 }
 
 .bg-danger {
-  background-color: #f44646 !important;
+  background-color: #4a8e9e !important;
 }
 
 .bg-light {
@@ -241,9 +241,11 @@ textarea.form-control {
   height: 64px;
 }
 
+
 .custom-control {
   line-height: 1.6rem;
 }
+
 
 .custom-file,
 .custom-file-label,

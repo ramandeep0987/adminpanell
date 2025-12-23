@@ -24,7 +24,9 @@ module.exports = {
   date: req.body.date,
   number: req.body.number,
   doctorname: req.body.doctorname,
-  services: req.body.services,
+         services: req.body.services,//satfified unsatsfied
+  service: req.body.service,//opd type
+  
   facilities: req.body.facilities,
          Suggestion: req.body.Suggestion,
          abhaid:req.body.abhaid,
@@ -52,7 +54,7 @@ module.exports = {
    General_list: async(req, res)=> {
         try {
             title = "General_list"
-            let catedata = await category_model.find({ services: "Gernal" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ service: "Gernal" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/General_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -62,7 +64,7 @@ module.exports = {
       Private_list: async(req, res)=> {
         try {
             title = "Private_list"
-            let catedata = await category_model.find({ services: "Private" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ service: "Private" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Private_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -72,7 +74,7 @@ module.exports = {
           Evening_list: async(req, res)=> {
         try {
             title = "Evening_list"
-            let catedata = await category_model.find({ services: "Evening" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ service: "Evening" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Evening_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
