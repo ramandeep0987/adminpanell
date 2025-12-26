@@ -796,7 +796,7 @@ footer.footer-border {
 
 .main-menu.menu-light {
   color: #6e6b7b;
-  background: #fff;
+  background: #4254a4;
 }
 
 .main-menu.menu-light .navigation {
@@ -895,7 +895,7 @@ footer.footer-border {
 }
 
 .main-menu.menu-light .navigation > li.active > a {
-  background: #0c5079cc;
+  background: #000000cc;
   box-shadow: none;
   color: #ffffff;
   font-weight: 400;

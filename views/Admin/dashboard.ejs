@@ -112,6 +112,8 @@
 }
 
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <!-- BEGIN: Content-->
 <div class="app-content content ">
   <div class="content-wrapper container-xxl p-0">
@@ -292,8 +294,6 @@
               </div>
             </div>
 
-
-
                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card dashboard-card card-pink" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
@@ -471,7 +471,8 @@
                   </div>
                 </div>
               </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+            </div>
+               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card dashboard-card card-darkgreen" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
                   <div>
@@ -489,6 +490,41 @@
                 </div>
               </div>
             </div>
+            <div class="row mt-3">
+  <div class="col-lg-4 col-md-6 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">OPD Footfalls </h5>
+      </div>
+      <div class="card-body">
+        <canvas id="pieChart1"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Total Footfall</h5>
+      </div>
+      <div class="card-body">
+        <canvas id="pieChart2"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Satisfied / Unsatisfied</h5>
+      </div>
+      <div class="card-body">
+        <canvas id="pieChart3"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
         </section>
       </div>
@@ -497,6 +533,50 @@
 </div>
 
 <%- include('common/footer'); -%>
+<script>
+  // Pie Chart 1
+  
+  const gernel = "<%= Gernal %>";
+  const privateCount = "<%= Private %>";
+  const evening = "<%= Evening %>";
+  new Chart(document.getElementById('pieChart1'), {
+    type: 'pie',
+    data: {
+      labels: ['Gernal ', 'Private', 'Evening'],
+      datasets: [{
+          data: [gernel, privateCount, evening],
+        backgroundColor: ['#e2b916cc', '#1788dfcc', '#92125cd9']
+      }]
+    }
+  });
+  const FootFall = "<%= futfaal %>";
+
+  // Pie Chart 2
+  new Chart(document.getElementById('pieChart2'), {
+    type: 'pie',
+    data: {
+      labels: [' Total FootFall',],
+      datasets: [{
+        data: [FootFall],
+        backgroundColor: ['#00CFE8']
+      }]
+    }
+  });
+  const Unsatisfied = "<%= Unsatisfied %>";
+  const Satisfied = "<%= Satisfied %>";
+
+  // Pie Chart 3
+  new Chart(document.getElementById('pieChart3'), {
+    type: 'pie',
+    data: {
+      labels: ['Unsatisfied', 'Satisfied'],
+      datasets: [{
+        data: [Unsatisfied, Satisfied],
+        backgroundColor: ['#8d8877cc', '#483a5acc']
+      }]
+    }
+  });
+</script>
 
 <script>
   setTimeout(function() {

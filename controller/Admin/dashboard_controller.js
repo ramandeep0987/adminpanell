@@ -14,6 +14,13 @@ module.exports = {
     dashboard: async(req, res)=> {
         try {
             let title = "dashboard"
+            let futfaal = await category_model.count()
+            let Gernal = await category_model.count({service:"Gernal"})
+            let Private = await category_model.count({service:"Private"})
+            let Evening = await category_model.count({service:"Evening"})
+        let Satisfied = await category_model.count({services:"Satisfied"})
+            let Unsatisfied = await category_model.count({services:"Unsatisfied"})
+
             let user = await category_model.count({facilities:"parking"})
             let worker = await category_model.count({facilities:"Wheel chair and trolly"})
             let category = await category_model.count({facilities:"Blood Collection Center"})
@@ -34,7 +41,7 @@ module.exports = {
             let Hospital = await category_model.count({facilities:"Hospital staff communication"})
             let Other = await category_model.count({facilities:"Any Other"})
      
-            res.render('Admin/dashboard', {title, Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
+            res.render('Admin/dashboard', {title,futfaal,Unsatisfied,Satisfied, Gernal,Private,Evening,Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
         } catch (error) {
             console.log(error)
         }
