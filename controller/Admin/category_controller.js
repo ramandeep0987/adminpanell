@@ -81,6 +81,20 @@ module.exports = {
             console.log(error)
         }
     },
+          
+          
+          
+              Unsatisfied_list: async(req, res)=> {
+        try {
+            title = "Unsatisfied_list"
+            let catedata = await category_model.find({ services: "Unsatisfied" }).sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Unsatisfied_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+    },
+          
     view_category: async(req, res)=> {
         try {
             let title = ""

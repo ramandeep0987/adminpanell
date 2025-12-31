@@ -2,7 +2,8 @@
 <%- include('common/sidebar'); -%>
 
 
-
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+<!-- icon link  -->
 
 <style>
 
@@ -130,24 +131,7 @@
           </div>
           <div class="row">
 
-
-         <!-- <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-  <div class="dashboard-card" onclick="location.href=''" style="cursor:pointer;">
-    <div class="dashboard-card-header">
-      <div>
-        <h2 class="dashboard-title">
-          <%= user %>
-        </h2>
-        <p class="dashboard-subtitle">Parking</p>
-      </div>
-
-      <div class="dashboard-avatar">
-        <i class="ph-fill ph-users"></i>
-      </div>
-    </div>
-  </div>
-</div> -->
-
+       
   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card dashboard-card card-yellow" onclick="location.href=''" style="cursor: pointer;">
                 <div class="card-header">
@@ -156,11 +140,12 @@
                       <%=user%>
                     </h2>
                     <p class="card-text">Parking</p>
-                  </div>
+                                  </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-users"></i>
-                    </div>
+  <i class="ph-fill ph-car" style="font-size:32px;"></i>
+</div>
+
                   </div>
                 </div>
               </div>
@@ -178,7 +163,11 @@
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-users-four"></i>
+                     <i class="ph-fill ph-wheelchair-motion" style="font-size:32px;"></i>
+
+
+
+
                     </div>
                   </div>
                 </div>
@@ -197,7 +186,9 @@
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-squares-four"></i>
+                    <i class="ph-fill ph-drop" style="font-size:32px; color:red;"></i>
+
+
                     </div>
                   </div>
                 </div>
@@ -214,12 +205,14 @@
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-rows"></i>
+                <i class="ph-fill ph-clipboard-text"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            
+
                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div class="card dashboard-card card-orange" onclick="location.href='' " style="cursor: pointer;">
                 <div class="card-header">
@@ -231,7 +224,7 @@
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-briefcase"></i>
+                   <i class="ph-fill ph-phone" style="font-size:32px;"></i>
                     </div>
                   </div>
                 </div>
