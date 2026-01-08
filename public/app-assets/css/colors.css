@@ -420,7 +420,7 @@ input:focus ~ .bg-light {
 }
 
 .bg-light-primary {
-  background: var(--theme) !important;
+  background: #000000d8 !important;
   color: #fafdff !important;
 }
 

@@ -13,7 +13,7 @@ html {
 
 html body {
   height: 100%;
-  background-color: #fff;
+  background-color: #f0f0f0;;
   direction: ltr;
 }
 
@@ -796,7 +796,7 @@ footer.footer-border {
 
 .main-menu.menu-light {
   color: #6e6b7b;
-  background: #4254a4;
+  background: #1283e0;
 }
 
 .main-menu.menu-light .navigation {
@@ -820,7 +820,7 @@ footer.footer-border {
 }
 
 .main-menu.menu-light .navigation li a {
-  color: #625f6e;
+  color: #000000;
   padding: 10px 15px 10px 15px;
   line-height: 1.45;
 }

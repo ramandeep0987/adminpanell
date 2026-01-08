@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const toolsSchema = new mongoose.Schema({
 
-  tool_name: {type: String},
-  status: {type: Number, default:1 },
+  question: {type: String},
+  answer: {type: String },
   deleted: {type: Boolean, default: false},
 
 }, {timestamps:true});

@@ -88,7 +88,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.2;
-  color: #ffffff;
+  color: #004692;
 }
 
 h1,
@@ -390,7 +390,7 @@ button:not(:disabled),
   cursor: pointer;
   background-color: #0f10109c;
   color: white;
-  padding: 2px 17px;
+  padding: 6px 10px;
   font-size: 14px;
   border-radius: 4px;
 }

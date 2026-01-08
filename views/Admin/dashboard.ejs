@@ -1,122 +1,121 @@
-<%- include('common/header'); -%>
-<%- include('common/sidebar'); -%>
+<%- include('common/header'); -%> <%- include('common/sidebar'); -%>
 
-
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css"
+/>
 <!-- icon link  -->
 
 <style>
+  /* Common dashboard card */
+  .dashboard-card {
+    border-radius: 14px;
+    border: none !important;
+  }
 
-/* Common dashboard card */
-.dashboard-card {
-  border-radius: 14px;
-  border: none !important;
-}
+  .dashboard-card .card-header {
+    background: transparent !important;
+    border-bottom: none !important;
+  }
 
-.dashboard-card .card-header {
-  background: transparent !important;
-  border-bottom: none !important;
-}
+  /* Text + icon */
+  .dashboard-card h2,
+  .dashboard-card p,
+  .dashboard-card i {
+    color: #fff !important;
+  }
 
-/* Text + icon */
-.dashboard-card h2,
-.dashboard-card p,
-.dashboard-card i {
-  color: #fff !important;
-}
+  /* 🟡 Yellow - Parking */
+  .card-yellow {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
+  .card-grey {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🟡 Yellow - Parking */
-.card-yellow {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-.card-grey {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  .card-red {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-.card-red {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🤎 Brown - Wheel Chair */
+  .card-brown {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🤎 Brown - Wheel Chair */
-.card-brown {
-  background: linear-gradient(135deg,#8eaac9, #5355a1) !important;
-}
+  /* 🟣 Green + Purple - Wheel Chair */
+  .card-orange {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🟣 Green + Purple - Wheel Chair */
-.card-orange {
-  background: linear-gradient(135deg,#8eaac9, #5355a1) !important;
-}
+  /* 🟢 Green - Wheel Chair */
+  .card-green {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
+  /* 🟥 Maroon - Wheel Chair */
+  .card-orange1 {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
+  .card-orange {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
+  /* 🌸 Pink - Wheel Chair */
+  .card-pink {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🟢 Green - Wheel Chair */
-.card-green {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-/* 🟥 Maroon - Wheel Chair */
-.card-orange1 {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-.card-orange {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-/* 🌸 Pink - Wheel Chair */
-.card-pink {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 💖 Magenta */
+  .card-magenta {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 💖 Magenta */
-.card-magenta {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* ☁️ Sky Blue */
+  .card-skyblue {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* ☁️ Sky Blue */
-.card-skyblue {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 💜 Purple */
+  .card-purple {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 💜 Purple */
-.card-purple {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🟡 Golden */
+  .card-golden {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🟡 Golden */
-.card-golden {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🍒 Cherry */
+  .card-cherry {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🍒 Cherry */
-.card-cherry {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🐪 Camel */
+  .card-camel {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🐪 Camel */
-.card-camel {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🔵 Blue */
+  .card-blue {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
+  /* 🍑 Peach */
+  .card-peach {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🔵 Blue */
-.card-blue {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-/* 🍑 Peach */
-.card-peach {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
+  /* 🖤 Light Black / Dark Gray */
+  .card-lightblack {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 
-/* 🖤 Light Black / Dark Gray */
-.card-lightblack {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-
-/* 🌲 Dark Green */
-.card-darkgreen {
-  background: linear-gradient(135deg, #8eaac9, #5355a1) !important;
-}
-
+  /* 🌲 Dark Green */
+  .card-darkgreen {
+    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- BEGIN: Content-->
-<div class="app-content content ">
+<div class="app-content content">
   <div class="content-wrapper container-xxl p-0">
     <div class="content-body">
       <div class="main-content">
@@ -126,126 +125,128 @@
               <div class="col-6">
                 <h2 class="card-title">Dashboard</h2>
               </div>
-          
             </div>
           </div>
           <div class="row">
-
-       
-  <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-yellow" onclick="location.href='/Parking_List'" style="cursor: pointer;">
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-yellow"
+                onclick="location.href='/Parking_List'"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=user%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=user%></h2>
                     <p class="card-text">Parking</p>
-                                  </div>
+                  </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-  <i class="ph-fill ph-car" style="font-size:32px;"></i>
-</div>
-
+                      <i class="ph-fill ph-car" style="font-size: 32px"></i>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-grey" onclick="location.href=''" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-grey"
+                onclick="location.href='/Wheel_chair'"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=worker%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=worker%></h2>
                     <p class="card-text">Wheel Chair</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                     <i class="ph-fill ph-wheelchair-motion" style="font-size:32px;"></i>
-
-
-
-
+                      <i
+                        class="ph-fill ph-wheelchair-motion"
+                        style="font-size: 32px"
+                      ></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-red" onclick="location.href=''" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-red"
+                onclick="location.href='/Blood_collection'"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=category%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=category%></h2>
                     <p class="card-text">Blood collection</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                    <i class="ph-fill ph-drop" style="font-size:32px; color:red;"></i>
-
-
+                      <i
+                        class="ph-fill ph-drop"
+                        style="font-size: 32px; color: red"
+                      ></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-brown" onclick="location.href='' " style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-brown"
+                onclick="location.href='' "
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=booking%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=booking%></h2>
                     <p class="card-text">Registration Desk</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                <i class="ph-fill ph-clipboard-text"></i>
+                      <i class="ph-fill ph-clipboard-text"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
 
-               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-orange" onclick="location.href='' " style="cursor: pointer;">
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-orange"
+                onclick="location.href='' "
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=reviews%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=reviews%></h2>
                     <p class="card-text">Help Desk</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                   <i class="ph-fill ph-phone" style="font-size:32px;"></i>
+                      <i class="ph-fill ph-phone" style="font-size: 32px"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-green" onclick="location.href='/dashboard' " style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-green"
+                onclick="location.href='/dashboard' "
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=completejobs%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=completejobs%></h2>
                     <p class="card-text">Nursing care</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-
-                    <i class="ph-fill ph-first-aid"></i>
-
+                      <i class="ph-fill ph-first-aid"></i>
                     </div>
                   </div>
                 </div>
@@ -253,13 +254,15 @@
             </div>
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-orange1" onclick="location.href='/dashboard'" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-orange1"
+                onclick="location.href='/dashboard'"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=withdraw%>
-                    </h2>
-                    <p class="card-text">BP Counter </p>
+                    <h2 class="fw-bolder mb-0"><%=withdraw%></h2>
+                    <p class="card-text">BP Counter</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
@@ -270,132 +273,135 @@
               </div>
             </div>
 
-
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-orange" onclick="location.href=''" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-orange"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=reports%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=reports%></h2>
                     <p class="card-text">Doctor consult</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                    <i class="ph-fill ph-hospital"></i>
-
-
+                      <i class="ph-fill ph-hospital"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-pink" onclick="location.href=''" style="cursor: pointer;">
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-pink"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=messages%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=messages%></h2>
                     <p class="card-text">X-Ray/CT Scan</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-      <i class="fa-solid fa-x-ray"></i>
+                      <i class="fa-solid fa-x-ray"></i>
 
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-
-
-
-
+                      <link
+                        rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
-            </div>   
+            </div>
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-magenta" onclick="location.href=''" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-magenta"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=FAQ%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=FAQ%></h2>
                     <p class="card-text">OPD Waiting</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                     <i class="ph-fill ph-chair"></i>
+                      <i class="ph-fill ph-chair"></i>
                     </div>
                   </div>
                 </div>
               </div>
-            </div> 
-              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-skyblue" onclick="location.href=''" style="cursor: pointer;">
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-skyblue"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Pharmacy%>
-                    </h2>
-                    <p class="card-text">Pharmacy Info </p>
+                    <h2 class="fw-bolder mb-0"><%=Pharmacy%></h2>
+                    <p class="card-text">Pharmacy Info</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
                       <i class="ph-fill ph-pill"></i>
-
                     </div>
                   </div>
                 </div>
               </div>
-            </div>   
+            </div>
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-purple" onclick="location.href=''" style="cursor: pointer;">
+              <div
+                class="card dashboard-card card-purple"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Physiotherapy%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Physiotherapy%></h2>
                     <p class="card-text">Physiotherapy</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                     <i class="ph-fill ph-person-simple-run"></i>
-
-
+                      <i class="ph-fill ph-person-simple-run"></i>
                     </div>
                   </div>
                 </div>
               </div>
-            </div> 
-              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-golden" onclick="location.href=''" style="cursor: pointer;">
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-golden"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Food%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Food%></h2>
                     <p class="card-text">Food Facilities</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
                       <i class="ph-fill ph-fork-knife"></i>
-
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-cherry" onclick="location.href=''" style="cursor: pointer;">
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-cherry"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Cleanliness%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Cleanliness%></h2>
                     <p class="card-text">Cleanliness</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -405,14 +411,16 @@
                   </div>
                 </div>
               </div>
-            </div> 
-              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-camel" onclick="location.href=''" style="cursor: pointer;">
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-camel"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Security%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Security%></h2>
                     <p class="card-text">Security</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -422,115 +430,290 @@
                   </div>
                 </div>
               </div>
-            </div>  
-             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-blue" onclick="location.href=''" style="cursor: pointer;">
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-blue"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Safe%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Safe%></h2>
                     <p class="card-text">Safe Environment</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                  <i class="fa-solid fa-shield-halved"></i> 
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-peach" onclick="location.href=''" style="cursor: pointer;">
-                <div class="card-header">
-                  <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Patient%>
-                    </h2>
-                    <p class="card-text">Patient Rights</p>
-                  </div>
-                  <div class="avatar bg-light-primary p-50 m-0">
-                    <div class="avatar-content">
-                      <i class="ph-fill ph-user"></i>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>   <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-lightblack" onclick="location.href=''" style="cursor: pointer;">
-                <div class="card-header">
-                  <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Hospital%>
-                    </h2>
-                    <p class="card-text">Staff Commun..</p>
-                  </div>
-                  <div class="avatar bg-light-primary p-50 m-0">
-                    <div class="avatar-content">
-                 <i class="ph-fill ph-handshake"></i>
-
-
+                      <i class="fa-solid fa-shield-halved"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-               <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div class="card dashboard-card card-darkgreen" onclick="location.href=''" style="cursor: pointer;">
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-peach"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0">
-                      <%=Other%>
-                    </h2>
+                    <h2 class="fw-bolder mb-0"><%=Patient%></h2>
+                    <p class="card-text">Patient Rights</p>
+                  </div>
+                  <div class="avatar bg-light-primary p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-user"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-lightblack"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0"><%=Hospital%></h2>
+                    <p class="card-text">Staff Commun..</p>
+                  </div>
+                  <div class="avatar bg-light-primary p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-handshake"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-darkgreen"
+                onclick="location.href=''"
+                style="cursor: pointer"
+              >
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0"><%=Other%></h2>
                     <p class="card-text">Any Other</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                     <i class="ph-fill ph-stack-plus"></i>
-
-                      
+                      <i class="ph-fill ph-stack-plus"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row mt-3">
-  <div class="col-lg-4 col-md-6 col-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="card-title">OPD Footfalls </h5>
-      </div>
-      <div class="card-body">
-        <canvas id="pieChart1"></canvas>
-      </div>
-    </div>
-  </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">OPD Footfalls</h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="pieChart1"></canvas>
+                  </div>
+                </div>
+              </div>
 
-  <div class="col-lg-4 col-md-6 col-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="card-title">Total Footfall</h5>
-      </div>
-      <div class="card-body">
-        <canvas id="pieChart2"></canvas>
-      </div>
-    </div>
-  </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">Total Footfall</h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="pieChart2"></canvas>
+                  </div>
+                </div>
+              </div>
 
-  <div class="col-lg-4 col-md-6 col-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="card-title">Satisfied / Unsatisfied</h5>
-      </div>
-      <div class="card-body">
-        <canvas id="pieChart3"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">Satisfied / Unsatisfied</h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="pieChart3"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- TASK INFO TABLE -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card shadow-sm">
+                  <div
+                    class="card-header d-flex justify-content-between align-items-center"
+                  >
+                    <h5 class="mb-0">TASK INFOS</h5>
+                    <i class="ph ph-dots-three-vertical"></i>
+                  </div>
+
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                          <tr>
+                            <th>#</th>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Manager</th>
+                            <th style="width: 30%">Progress</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Parking</td>
+                            <td><span class="badge bg-success">Doing</span></td>
+                            <td>Admin</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar bg-success"
+                                  style="width: <%= user %>%"
+                                >
+                                  <%= user %>%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>2</td>
+                            <td>Wheel Chair</td>
+                            <td><span class="badge bg-primary">To Do</span></td>
+                            <td>Admin</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar bg-primary"
+                                  style="width: <%= worker %>%"
+                                >
+                                  <%= worker %>%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>3</td>
+                            <td>Blood Collection</td>
+                            <td><span class="badge bg-info">On Hold</span></td>
+                            <td>Admin</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar bg-info"
+                                  style="width: <%= category %>%"
+                                >
+                                  <%= category %>%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>4</td>
+                            <td>Doctor Consult</td>
+                            <td>
+                              <span class="badge bg-warning"
+                                >Wait Approval</span
+                              >
+                            </td>
+                            <td>Admin</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar bg-warning"
+                                  style="width: <%= reports %>%"
+                                >
+                                  <%= reports %>%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>5</td>
+                            <td>X-Ray / CT</td>
+                            <td>
+                              <span class="badge bg-danger">Suspended</span>
+                            </td>
+                            <td>Admin</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar bg-danger"
+                                  style="width: <%= messages %>%"
+                                >
+                                  <%= messages %>%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div class="card issue-card">
+                <div class="card-body d-flex align-items-center">
+                  <!-- LEFT CONTENT -->
+                  <div class="issue-info">
+                    <h4 class="mb-0">Issues Discovered</h4>
+                    <small class="text-muted"
+                      >Newly found and yet to be solved</small
+                    >
+
+                    <div class="issue-list mt-3">
+                      <div class="issue-row">
+                        <span class="dot blue"></span> Product design
+                        <span class="count">78</span>
+                      </div>
+                      <div class="issue-row">
+                        <span class="dot orange"></span> Development
+                        <span class="count">63</span>
+                      </div>
+                      <div class="issue-row">
+                        <span class="dot red"></span> QA & Testing
+                        <span class="count">56</span>
+                      </div>
+                      <div class="issue-row">
+                        <span class="dot green"></span> Customer queries
+                        <span class="count">36</span>
+                      </div>
+                      <div class="issue-row">
+                        <span class="dot purple"></span> R & D
+                        <span class="count">24</span>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-outline-primary btn-sm mt-3">
+                      See Details →
+                    </button>
+                  </div>
+
+                  <!-- RIGHT CHART -->
+                  <div class="issue-chart">
+                    <canvas id="issuesChart"></canvas>
+                  </div>
+
+                  <div class="issue-chart">
+                    <canvas id="issuesChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -539,58 +722,158 @@
 </div>
 
 <%- include('common/footer'); -%>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById("issuesChart");
+
+    new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: [
+          "Product design",
+          "Development",
+          "QA & Testing",
+          "Customer queries",
+          "R & D",
+        ],
+        datasets: [
+          {
+            data: [78, 63, 56, 36, 24],
+            backgroundColor: [
+              "#63c7ff",
+              "#ffcf87",
+              "#ff8a7a",
+              "#8fd67d",
+              "#4a7dff",
+            ],
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: "65%",
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+      },
+    });
+  });
+</script>
+
 <script>
   // Pie Chart 1
-  
+
   const gernel = "<%= Gernal %>";
   const privateCount = "<%= Private %>";
   const evening = "<%= Evening %>";
-  new Chart(document.getElementById('pieChart1'), {
-    type: 'pie',
+  new Chart(document.getElementById("pieChart1"), {
+    type: "pie",
     data: {
-      labels: ['Gernal ', 'Private', 'Evening'],
-      datasets: [{
+      labels: ["Gernal ", "Private", "Evening"],
+      datasets: [
+        {
           data: [gernel, privateCount, evening],
-        backgroundColor: ['#e2b916cc', '#46b6e8', '#710e38']
-      }]
-    }
+          backgroundColor: ["#e2b916cc", "#46b6e8", "#710e38"],
+        },
+      ],
+    },
   });
   const FootFall = "<%= futfaal %>";
 
   // Pie Chart 2
-  new Chart(document.getElementById('pieChart2'), {
-    type: 'pie',
+  new Chart(document.getElementById("pieChart2"), {
+    type: "pie",
     data: {
-      labels: [' Total FootFall',],
-      datasets: [{
-        data: [FootFall],
-        backgroundColor: ['#98259e']
-      }]
-    }
+      labels: [" Total FootFall"],
+      datasets: [
+        {
+          data: [FootFall],
+          backgroundColor: ["#98259e"],
+        },
+      ],
+    },
   });
   const Unsatisfied = "<%= Unsatisfied %>";
   const Satisfied = "<%= Satisfied %>";
 
   // Pie Chart 3
-  new Chart(document.getElementById('pieChart3'), {
-    type: 'pie',
+  new Chart(document.getElementById("pieChart3"), {
+    type: "pie",
     data: {
-      labels: ['Unsatisfied', 'Satisfied'],
-      datasets: [{
-        data: [Unsatisfied, Satisfied],
-        backgroundColor: ['#e40505', '#38bf3f']
-      }]
-    }
+      labels: ["Unsatisfied", "Satisfied"],
+      datasets: [
+        {
+          data: [Unsatisfied, Satisfied],
+          backgroundColor: ["#e40505", "#38bf3f"],
+        },
+      ],
+    },
   });
 </script>
 
-
-
 <script>
-  setTimeout(function() {
+  setTimeout(function () {
     $("div.msg").fadeOut();
   }, 2000);
 </script>
 
+<!-- raman -->
 
- 
+<style>
+  .issue-card {
+    border-radius: 16px;
+  }
+
+  .issue-info {
+    width: 55%;
+  }
+
+  .issue-chart {
+    width: 45%;
+    height: 260px; /* 🔴 VERY IMPORTANT */
+    position: relative;
+  }
+
+  .issue-chart canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .issue-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  /* Colors */
+  .blue {
+    background: #63c7ff;
+  }
+  .orange {
+    background: #ffcf87;
+  }
+  .red {
+    background: #ff8a7a;
+  }
+  .green {
+    background: #8fd67d;
+  }
+  .purple {
+    background: #4a7dff;
+  }
+</style>

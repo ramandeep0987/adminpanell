@@ -74,7 +74,11 @@ router.get('/Evening_list', session,  category_controller.Evening_list)
 router.get('/Private_list', session,  category_controller.Private_list)
 router.get('/General_list', session,  category_controller.General_list)
 router.get('/Unsatisfied_list', session, category_controller.Unsatisfied_list)
-router.get('/Parking_list', session,category_controller.Parking_list)
+router.get('/Parking_list', session, category_controller.Parking_list)
+router.get('/Wheel_chair', session, category_controller.Wheel_Chair)
+router.get('/Blood_collection', session, category_controller.Blood_Collection)
+
+
 
 router.get('/add_category', category_controller.add_category)
 router.post('/Create_category', category_controller.Create_category)

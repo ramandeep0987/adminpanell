@@ -96,11 +96,11 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 .bg-warning {
-  background-color:#266affd3 !important;
+  background-color:#FB8C00 !important;
 }
 
 .bg-danger {
-  background-color: #4a8e9e !important;
+  background-color: #fd3232 !important;
 }
 
 .bg-light {
@@ -522,6 +522,7 @@ select.form-control:not([size]):not([multiple]) {
   opacity: 0;
 }
 
+
 .imagecheck-figure {
   background-color: #fdfdff;
   border-color: #e4e6fc;
@@ -854,7 +855,7 @@ select.form-control:not([size]):not([multiple]) {
   margin-top: -1px;
 }
 .card .card-header h4 {
-  font-size: 18px;
+  font-size: 31px;
   line-height: 28px;
   color: #4a4a4d;
   padding-right: 10px;
@@ -1275,7 +1276,7 @@ select.form-control:not([size]):not([multiple]) {
 .table:not(.table-sm) thead th {
   border-bottom: none;
   background-color: rgba(0, 0, 0, 0.04);
-  color: #000000;
+  color: #0008ff;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -2708,7 +2709,7 @@ ul.nav-tabs li.nav-item a.nav-link.active i {
 body,
 html {
   min-height: 100%;
-}
+}  
 
 body {
   background-color: #fcfcfc;

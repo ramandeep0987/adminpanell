@@ -33,7 +33,7 @@
 
 #myTable th,
 #myTable td {
-  text-align: center;
+  text-align: justify;
   vertical-align: middle;
 }
 
@@ -320,27 +320,27 @@
 
 /* ===== Print Button (optional different color) ===== */
 .dt-button.buttons-print {
-  background-color: #28c76f !important;
+  background-color: #2f0c4a !important;
 }
 
 /* ===== PDF Button ===== */
 .dt-button.buttons-pdf {
-  background-color: #ea5455 !important;
+  background-color: #e02020 !important;
 }
 
 /* ===== Excel Button ===== */
 .dt-button.buttons-excel {
-  background-color: #00cfe8 !important;
+  background-color: #08b0c2 !important;
 }
 
 /* ===== CSV Button ===== */
 .dt-button.buttons-csv {
-  background-color: #ff9f43 !important;
+  background-color: #e8801f !important;
 }
 
 /* ===== Copy Button ===== */
 .dt-button.buttons-copy {
-  background-color: #1e9ff2 !important;
+  background-color: #1083cb !important;
 }
 
 /* ===== Responsive Fix ===== */
@@ -354,3 +354,177 @@
 
 </style>
 
+<style>
+  /* ===============================
+   Card Styling
+================================ */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #1f85f6, #1f85f6);
+  color: #fff;
+  padding: 18px 24px;
+  border-bottom: none;
+}
+
+.card{
+  background-color: #1f85f6 ;
+}
+
+.card-header .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-DataTable {
+  background: #ffffff;
+  padding: 15px;
+}
+
+/* ===============================
+   Table Styling
+================================ */
+table.dataTable {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table.dataTable thead th {
+  background-color: #f8f9fc;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid #e3e6f0 !important;
+  padding: 12px;
+}
+
+table.dataTable tbody td {
+  font-size: 18px;
+  color: #000000;
+  padding: 12px;
+  vertical-align: middle;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+/* ===============================
+   Action Buttons
+================================ */
+.btn.bg-warning{
+padding: 3px 8px ;
+  border-radius: 6px;
+}
+.btn.bg-danger {
+  padding: 3px 8px ;
+  border-radius: 6px;
+}
+.btn.bg-warning {
+  background-color: #ff7d01 !important;
+  border: none;
+}
+
+.btn.bg-danger {
+  background-color: #c81618 !important;
+  border: none;
+}
+
+.btn svg {
+  vertical-align: middle;
+}
+
+/* ===============================
+   DataTables Top Controls
+================================ */
+.dataTables_wrapper .dataTables_filter input {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 6px 10px;
+  margin-left: 6px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 4px 8px;
+}
+
+/* ===============================
+   DataTables Buttons
+================================ */
+.dt-buttons {
+  margin-bottom: 10px;
+}
+
+.dt-button {
+  border: none !important;
+  color: #fff !important;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-right: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dt-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.dt-button.buttons-copy   { background-color: #086ba8 !important; }
+.dt-button.buttons-csv    { background-color: #c36916 !important; }
+.dt-button.buttons-excel  { background-color: #07a0b1 !important; }
+.dt-button.buttons-pdf    { background-color: #c31a1a !important; }
+.dt-button.buttons-print  { background-color: #4d1578 !important; }
+
+/* ===============================
+   Pagination
+================================ */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  margin: 0 2px;
+  border: 1px solid transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: #1788df !important;
+  color: #fff !important;
+  border-color: #1788df;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #e8f0ff !important;
+  color: #1788df !important;
+}
+
+/* ===============================
+   Info Text
+================================ */
+.dataTables_info {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* ===============================
+   Responsive Fix
+================================ */
+@media (max-width: 768px) {
+  .dt-buttons {
+    margin-bottom: 15px;
+  }
+
+  .card-header {
+    text-align: center;
+  }
+}
+
+</style>
+
+<!-- #12e0cb -->
