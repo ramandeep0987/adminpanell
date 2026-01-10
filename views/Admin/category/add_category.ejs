@@ -165,7 +165,7 @@
  
 }
 
-/* calender */
+
 
 
 
@@ -205,7 +205,7 @@
   <div class="input-group">
   <input type="date" id="visitDate" name="date" class="input-field" placeholder=" " />
   <label class="floating-label" for="visitDate">
-    Date Of OPD Visit / ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
+    Date Of OPD Visit/ ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
   </label>
 </div>
 
@@ -224,22 +224,67 @@
 </label>
         </div>  
         
+
+
+
+
         
+<style>
+
+.input-field{
+  width:100%;
+  padding:22px 14px;
+  font-size:16px;
+  border:2px solid #000;
+  border-radius:4px;
+  background:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* text shown INSIDE input area */
+.select-placeholder{
+  position:absolute;
+  top:50%;
+  left:14px;
+  transform:translateY(-50%);
+  font-size:14px;
+  line-height:1.3;
+  color:#000;
+  pointer-events:none;
+}
+
+/* hide when option selected */
+.input-field.has-value ~ .select-placeholder{
+  display:none;
+}
+</style>
+
+
 
           <div class="input-group">
-  <select id="service" name="service" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> Select OPD Types<br> ਓਪੀਡੀ ਦੀ ਕਿਸਮ ਚੁਣੋ
-</option>
+  <select id="service" name="service" class="input-field" required
+          onchange="this.classList.add('has-value')" style="appearance:none;">
+      <option value="" class="floating-label" disabled selected hidden> </option>
       <option value="Gernal">General</option>
       <option value="Private">Private</option>
       <option value="Evening">Evening</option>
-      
   </select>
- 
+   <div class="select-placeholder">
+    Select OPD Types<br>
+    ਓਪੀਡੀ ਦੀ ਕਿਸਮ ਚੁਣੋ
+  </div>
 </div>
-      
+
+
+
+
+
+
+
+
 <!-- ramam -->
-<div class="input-group">
+<!-- <div class="input-group">
   <select id="services" name="services" class="input-field" onchange="mark(this.value)">
       <option value="" disabled selected hidden>
         Were You Satisfied With The Hospital Services<br> ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
@@ -249,8 +294,6 @@
       <option value="Unsatisfied">Unsatisfied <br> ਅਸੰਤੁਸ਼ਟ</option>  
   </select>
 </div>
-
-    
 
 
         <div class="input-group" id="parking" style="display: none;">
@@ -289,14 +332,215 @@
       
   </select>
   
+</div> -->
+
+
+
+
+<style>
+
+
+
+
+/* select input */
+.input-field{
+  width:100%;
+  padding:22px 14px;
+  font-size:16px;
+  border:2px solid #000;
+  border-radius:4px;
+  background:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* overlay placeholder (with <br>) */
+.select-placeholder{
+  position:absolute;
+  top:50%;
+  left:14px;
+  transform:translateY(-50%);
+  font-size:14px;
+  line-height:1.35;
+  color:#000;
+  pointer-events:none;
+}
+
+/* hide overlay when value selected */
+.input-field.has-value ~ .select-placeholder{
+  display:none;
+}
+</style>
+
+
+<!-- SATISFACTION SELECT -->
+<div class="input-group">
+  <select id="services" name="services" class="input-field" required
+          onchange="handleServiceChange(this)">
+    <option value="" disabled selected hidden></option>
+    <option value="Satisfied">Satisfied / ਸੰਤੁਸ਼ਟ</option>
+    <option value="Unsatisfied">Unsatisfied / ਅਸੰਤੁਸ਼ਟ</option>
+  </select>
+
+  <!-- TEXT SHOWN INSIDE INPUT AREA -->
+  <div class="select-placeholder">
+    Were You Satisfied With The Hospital Services<br>
+    ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
+  </div>
 </div>
+
+
+
+
+
+
+
+<!-- SHOW ONLY WHEN UNSATISFIED -->
+
+ <!-- <div class="input-group" id="parking" style="display: none;">
+  <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
+      <option value="" class="floating-label" disabled selected hidden>As Per Your Experience, Which Of Our Areas/Services Need Improvement? <br> ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
+
+      <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
+      <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+       <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
+      <option value="X-R/CT Scan/MRI">X-R/CT Scan/MRI/ ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+       <option value="Help Desk">Help Desk/ ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
+</option>
+      <option value="Registration Desk">Registration Desk/ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
+</option>
+       <option value="Nursing Care">Nursing Care/ ਨਰਸਿੰਗ ਦੇਖਭਾਲ
+</option>
+      <option value="BP Counter">BP Counter/ ਬੀਪੀ ਕਾਊਂਟਰ
+</option>
+       <option value="OPD Waiting">OPD Waiting/ ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
+      <option value="Doctor Consult">Doctor Consult/ ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy Information About How To Take Your Medicines/ /ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
+</option>
+
+      <option value="Physiotherapy">Physiotherapy/ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+      <option value="Food And Beverage Facilities">Food And Beverage Facilities/ ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
+</option>
+      <option value="Cleanliness">Cleanliness/ ਸਾਫ਼ ਸਫ਼ਾਈ
+</option>
+      <option value="Security">Security/ ਸੁਰੱਖਿਆ </option>
+      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment/ ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
+</option>
+      <option value="Patient rights respected by staff">Patient rights respected by staff/ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+      <option value="Hospital staff communication">Hospital staff communication/ ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
+</option>
+      <option value="Any Other">Any Other/ਹੋਰ ਕੋਈ</option>
+  </select>
+</div> -->
+
+<!-- raman -->
+
+
+<style>
+
+
+/* select input */
+.input-field{
+  width:100%;
+  padding:22px 14px;
+  font-size:16px;
+  border:2px solid #000;
+  border-radius:4px;
+  background:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* overlay placeholder (with <br>) */
+.select-placeholder{
+  position:absolute;
+  top:50%;
+  left:14px;
+  transform:translateY(-50%);
+  font-size:14px;
+  line-height:1.35;
+  color:#000;
+  pointer-events:none;
+}
+
+/* hide overlay when value selected */
+.input-field.has-value ~ .select-placeholder{
+  display:none;
+}
+select option {
+  white-space: pre-line;
+}
+
+</style>
+
+
+
+<!-- SHOW ONLY WHEN UNSATISFIED -->
+<div class="input-group" id="parking" style="display:none;">
+  <select id="facilities" name="facilities" class="input-field">
+    <option value="" disabled selected >
+As Per Your Experience, Which Of Our Areas/Services Need Improvement?
+ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
+    </option>
+    <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
+      <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+       <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
+      <option value="X-R/CT Scan/MRI">X-R/CT Scan/MRI/ ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+       <option value="Help Desk">Help Desk/ ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
+</option>
+      <option value="Registration Desk">Registration Desk/ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
+</option>
+       <option value="Nursing Care">Nursing Care/ ਨਰਸਿੰਗ ਦੇਖਭਾਲ
+</option>
+      <option value="BP Counter">BP Counter/ ਬੀਪੀ ਕਾਊਂਟਰ
+</option>
+       <option value="OPD Waiting">OPD Waiting/ ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
+      <option value="Doctor Consult">Doctor Consult/ ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy Information About How To Take Your Medicines/ /ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
+</option>
+
+      <option value="Physiotherapy">Physiotherapy/ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+      <option value="Food And Beverage Facilities">Food And Beverage Facilities/ ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
+</option>
+      <option value="Cleanliness">Cleanliness/ ਸਾਫ਼ ਸਫ਼ਾਈ
+</option>
+      <option value="Security">Security/ ਸੁਰੱਖਿਆ </option>
+      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment/ ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
+</option>
+      <option value="Patient rights respected by staff">Patient rights respected by staff/ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+      <option value="Hospital staff communication">Hospital staff communication/ ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
+</option>
+      <option value="Any Other">Any Other/ਹੋਰ ਕੋਈ</option>
+  </select>
+</div>
+
+
+
+
+
+<script>
+function handleServiceChange(el){
+  // mark select as filled (hide overlay text)
+  el.classList.add('has-value');
+
+  // show/hide next section
+  mark(el.value);
+}
+
+function mark(value){
+  document.getElementById("parking").style.display =
+    value === "Unsatisfied" ? "block" : "none";
+}
+</script>
+
+
 
 
 
 <div class="input-group">
   <textarea id="Suggestion" name="Suggestion" class="input-field" placeholder=" "></textarea>
   <label for="Suggestion" class="floating-label">
-   Please Mention Your Suggestion For Improvement As Per Your Experience / ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।
+   Please Mention Your Suggestion For Improvement As Per Your Experience <br> ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।
 
   </label>
 
@@ -392,7 +636,10 @@ document.getElementById("profile").addEventListener("submit", function(e){
             text: "Your response has been submitted.",
             icon: "success",
             confirmButtonText: "OK"
-        });
+        }).then(() => {
+        // Reload page after popup is closed
+        window.location.reload();
+    });
 
         // you can also reset the form
         document.getElementById("profile").reset();

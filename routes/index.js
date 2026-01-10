@@ -77,6 +77,26 @@ router.get('/Unsatisfied_list', session, category_controller.Unsatisfied_list)
 router.get('/Parking_list', session, category_controller.Parking_list)
 router.get('/Wheel_chair', session, category_controller.Wheel_Chair)
 router.get('/Blood_collection', session, category_controller.Blood_Collection)
+router.get('/Registration_Desk', session, category_controller.Registration_Desk)
+router.get('/Help_Desk', session, category_controller.Help_Desk)
+router.get('/Nursing_Care', session, category_controller.Nursing_Care)
+router.get('/BP_Counter', session, category_controller.BP_Counter)
+router.get('/Doctor_Consult', session, category_controller.Doctor_Consult)
+router.get('/XRay_CTScan', session, category_controller.XRay_CTScan)
+router.get('/OPD_Waiting', session, category_controller.OPD_Waiting)
+router.get('/Pharmacy_Info', session, category_controller.Pharmacy_Info)
+router.get('/Physiotherapy', session, category_controller.Physiotherapy)
+router.get('/Food_Facilities', session, category_controller.Food_Facilities)
+router.get('/Cleanliness', session, category_controller.Cleanliness)
+
+router.get('/Security', session, category_controller.Security)
+router.get('/Safe_Environment', session, category_controller.Safe_Environment)
+router.get('/Patient_Rights', session, category_controller.Pharmacy_Info)
+
+router.get('/Staff_Commun', session, category_controller.Staff_Commun)
+router.get('/Any_Other', session, category_controller.Any_Other)
+
+
 
 
 

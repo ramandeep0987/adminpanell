@@ -111,7 +111,7 @@ module.exports = {
       Wheel_Chair: async (req, res) => {
         try {
             title = "Wheel_Chair"
-            let catedata = await category_model.find({ services: "Wheel chair and trolly" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Wheel chair and trolly" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Wheel_chair.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -122,7 +122,7 @@ module.exports = {
       Blood_Collection: async (req, res) => {
         try {
             title = "Blood_Collection"
-            let catedata = await category_model.find({ services: "Blood Collection Center" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Blood Collection Center" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Blood_collection.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -134,7 +134,7 @@ module.exports = {
      Registration_Desk: async (req, res) => {
         try {
             title = " Registration_Desk"
-            let catedata = await category_model.find({ services: "Registration Desk" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Registration Desk" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Registration_desk.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -145,7 +145,7 @@ module.exports = {
       Help_Desk: async (req, res) => {
         try {
             title = "Help_Desk"
-            let catedata = await category_model.find({ services: "Help Desk" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Help Desk" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Help_desk.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -156,7 +156,7 @@ module.exports = {
         Nursing_Care: async (req, res) => {
         try {
             title = "Nursing_Care"
-            let catedata = await category_model.find({ services: "Nursing Care" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Nursing Care" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Evening_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -167,7 +167,7 @@ module.exports = {
              BP_Counter: async (req, res) => {
         try {
             title = "BP_Counter"
-            let catedata = await category_model.find({ services: "BP Counter" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "BP Counter" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Nursing_care.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -178,7 +178,7 @@ module.exports = {
           Doctor_Consult: async (req, res) => {
         try {
             title = "Doctor_Consult"
-            let catedata = await category_model.find({ services: "Doctor Consult" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Doctor Consult" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Doctor_Consult.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -189,7 +189,7 @@ module.exports = {
        XRay_CTScan: async (req, res) => {
         try {
             title = "XRay_CTScan"
-            let catedata = await category_model.find({ services: "X-R/CT Scan/MRI" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "X-R/CT Scan/MRI" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Xray_CTscan.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -200,7 +200,7 @@ module.exports = {
       OPD_Waiting: async (req, res) => {
         try {
             title = "OPD_Waiting"
-            let catedata = await category_model.find({ services: "OPD Waiting" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "OPD Waiting" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/OPD_Waiting.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -212,7 +212,7 @@ module.exports = {
            Pharmacy_Info: async (req, res) => {
         try {
             title = "Pharmacy_Info"
-            let catedata = await category_model.find({ services: "Pharmacy Information About How To Take Your Medicines" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Pharmacy Information About How To Take Your Medicines" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Pharmacy_info.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -223,7 +223,7 @@ module.exports = {
      Physiotherapy: async (req, res) => {
         try {
             title = "Physiotherapy"
-            let catedata = await category_model.find({ services: "Physiotherapy" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Physiotherapy" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Physiotherapy.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -234,7 +234,7 @@ module.exports = {
          Food_Facilities: async (req, res) => {
         try {
             title = "Food_Facilities"
-            let catedata = await category_model.find({ services: "Food And Beverage Facilities" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Food And Beverage Facilities" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Food_facilities.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -245,7 +245,7 @@ module.exports = {
         Cleanliness: async (req, res) => {
         try {
             title = "Cleanliness"
-            let catedata = await category_model.find({ services: "Cleanliness" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Cleanliness" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Cleanliness.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -256,7 +256,7 @@ module.exports = {
      Security: async (req, res) => {
         try {
             title = "Security"
-            let catedata = await category_model.find({ services: "Security" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Security" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Security.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -267,7 +267,7 @@ module.exports = {
          Safe_Environment: async (req, res) => {
         try {
             title = "Safe_Environment"
-            let catedata = await category_model.find({ services: "Safe & secure environment for treatment" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Safe & secure environment for treatment" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Safe_environment.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -279,7 +279,7 @@ module.exports = {
        Patient_Rights: async (req, res) => {
         try {
             title = "Patient_Rights"
-            let catedata = await category_model.find({ services: "Patient rights respected by staff" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Patient rights respected by staff" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Patient_rights', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -290,7 +290,7 @@ module.exports = {
             Staff_Commun: async (req, res) => {
         try {
             title = "Staff_Commun"
-            let catedata = await category_model.find({ services: "Hospital staff communication" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Hospital staff communication" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Staff_commun.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -301,7 +301,7 @@ module.exports = {
      Any_Other: async (req, res) => {
         try {
             title = "Any_Other"
-            let catedata = await category_model.find({ services: "Any Other" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Any Other" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Any_other.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
