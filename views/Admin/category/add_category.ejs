@@ -649,3 +649,93 @@ document.getElementById("profile").addEventListener("submit", function(e){
     });
 });
 </script>
+
+<!-- 
+Jquary validation -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+  $("#profile").validate({
+    ignore: "#Suggestion", // ✅ THIS FIELD WILL NOT BE VALIDATED
+
+    rules: {
+      name: {
+        required: true
+      },
+      mrdnumber: {
+        required: true,
+        digits: true
+      },
+      date: {
+        required: true
+      },
+      number: {
+        required: true,
+        digits: true,
+        minlength: 10,
+        maxlength: 10
+      },
+      doctorname: {
+        required: true
+      },
+      service: {
+        required: true
+      },
+      services: {
+        required: true
+      },
+      facilities: {
+        required: function () {
+          return $("#services").val() === "Unsatisfied";
+        }
+      }
+      // ❌ Suggestion intentionally not added
+    },
+
+    messages: {
+      name: "Please enter patient name",
+      mrdnumber: "Please enter MRD number",
+      date: "Please select OPD visit date",
+      number: "Please enter valid 10 digit contact number",
+      doctorname: "Please enter doctor name",
+      service: "Please select OPD type",
+      services: "Please select satisfaction option",
+      facilities: "Please select area for improvement"
+    },
+
+    errorElement: "small",
+    errorClass: "text-danger",
+
+    submitHandler: function (form) {
+      // Your existing fetch logic
+      let formData = new FormData(form);
+
+      fetch("/Create_category", {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.text())
+      .then(data => {
+        Swal.fire({
+          title: "Success!",
+          text: "Your response has been submitted.",
+          icon: "success",
+          confirmButtonText: "OK"
+        }).then(() => {
+          window.location.reload();
+        });
+      })
+      .catch(err => {
+        Swal.fire("Error!", "Something went wrong.", "error");
+      });
+    }
+  });
+
+});
+</script>
+
+
