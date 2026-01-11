@@ -158,7 +158,7 @@ module.exports = {
             title = "Nursing_Care"
             let catedata = await category_model.find({ facilities: "Nursing Care" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
-            res.render('Admin/category/Evening_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+            res.render('Admin/category/Nursing_care.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -169,7 +169,7 @@ module.exports = {
             title = "BP_Counter"
             let catedata = await category_model.find({ facilities: "BP Counter" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
-            res.render('Admin/category/Nursing_care.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+            res.render('Admin/category/BP_counter.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -384,6 +384,7 @@ module.exports = {
           console.log(error)
         }
     },
+
 
 
     

@@ -91,7 +91,7 @@ router.get('/Cleanliness', session, category_controller.Cleanliness)
 
 router.get('/Security', session, category_controller.Security)
 router.get('/Safe_Environment', session, category_controller.Safe_Environment)
-router.get('/Patient_Rights', session, category_controller.Pharmacy_Info)
+router.get('/Patient_Rights', session, category_controller.Patient_Rights)
 
 router.get('/Staff_Commun', session, category_controller.Staff_Commun)
 router.get('/Any_Other', session, category_controller.Any_Other)

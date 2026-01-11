@@ -1,4 +1,5 @@
-<body style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); font-family:'Inter', sans-serif;">
+<body 
+style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); font-family:'Inter', sans-serif;">
 
 <style>
 
@@ -197,13 +198,13 @@
 
 
            <div class="input-group">
-          <input type="number" id="name" name="mrdnumber" class="input-field" placeholder=" " />
+          <input type="number" id="name" name="mrdnumber" class="input-field"required placeholder=" " />
           <label class="floating-label">MRD Number<br> ਐਮ ਆਰ ਡੀ ਨੰਬਰ  
 </label>
         </div>  
         
   <div class="input-group">
-  <input type="date" id="visitDate" name="date" class="input-field" placeholder=" " />
+  <input type="date" id="visitDate" name="date" class="input-field" required placeholder=" " />
   <label class="floating-label" for="visitDate">
     Date Of OPD Visit/ ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
   </label>
@@ -219,7 +220,7 @@
 
 
           <div class="input-group">
-          <input type="text" id="name" name="doctorname" class="input-field" placeholder=" " />
+          <input type="text" id="name" name="doctorname" class="input-field" required placeholder=" " />
           <label class="floating-label">Doctor Name<br> ਡਾਕਟਰ ਦਾ ਨਾਮ
 </label>
         </div>  
@@ -283,56 +284,6 @@
 
 
 
-<!-- ramam -->
-<!-- <div class="input-group">
-  <select id="services" name="services" class="input-field" onchange="mark(this.value)">
-      <option value="" disabled selected hidden>
-        Were You Satisfied With The Hospital Services<br> ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
-
-      </option>
-      <option value="Satisfied">Satisfied <br> ਸੰਤੁਸ਼ਟ</option>
-      <option value="Unsatisfied">Unsatisfied <br> ਅਸੰਤੁਸ਼ਟ</option>  
-  </select>
-</div>
-
-
-        <div class="input-group" id="parking" style="display: none;">
-  <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden>As Per Your Experience, Which Of Our Areas/Services Need Improvement? / ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
-
-      <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
-      <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
-       <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
-      <option value="X-R/CT Scan/MRI">X-R/CT Scan/MRI/ ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
-       <option value="Help Desk">Help Desk/ ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
-</option>
-      <option value="Registration Desk">Registration Desk/ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
-</option>
-       <option value="Nursing Care">Nursing Care/ ਨਰਸਿੰਗ ਦੇਖਭਾਲ
-</option>
-      <option value="BP Counter">BP Counter/ ਬੀਪੀ ਕਾਊਂਟਰ
-</option>
-       <option value="OPD Waiting">OPD Waiting/ ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
-      <option value="Doctor Consult">Doctor Consult/ ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
-      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy Information About How To Take Your Medicines/ /ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
-</option>
-
-      <option value="Physiotherapy">Physiotherapy/ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
-      <option value="Food And Beverage Facilities">Food And Beverage Facilities/ ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
-</option>
-      <option value="Cleanliness">Cleanliness/ ਸਾਫ਼ ਸਫ਼ਾਈ
-</option>
-      <option value="Security">Security/ ਸੁਰੱਖਿਆ </option>
-      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment/ ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
-</option>
-      <option value="Patient rights respected by staff">Patient rights respected by staff/ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
-      <option value="Hospital staff communication">Hospital staff communication/ ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
-</option>
-      <option value="Any Other">Any Other/ਹੋਰ ਕੋਈ</option>
-      
-  </select>
-  
-</div> -->
 
 
 
@@ -366,14 +317,13 @@
   pointer-events:none;
 }
 
-/* hide overlay when value selected */
 .input-field.has-value ~ .select-placeholder{
   display:none;
 }
 </style>
 
 
-<!-- SATISFACTION SELECT -->
+
 <div class="input-group">
   <select id="services" name="services" class="input-field" required
           onchange="handleServiceChange(this)">
@@ -382,7 +332,7 @@
     <option value="Unsatisfied">Unsatisfied / ਅਸੰਤੁਸ਼ਟ</option>
   </select>
 
-  <!-- TEXT SHOWN INSIDE INPUT AREA -->
+
   <div class="select-placeholder">
     Were You Satisfied With The Hospital Services<br>
     ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
@@ -393,53 +343,10 @@
 
 
 
-
-
-<!-- SHOW ONLY WHEN UNSATISFIED -->
-
- <!-- <div class="input-group" id="parking" style="display: none;">
-  <select id="facilities" name="facilities" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden>As Per Your Experience, Which Of Our Areas/Services Need Improvement? <br> ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
-
-      <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
-      <option value="Wheel chair and trolly">Wheel chair and trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
-       <option value="Blood Collection Center">Blood Collection Center/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
-      <option value="X-R/CT Scan/MRI">X-R/CT Scan/MRI/ ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
-       <option value="Help Desk">Help Desk/ ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
-</option>
-      <option value="Registration Desk">Registration Desk/ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
-</option>
-       <option value="Nursing Care">Nursing Care/ ਨਰਸਿੰਗ ਦੇਖਭਾਲ
-</option>
-      <option value="BP Counter">BP Counter/ ਬੀਪੀ ਕਾਊਂਟਰ
-</option>
-       <option value="OPD Waiting">OPD Waiting/ ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
-      <option value="Doctor Consult">Doctor Consult/ ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
-      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy Information About How To Take Your Medicines/ /ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
-</option>
-
-      <option value="Physiotherapy">Physiotherapy/ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
-      <option value="Food And Beverage Facilities">Food And Beverage Facilities/ ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
-</option>
-      <option value="Cleanliness">Cleanliness/ ਸਾਫ਼ ਸਫ਼ਾਈ
-</option>
-      <option value="Security">Security/ ਸੁਰੱਖਿਆ </option>
-      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment/ ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
-</option>
-      <option value="Patient rights respected by staff">Patient rights respected by staff/ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
-      <option value="Hospital staff communication">Hospital staff communication/ ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
-</option>
-      <option value="Any Other">Any Other/ਹੋਰ ਕੋਈ</option>
-  </select>
-</div> -->
-
-<!-- raman -->
-
-
 <style>
 
 
-/* select input */
+
 .input-field{
   width:100%;
   padding:22px 14px;
@@ -451,7 +358,7 @@
   -webkit-appearance:none;
 }
 
-/* overlay placeholder (with <br>) */
+
 .select-placeholder{
   position:absolute;
   top:50%;
@@ -463,7 +370,7 @@
   pointer-events:none;
 }
 
-/* hide overlay when value selected */
+
 .input-field.has-value ~ .select-placeholder{
   display:none;
 }
@@ -477,7 +384,7 @@ select option {
 
 <!-- SHOW ONLY WHEN UNSATISFIED -->
 <div class="input-group" id="parking" style="display:none;">
-  <select id="facilities" name="facilities" class="input-field">
+  <select id="facilities" name="facilities" class="input-field" >
     <option value="" disabled selected >
 As Per Your Experience, Which Of Our Areas/Services Need Improvement?
 ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
@@ -520,10 +427,10 @@ As Per Your Experience, Which Of Our Areas/Services Need Improvement?
 
 <script>
 function handleServiceChange(el){
-  // mark select as filled (hide overlay text)
+
   el.classList.add('has-value');
 
-  // show/hide next section
+ 
   mark(el.value);
 }
 
@@ -547,60 +454,7 @@ function mark(value){
 </div>
 
 
-         <!-- <div class="input-group">
-
-  <select id="services" name="services" class="input-field" style="appearance:none;">
-      <option value="" class="floating-label" disabled selected hidden> Select</option>
-      <option value="1">yes</option>
-      <option value="2">No</option>
-      
-      
-  </select>
-  <label class="floating-label">Do you have your ABHA ID  (Ayushman Bharat Health Account) number?
-</label>
-</div> -->
-
-
-<!-- Select Box -->
-<!-- <div class="input-group">
-  <select id="Ayushmanid" class="input-field">
-      <option value="" disabled selected hidden>Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-  </select>
-  
-  <label class="floating-label">Do you have your ABHA ID (Ayushman Bharat Health Account) number?</label>
-</div> -->
-
-<!-- ABHA Box (Hidden by default) -->
-<!-- <div id="abhaBox" style="display:none; margin-top:10px;">
-  <p>Please enter your 14 digit ABHA ID number.</p>
-   <input type="text" maxlength="14" class="input-field" name="abhaid" placeholder="Enter ABHA ID Number">
-  <p>
-    Please create your ABHA ID using the link:<br>
-    <a href="https://abha.abdm.gov.in/abha/v3/" target="_blank">
-      https://abha.abdm.gov.in/abha/v3/
-    </a>
-  </p>
-
  
-</div> -->
-
-<!-- <script>
-document.getElementById("Ayushmanid").addEventListener("change", function() {
-    let value = this.value;
-    let abhaBox = document.getElementById("abhaBox");
-
-    if (value === "yes") {
-        abhaBox.style.display = "block";
-    } else {
-        abhaBox.style.display = "block";
-    }
-});
-</script> -->
-
-         
-
 
 
         
@@ -650,92 +504,7 @@ document.getElementById("profile").addEventListener("submit", function(e){
 });
 </script>
 
-<!-- 
-Jquary validation -->
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
-<script>
-$(document).ready(function () {
-
-  $("#profile").validate({
-    ignore: "#Suggestion", // ✅ THIS FIELD WILL NOT BE VALIDATED
-
-    rules: {
-      name: {
-        required: true
-      },
-      mrdnumber: {
-        required: true,
-        digits: true
-      },
-      date: {
-        required: true
-      },
-      number: {
-        required: true,
-        digits: true,
-        minlength: 10,
-        maxlength: 10
-      },
-      doctorname: {
-        required: true
-      },
-      service: {
-        required: true
-      },
-      services: {
-        required: true
-      },
-      facilities: {
-        required: function () {
-          return $("#services").val() === "Unsatisfied";
-        }
-      }
-      // ❌ Suggestion intentionally not added
-    },
-
-    messages: {
-      name: "Please enter patient name",
-      mrdnumber: "Please enter MRD number",
-      date: "Please select OPD visit date",
-      number: "Please enter valid 10 digit contact number",
-      doctorname: "Please enter doctor name",
-      service: "Please select OPD type",
-      services: "Please select satisfaction option",
-      facilities: "Please select area for improvement"
-    },
-
-    errorElement: "small",
-    errorClass: "text-danger",
-
-    submitHandler: function (form) {
-      // Your existing fetch logic
-      let formData = new FormData(form);
-
-      fetch("/Create_category", {
-        method: "POST",
-        body: formData
-      })
-      .then(res => res.text())
-      .then(data => {
-        Swal.fire({
-          title: "Success!",
-          text: "Your response has been submitted.",
-          icon: "success",
-          confirmButtonText: "OK"
-        }).then(() => {
-          window.location.reload();
-        });
-      })
-      .catch(err => {
-        Swal.fire("Error!", "Something went wrong.", "error");
-      });
-    }
-  });
-
-});
-</script>
 
 
