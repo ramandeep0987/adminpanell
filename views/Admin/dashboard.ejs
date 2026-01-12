@@ -27,89 +27,89 @@
 
   /* 🟡 Yellow - Parking */
   .card-yellow {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
   .card-grey {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   .card-red {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🤎 Brown - Wheel Chair */
   .card-brown {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🟣 Green + Purple - Wheel Chair */
   .card-orange {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🟢 Green - Wheel Chair */
   .card-green {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
   /* 🟥 Maroon - Wheel Chair */
   .card-orange1 {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
   .card-orange {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
   /* 🌸 Pink - Wheel Chair */
   .card-pink {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 💖 Magenta */
   .card-magenta {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* ☁️ Sky Blue */
   .card-skyblue {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 💜 Purple */
   .card-purple {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🟡 Golden */
   .card-golden {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🍒 Cherry */
   .card-cherry {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🐪 Camel */
   .card-camel {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🔵 Blue */
   .card-blue {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
   /* 🍑 Peach */
   .card-peach {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🖤 Light Black / Dark Gray */
   .card-lightblack {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 
   /* 🌲 Dark Green */
   .card-darkgreen {
-    background: linear-gradient(135deg, #5e136a, #02af7f) !important;
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -193,25 +193,36 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
-                class="card dashboard-card card-brown"
-                onclick="location.href='/Registration_Desk' "
+                class="card dashboard-card card-pink"
+                onclick="location.href='/XRay_CTScan'"
                 style="cursor: pointer"
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=booking%></h2>
-                    <p class="card-text">Registration Desk</p>
+                    <h2 class="fw-bolder mb-0"><%=messages%></h2>
+                    <p class="card-text">X-Ray/CT Scan</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
-                      <i class="ph-fill ph-clipboard-text"></i>
+                      <i class="fa-solid fa-x-ray"></i>
+
+                      <link
+                        rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+
+
+
+          
 
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
@@ -227,6 +238,26 @@
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
                       <i class="ph-fill ph-phone" style="font-size: 32px"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-brown"
+                onclick="location.href='/Registration_Desk' "
+                style="cursor: pointer"
+              >
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0"><%=booking%></h2>
+                    <p class="card-text">Registration Desk</p>
+                  </div>
+                  <div class="avatar bg-light-primary p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-clipboard-text"></i>
                     </div>
                   </div>
                 </div>
@@ -273,6 +304,26 @@
               </div>
             </div>
 
+                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div
+                class="card dashboard-card card-magenta"
+                onclick="location.href='/OPD_Waiting'"
+                style="cursor: pointer"
+              >
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0"><%=FAQ%></h2>
+                    <p class="card-text">OPD Waiting</p>
+                  </div>
+                  <div class="avatar bg-light-primary p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-chair"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
                 class="card dashboard-card card-orange"
@@ -293,49 +344,13 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div
-                class="card dashboard-card card-pink"
-                onclick="location.href='/XRay_CTScan'"
-                style="cursor: pointer"
-              >
-                <div class="card-header">
-                  <div>
-                    <h2 class="fw-bolder mb-0"><%=messages%></h2>
-                    <p class="card-text">X-Ray/CT Scan</p>
-                  </div>
-                  <div class="avatar bg-light-primary p-50 m-0">
-                    <div class="avatar-content">
-                      <i class="fa-solid fa-x-ray"></i>
+           
 
-                      <link
-                        rel="stylesheet"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-              <div
-                class="card dashboard-card card-magenta"
-                onclick="location.href='/OPD_Waiting'"
-                style="cursor: pointer"
-              >
-                <div class="card-header">
-                  <div>
-                    <h2 class="fw-bolder mb-0"><%=FAQ%></h2>
-                    <p class="card-text">OPD Waiting</p>
-                  </div>
-                  <div class="avatar bg-light-primary p-50 m-0">
-                    <div class="avatar-content">
-                      <i class="ph-fill ph-chair"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+        
+
+
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
                 class="card dashboard-card card-skyblue"
@@ -489,7 +504,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+
+            <!-- <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
                 class="card dashboard-card card-darkgreen"
                 onclick="location.href='/Any_Other'"
@@ -507,7 +523,8 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+
             <div class="row mt-3">
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="card">
@@ -667,7 +684,7 @@
               </div>
             </div> -->
 
-            <!-- <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12">
               <div class="card issue-card">
                 <div class="card-body d-flex align-items-center">
                 
@@ -677,45 +694,87 @@
                       >Newly found and yet to be solved</small
                     >
 
-                    <div class="issue-list mt-3">
-                      <div class="issue-row">
-                        <span class="dot blue"></span> Product design
-                        <span class="count">78</span>
-                      </div>
-                      <div class="issue-row">
-                        <span class="dot orange"></span> Development
-                        <span class="count">63</span>
-                      </div>
-                      <div class="issue-row">
-                        <span class="dot red"></span> QA & Testing
-                        <span class="count">56</span>
-                      </div>
-                      <div class="issue-row">
-                        <span class="dot green"></span> Customer queries
-                        <span class="count">36</span>
-                      </div>
-                      <div class="issue-row">
-                        <span class="dot purple"></span> R & D
-                        <span class="count">24</span>
-                      </div>
-                    </div>
+                    <div class="container">
 
-                    <button class="btn btn-outline-primary btn-sm mt-3">
-                      See Details →
-                    </button>
-                  </div>
+  <h2>OPD Feedback Summary</h2>
+
+  <!-- ISSUE LIST -->
+  <div class="issue-list mt-3">
+    <div class="issue-row">
+      <div class="label"><span class="dot blue"></span> General OPD Feedback</div>
+      <span class="count">78</span>
+    </div>
+
+    <div class="issue-row">
+      <div class="label"><span class="dot orange"></span> Private OPD Feedback</div>
+      <span class="count">63</span>
+    </div>
+
+    <div class="issue-row">
+      <div class="label"><span class="dot red"></span> Evening OPD Feedback</div>
+      <span class="count">56</span>
+    </div>
+
+    <div class="issue-row">
+      <div class="label"><span class="dot purple"></span> Total Feedback</div>
+      <span class="count">24</span>
+    </div>
+
+    <div class="issue-row">
+      <div class="label"><span class="dot green"></span> Satisfied Patient</div>
+      <span class="count">36</span>
+    </div>
+
+    <div class="issue-row">
+      <div class="label"><span class="dot purple"></span> Dissatisfied Patient</div>
+      <span class="count">24</span>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <canvas id="opdChart"></canvas>
+
+</div>
+
+<script>
+const ctx = document.getElementById('opdChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'doughnut',   // bar | pie | doughnut | line
+  data: {
+    labels: [
+      'General OPD Feedback',
+      'Private OPD Feedback',
+      'Evening OPD Feedback',
+      'Total Feedback',
+      'Satisfied Patient',
+      'Dissatisfied Patient'
+    ],
+    datasets: [{
+      data: [78, 63, 56, 24, 36, 24],
+      backgroundColor: [
+        '#3498db',
+        '#f39c12',
+        '#e74c3c',
+        '#9b59b6',
+        '#2ecc71',
+        '#8e44ad'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }
+});
+</script>
 
 
-                  <div class="issue-chart">
-                    <canvas id="issuesChart"></canvas>
-                  </div>
-
-                  <div class="issue-chart">
-                    <canvas id="issuesChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
         </section>
       </div>
@@ -777,7 +836,7 @@
  new Chart(document.getElementById("pieChart1"), {
   type: "pie",
   data: {
-    labels: ["Gernal", "Private", "Evening"],
+    labels: ["General", "Private", "Evening"],
     datasets: [
       {
         data: [gernel, privateCount, evening],
@@ -933,7 +992,7 @@ new Chart(document.getElementById("pieChart2"), {
 
 /* Card Header */
 .card .card-header {
- background: linear-gradient(135deg, #5e136a, #02af7f) !important;  /* dark header */
+ background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;  /* dark header */
   color: #ffffff;
   padding: 16px 20px;
   border-bottom: none;
@@ -942,15 +1001,64 @@ new Chart(document.getElementById("pieChart2"), {
 /* Card Title */
 .card .card-header .card-title {
   margin: 0;
-  font-size: 16px;
+  font-size: 25pk;
   font-weight: 600;
 }
 
 /* Card Body */
 .card .card-body {
-   background: linear-gradient(135deg, #5e136a, #02af7f) !important; /* body background */
+   background: linear-gradient(135deg, #3B82F6, #60A5FA) !important; /* body background */
   padding: 20px;
 }
+</style>
 
+<!-- new pie chat  -->
+
+
+<style>
+
+  /* body{
+  font-family: Arial, sans-serif;
+  background:#eef2f7;
+  padding:40px;
+} */
+
+.container{
+  max-width:900px;
+  margin:auto;
+  background:#ffffff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+.issue-list{
+  margin-bottom:40px;
+}
+
+.issue-row{
+  display:flex;
+  align-items:justify;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+}
+
+.dot{
+  height:12px;
+  width:12px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:10px;
+}
+  .blue{ background:#3498db; }
+.orange{ background:#f39c12; }
+.red{ background:#e74c3c; }
+.purple{ background:#9b59b6; }
+.green{ background:#2ecc71; }
+
+.label{
+  display:flex;
+  align-items:justify;
+}
 
 </style>
