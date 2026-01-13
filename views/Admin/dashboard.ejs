@@ -360,7 +360,7 @@
                 <div class="card-header">
                   <div>
                     <h2 class="fw-bolder mb-0"><%=Pharmacy%></h2>
-                    <p class="card-text">Pharmacy Info</p>
+                    <p class="card-text">Pharmacy </p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
                     <div class="avatar-content">
@@ -525,7 +525,7 @@
               </div>
             </div> -->
 
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="card">
                   <div class="card-header">
@@ -558,7 +558,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             
 
@@ -698,82 +698,99 @@
 
   <h2>OPD Feedback Summary</h2>
 
-  <!-- ISSUE LIST -->
-  <div class="issue-list mt-3">
-    <div class="issue-row">
-      <div class="label"><span class="dot blue"></span> General OPD Feedback</div>
-      <span class="count">78</span>
-    </div>
+<div class="issue-list mt-3">
 
-    <div class="issue-row">
-      <div class="label"><span class="dot orange"></span> Private OPD Feedback</div>
-      <span class="count">63</span>
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot blue"></span> General OPD Feedback
     </div>
-
-    <div class="issue-row">
-      <div class="label"><span class="dot red"></span> Evening OPD Feedback</div>
-      <span class="count">56</span>
-    </div>
-
-    <div class="issue-row">
-      <div class="label"><span class="dot purple"></span> Total Feedback</div>
-      <span class="count">24</span>
-    </div>
-
-    <div class="issue-row">
-      <div class="label"><span class="dot green"></span> Satisfied Patient</div>
-      <span class="count">36</span>
-    </div>
-
-    <div class="issue-row">
-      <div class="label"><span class="dot purple"></span> Dissatisfied Patient</div>
-      <span class="count">24</span>
-    </div>
+    <span class="count"><%= Gernal %></span>
   </div>
 
-  <!-- CHART -->
-  <canvas id="opdChart"></canvas>
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot orange"></span> Private OPD Feedback
+    </div>
+    <span class="count"><%= Private %></span>
+  </div>
+
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot red"></span> Evening OPD Feedback
+    </div>
+    <span class="count"><%= Evening %></span>
+  </div>
+
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot purple"></span> Total Feedback
+    </div>
+    <span class="count"><%= futfaal %></span>
+  </div>
+
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot green"></span> Satisfied Patient
+    </div>
+    <span class="count"><%= Satisfied %></span>
+  </div>
+
+  <div class="issue-row">
+    <div class="label">
+      <span class="dot purple"></span> Dissatisfied Patient
+    </div>
+    <span class="count"><%= Unsatisfied %></span>
+  </div>
+
+
+  
+
 
 </div>
 
-<script>
-const ctx = document.getElementById('opdChart').getContext('2d');
+<!-- <canvas id="opdChart" height="120"></canvas> -->
+</div>
 
-new Chart(ctx, {
-  type: 'doughnut',   // bar | pie | doughnut | line
-  data: {
-    labels: [
-      'General OPD Feedback',
-      'Private OPD Feedback',
-      'Evening OPD Feedback',
-      'Total Feedback',
-      'Satisfied Patient',
-      'Dissatisfied Patient'
-    ],
-    datasets: [{
-      data: [78, 63, 56, 24, 36, 24],
-      backgroundColor: [
-        '#3498db',
-        '#f39c12',
-        '#e74c3c',
-        '#9b59b6',
-        '#2ecc71',
-        '#8e44ad'
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('opdChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [
+        'General OPD',
+        'Private OPD',
+        'Evening OPD',
+        'Satisfied',
+        'Dissatisfied'
       ],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'bottom'
+      datasets: [{
+        label: 'OPD Feedback Count',
+        data: [
+          "<%= Gernal %>",
+          "<%= Private %>",
+          "<%= Evening %>",
+          "<%= Satisfied %>",
+          "<%= Unsatisfied %>"
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
       }
     }
-  }
-});
+  });
 </script>
-
 
           </div>
         </section>
@@ -782,52 +799,17 @@ new Chart(ctx, {
   </div>
 </div>
 
+
+
+
+
+
+
 <%- include('common/footer'); -%>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById("issuesChart");
 
-    new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        labels: [
-          "Product design",
-          "Development",
-          "QA & Testing",
-          "Customer queries",
-          "R & D",
-        ],
-        datasets: [
-          {
-            data: [78, 63, 56, 36, 24],
-            backgroundColor: [
-              "#63c7ff",
-              "#ffcf87",
-              "#ff8a7a",
-              "#8fd67d",
-              "#4a7dff",
-            ],
-            borderWidth: 0,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: "65%",
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-      },
-    });
-  });
-</script>
 
-<script>
+<!-- <script>
   // Pie Chart 1
 
   const gernel = "<%= Gernal %>";
@@ -918,7 +900,7 @@ new Chart(document.getElementById("pieChart2"), {
   }
 });
 
-</script>
+</script> -->
 
 <script>
   setTimeout(function () {
@@ -926,62 +908,7 @@ new Chart(document.getElementById("pieChart2"), {
   }, 2000);
 </script>
 
-<!-- raman -->
-
-<style>
-  .issue-card {
-    border-radius: 16px;
-  }
-
-  .issue-info {
-    width: 55%;
-  }
-
-  .issue-chart {
-    width: 45%;
-    height: 260px; /* 🔴 VERY IMPORTANT */
-    position: relative;
-  }
-
-  .issue-chart canvas {
-    height: 100% !important;
-    width: 100% !important;
-  }
-
-  .issue-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-  }
-
-  /* Colors */
-  .blue {
-    background: #63c7ff;
-  }
-  .orange {
-    background: #ffcf87;
-  }
-  .red {
-    background: #ff8a7a;
-  }
-  .green {
-    background: #8fd67d;
-  }
-  .purple {
-    background: #4a7dff;
-  }
-</style>
-
-
+<!-- dashboard scc -->
 <style>
   .card {
   background-color: #f4f6f9;   /* light background */
@@ -1016,18 +943,11 @@ new Chart(document.getElementById("pieChart2"), {
 
 
 <style>
-
-  /* body{
-  font-family: Arial, sans-serif;
-  background:#eef2f7;
-  padding:40px;
-} */
-
 .container{
   max-width:900px;
   margin:auto;
   background:#ffffff;
-  padding:30px;
+  padding:34px;
   border-radius:12px;
   box-shadow:0 6px 15px rgba(0,0,0,0.1);
 }
@@ -1050,15 +970,33 @@ new Chart(document.getElementById("pieChart2"), {
   display:inline-block;
   margin-right:10px;
 }
-  .blue{ background:#3498db; }
-.orange{ background:#f39c12; }
-.red{ background:#e74c3c; }
-.purple{ background:#9b59b6; }
+
+  .blue{ background:#f39c12; }
+.orange{ background:#3498db; }
+.red{ background:#a42929e9; }
+.purple{ background:#f33d3d; }
 .green{ background:#2ecc71; }
+
 
 .label{
   display:flex;
   align-items:justify;
+}
+
+
+dashboard-card {
+  /* increase size */
+  min-height: 520px;     /* ⬅️ increase card length (height) */
+  width: 100%;
+  max-width: 900px;      /* ⬅️ increase card width */
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* number style */
+.count {
+  font-weight: 600;
+  font-size: 16px;
 }
 
 </style>
