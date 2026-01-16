@@ -52,7 +52,11 @@
             <div class="card-header border-bottom">
               <h4 class="card-title">Feedback Private OPD Patients </h4>
             </div>
-
+<div class="text-end mb-3">
+              <a href="/exportPrivateIExcel" class="btn btn-success">
+                <i class="fa fa-file-excel"></i> Export Excel
+              </a>
+            </div>
             <div class="card-DataTable table-responsive">
               <table class="table table-hover-animation" id="myTable">
                 <thead>
@@ -149,13 +153,7 @@
       ],
       layout: {
         topStart: {
-          buttons: [
-            { extend: 'copy', exportOptions: { columns: [0,1,2,3] } },
-            { extend: 'csv', exportOptions: { columns: [0,1,2,3] } },
-            { extend: 'excel', exportOptions: { columns: [0,1,2,3] } },
-            { extend: 'pdf', exportOptions: { columns: [0,1,2,3] } },
-            { extend: 'print', exportOptions: { columns: [0,1,2,3] } }
-          ],
+        
           pageLength: true
         },
         topEnd: { search: true },

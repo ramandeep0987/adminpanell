@@ -136,23 +136,18 @@
 <script>
   $(document).ready(function () {
     new DataTable('#myTable', {
-      layout: {
-        topStart: {
-          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-        },
-        topEnd: {
-          search: true
-        },
-        bottomStart: {
-          info: true
-        },
-        bottomEnd: {
-          paging: true
-        }
-      },
       columnDefs: [
         { targets: 4, orderable: false }
-      ]
+      ],
+      layout: {
+        topStart: {
+        
+          pageLength: true
+        },
+        topEnd: { search: true },
+        bottomStart: { info: true },
+        bottomEnd: { paging: true }
+      }
     });
   });
 </script>

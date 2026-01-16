@@ -52,7 +52,11 @@
             <div class="card-header border-bottom">
               <h4 class="card-title">Feedback Evening OPD Patients </h4>
             </div>
-
+ <div class="text-end mb-3">
+              <a href="/exporteveningIExcel" class="btn btn-success">
+                <i class="fa fa-file-excel"></i> Export Excel
+              </a>
+            </div>
             <div class="card-DataTable table-responsive">
               <table class="table table-hover-animation" id="myTable">
                 <thead>
@@ -131,7 +135,7 @@
       ],
       layout: {
         topStart: {
-          buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+         
           pageLength: true
         },
         topEnd: { search: true },

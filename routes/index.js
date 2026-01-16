@@ -89,7 +89,10 @@ router.get("/exporsafeenvironmentIExcel",session,category_controller. exporsafee
 router.get("/exporpatientrightsIExcel",session,category_controller. exporpatientrightsIExcel);
 router.get("/exporstaffcommunicationIExcel",session,category_controller. exporstaffcommunicationIExcel);
 router.get("/exporUnsatisfiedIExcel",session,category_controller.  exporUnsatisfiedIExcel);
-
+router.get("/exportPatentsExcel", session, category_controller.exportPatentsExcel);
+router.get("/exportGernalIExcel",session,category_controller.  exportGernalIExcel);
+router.get("/exportPrivateIExcel",session,category_controller.  exportPrivateIExcel);
+router.get("/exporteveningIExcel",session,category_controller.  exporteveningIExcel);
 
 router.get('/category_list', session, category_controller.category_list)
 router.get('/Evening_list', session,  category_controller.Evening_list)
