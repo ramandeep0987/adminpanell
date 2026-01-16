@@ -1058,7 +1058,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Name of doctor", key: "doctorname", width: 20 },
       { header: "OPD type", key: "service", width: 20 },
       { header: "Satisfied/Unsatisfied", key: "services", width: 20 },
-      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Category/issues", key: "facilities", width: 15 },
       { header: "Remarks/suggestion", key: "Suggestion", width: 30 },
       { header: "Date of visit", key: "createdAt", width: 25 },
     ];
@@ -1116,7 +1116,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Name of doctor", key: "doctorname", width: 20 },
       { header: "OPD type", key: "service", width: 20 },
       { header: "Satisfied/Unsatisfied", key: "services", width: 20 },
-      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Category/issues", key: "facilities", width: 15 },
       { header: "Remarks/suggestion", key: "Suggestion", width: 30 },
       { header: "Date of visit", key: "createdAt", width: 25 },
     ];
@@ -1173,7 +1173,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Name of doctor", key: "doctorname", width: 20 },
       { header: "OPD type", key: "service", width: 20 },
       { header: "Satisfied/Unsatisfied", key: "services", width: 20 },
-      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Category/issues", key: "facilities", width: 15 },
       { header: "Remarks/suggestion", key: "Suggestion", width: 30 },
       { header: "Date of visit", key: "createdAt", width: 25 },
     ];
@@ -1229,7 +1229,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Name of doctor", key: "doctorname", width: 20 },
       { header: "OPD type", key: "service", width: 20 },
       { header: "Satisfied/Unsatisfied", key: "services", width: 20 },
-      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Category/issues", key: "facilities", width: 15 },
       { header: "Remarks/suggestion", key: "Suggestion", width: 30 },
       { header: "Date of visit", key: "createdAt", width: 25 },
     ];
@@ -1286,7 +1286,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Name of doctor", key: "doctorname", width: 20 },
       { header: "OPD type", key: "service", width: 20 },
       { header: "Satisfied/Unsatisfied", key: "services", width: 20 },
-      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Category/issues", key: "facilities", width: 15 },
       { header: "Remarks/suggestion", key: "Suggestion", width: 30 },
       { header: "Date of visit", key: "createdAt", width: 25 },
     ];
