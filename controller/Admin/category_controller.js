@@ -1,9 +1,1104 @@
 let category_model = require('../../model/Admin/category_model')
 let helper = require('../../Helper/helper')
+const ExcelJS = require("exceljs");
+
+
+
+
+
 
 
 module.exports = { 
 
+exportParkingExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "parking" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Parking List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Parking_List.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+},
+
+exportWheelchairExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Wheel chair and trolly" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("WheelChair List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Wheelchair.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+
+    exportBloodcollectionExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Blood Collection Center" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Blood Collection List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Blood Collection Center.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+},
+
+    
+    
+      exportXrayIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "X-R/CT Scan/MRI" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Xray List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Xray.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+},
+
+      
+      
+    exporhelpdeskIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Help Desk" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("helpdesk List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=helpdesk.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+          
+          
+     exporregistrationdeskIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Registration Desk" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("registrationdesk List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=registrationdesk.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+          
+          
+       expornursingIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Nursing Care" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("nursing List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=nursing.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+
+       
+       
+         exporBPcounterIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "BP Counter" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("BPcounter List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=PBcounter.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },
+         
+         
+         
+            exporOPDwaitingIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "OPD Waiting" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("OPDwaiting List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=OPDwaiting.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+
+            
+            expordoctorconsultIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Doctor Consult" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("doctorconsult List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=doctorconsult.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },   
+    
+            
+      exporpharmacyIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Pharmacy Information About How To Take Your Medicines" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("pharmacy List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=pharmacy.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },     
+
+      
+         exporphysiotherapyIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Physiotherapy" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("physiotherapy List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=physiotherapy.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },     
+
+         
+         
+    exporFoodfacilitiesIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Food And Beverage Facilities" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Foodfacilities List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Foodfacilities.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    }, 
+
+            
+      exporcleanlinessIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Cleanliness" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("cleanliness List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=cleanliness.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    }, 
+
+      
+      
+            exporsecurtyIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Security" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("security List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=security.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    }, 
+
+            
+    exporsafeenvironmentIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Safe & secure environment for treatment" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("safeenvironment List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=safeenvironment.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    }, 
+
+
+     exporpatientrightsIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Patient rights respected by staff" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("patientrights List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=patientrights.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+      
+     
+      exporstaffcommunicationIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Hospital staff communication" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("staffcommunication List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=staffcommunication.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+    },
+
+      
+      
+      
+      
+       exporUnsatisfiedIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ facilities: "Unsatisfied" }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Unsatisfied List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+      { header: "Name", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name", key: "doctorname", width: 20 },
+      { header: "OPD Type", key: "service", width: 20 },
+      { header: "Services", key: "services", width: 20 },
+      { header: "Facility", key: "facilities", width: 15 },
+      { header: "Suggestion", key: "Suggestion", width: 30 },
+      { header: "Date", key: "createdAt", width: 25 },
+    ];
+
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=Unsatisfied.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },
+       
     add_category: async(req, res)=> {
         try {
             let title = "category_list"

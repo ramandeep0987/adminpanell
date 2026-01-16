@@ -69,6 +69,28 @@ router.post('/Delete_job/:id', job_controller.Delete_job)
 router.post('/job_status', job_controller.job_status)
 
 ////////////// CATEGORY /////////////////////////////
+
+router.get("/export-parking-excel", session, category_controller.exportParkingExcel);
+router.get("/export-Wheel;-excel",session,category_controller.exportWheelchairExcel);
+router.get("/export-Blood;-excel",session,category_controller.exportBloodcollectionExcel);
+router.get("/exportXrayIExcel", session, category_controller.exportXrayIExcel);
+router.get("/exporhelpdeskIExcel",session,category_controller.exporhelpdeskIExcel);
+router.get("/exporregistrationdeskIExcel",session,category_controller. exporregistrationdeskIExcel);
+router.get("/expornursingIExcel",session,category_controller. expornursingIExcel);
+router.get("/exporBPcounterIExcel",session,category_controller. exporBPcounterIExcel);
+router.get("/exporOPDwaitingIExcel",session,category_controller. exporOPDwaitingIExcel);
+router.get("/expordoctorconsultIExcel",session,category_controller.  expordoctorconsultIExcel);
+router.get("/exporpharmacyIExcel",session,category_controller.  exporpharmacyIExcel);
+router.get("/exporphysiotherapyIExcel",session,category_controller.exporphysiotherapyIExcel);
+router.get("/exporFoodfacilitiesIExcel",session,category_controller.exporFoodfacilitiesIExcel);
+router.get("/exporcleanlinessIExcel",session,category_controller.exporcleanlinessIExcel);
+router.get("/exporsecurtyIExcel", session, category_controller.exporsecurtyIExcel);
+router.get("/exporsafeenvironmentIExcel",session,category_controller. exporsafeenvironmentIExcel);
+router.get("/exporpatientrightsIExcel",session,category_controller. exporpatientrightsIExcel);
+router.get("/exporstaffcommunicationIExcel",session,category_controller. exporstaffcommunicationIExcel);
+router.get("/exporUnsatisfiedIExcel",session,category_controller.  exporUnsatisfiedIExcel);
+
+
 router.get('/category_list', session, category_controller.category_list)
 router.get('/Evening_list', session,  category_controller.Evening_list)
 router.get('/Private_list', session,  category_controller.Private_list)
