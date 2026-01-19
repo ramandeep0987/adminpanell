@@ -92,7 +92,13 @@ router.get("/exporUnsatisfiedIExcel",session,category_controller.  exporUnsatisf
 router.get("/exportPatentsExcel", session, category_controller.exportPatentsExcel);
 router.get("/exportGernalIExcel",session,category_controller.  exportGernalIExcel);
 router.get("/exportPrivateIExcel",session,category_controller.  exportPrivateIExcel);
-router.get("/exporteveningIExcel",session,category_controller.  exporteveningIExcel);
+router.get("/exporteveningIExcel", session, category_controller.exporteveningIExcel);
+router.get("/GernallIST_satisfied", session, category_controller.GernallIST_satisfied);
+router.get("/PrivatelIST_satisfied", session, category_controller.PrivatelIST_satisfied);
+router.get("/EveningIST_satisfied",session,category_controller.  EveningIST_satisfied);
+
+
+
 
 router.get('/category_list', session, category_controller.category_list)
 router.get('/Evening_list', session,  category_controller.Evening_list)

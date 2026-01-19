@@ -1267,7 +1267,36 @@ worksheet.columns = [
     res.status(500).send("Error exporting Excel");
   }
   },
-       
+         GernallIST_satisfied: async(req, res)=> {
+        try {
+            title = "GernallIST_satisfied"
+            let catedata = await category_model.find({service:"Gernal",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/General_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+            PrivatelIST_satisfied: async(req, res)=> {
+        try {
+            title = "Private_dissatisfied"
+            let catedata = await category_model.find({service:"Private",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Private_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+                 EveningIST_satisfied: async(req, res)=> {
+        try {
+            title = "Evening_dissatisfied"
+            let catedata = await category_model.find({service:"Evening",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Evening_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+    },
        
          exporteveningIExcel : async (req, res) => {
   try {
