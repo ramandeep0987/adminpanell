@@ -23,7 +23,7 @@
       <!-- <li class=" <%= title =='worker_list'?'active':'' %> "><a class="d-flex align-items-center" href="/worker_list"><i data-feather="users"></i><span class="menu-title text-truncate">Providers </span></a>
       </li> -->
       <li class=" <%= title =='category_list'?'active':'' %> "><a class="d-flex align-items-center" href="/category_list"> 
-         <div class="triangle blue"><i data-feather=""></i></div>
+         <i class="ph-fill ph-users"></i>
 <span class="menu-title text-truncate">Patients</span></a>
       </li>
 
@@ -71,6 +71,8 @@
     <span class="menu-title text-truncate">Evening OPD</span>
   </a>
 </li>
+
+
 <li class=" <%= title == 'Unsatisfied_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/Unsatisfied_list">
     <div class="triangle white">
@@ -80,6 +82,40 @@
   </a>
 </li>
 
+
+
+
+<li class=" <%= title == '' ? 'active' : '' %> ">
+  <a class="d-flex align-items-center" href="/">
+    <span class="dot blue"></span>
+    <span class="menu-title text-truncate">General Dissatisfied</span>
+  </a>
+</li>
+
+
+
+
+
+
+<li class=" <%= title == '' ? 'active' : '' %> ">
+  <a class="d-flex align-items-center" href="/">
+    <span class="dot orange"></span>
+    <span class="menu-title text-truncate">Private Dissatisfied</span>
+  </a>
+</li>
+
+
+
+
+
+
+
+<li class=" <%= title == '' ? 'active' : '' %> ">
+  <a class="d-flex align-items-center" href="/">
+    <span class="dot red"></span>
+    <span class="menu-title text-truncate">Evening Dissatisfied</span>
+  </a>
+</li>
 <!-- <li class="nav-item has-sub <%= title === 'Parking_list' ? 'open active' : '' %>">
   <a href="javascript:void(0)" class="d-flex align-items-center">
  <i data-feather="file-text"></i>
@@ -293,7 +329,7 @@
   .warning-triangle {
   width: 30px;
   height: 20px;
-  background: #f5f75a; /* Yellow fill */
+  background: #f1d924; /* Yellow fill */
   clip-path: polygon(
     50% 5%,
     5% 95%,
@@ -308,22 +344,22 @@
 
 
 
-.triangle.blue {
+/* .triangle.blue {
   width: 30px;
   height: 20px;
-  background: #3b82f6; /* Blue fill */
+  background: #3b82f6; 
   clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
   border-radius: 18px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .triangle.purple {
    width: 30px;
   height: 20px;
-  background: #36dae6; /* Purple fill */
+  background: #3498db; /* Purple fill */
   clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
   border-radius: 18px;
   position: relative;
@@ -355,6 +391,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+
+
+.dot{
+  height:12px;
+  width:12px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:10px;
+}
+
+  .blue{ background:#f1d924; }
+.orange{ background:#3498db; }
+.red{ background:#a42929e9; }
+.purple{ background:#f33d3d; }
+.green{ background:#2ecc71; }
+
+
+.label{
+  display:flex;
+  align-items:justify;
 }
 
 

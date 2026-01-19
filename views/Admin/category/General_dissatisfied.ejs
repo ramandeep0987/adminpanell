@@ -1,0 +1,536 @@
+
+<%-include('../common/header');-%>
+<%-include('../common/sidebar');-%>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.dataTables.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.1.1/js/buttons.print.min.js"></script>
+
+<style>
+
+.dt-layout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dt-search {
+  margin-left: auto;
+}
+
+#myTable th,
+#myTable td {
+  text-align: justify;
+  vertical-align: middle;
+}
+
+</style>
+<div class="app-content content ">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+      <section id="responsive-datatable">
+        <div class="row">
+          <div class="card">
+            <div class="card-header border-bottom">
+              <h4 class="card-title">Patient Feedback</h4>
+              <div class="section-header-breadcrumb-right">
+                            <!-- <a href="/add_category" class="btn float-right" title="Edit Profile"> Add Category </a>     -->
+                        </div>
+            </div>
+                      <div class="text-end mb-3">
+  <a href="/exportPatentsExcel" class="btn btn-success">
+    <i class="fa fa-file-excel"></i> Export Excel
+  </a>
+</div>
+            <div class="card-DataTable table-responsive">
+              <table class="table table-hover-animation" id="myTable" style="color: rgb(65, 64, 64);" >
+                <thead>
+                  <tr>
+                    <th>S NO.</th>
+                    <th>Patient Name</th>
+                    <th>MRD Number</th>
+                    <th>Doctor Name</th>
+                    <th>Satisfied/Dissatisfied</th>
+                    <th>Action</th>
+
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <%catedata.forEach(function(data,i) {%>
+                    <tr>
+                      <td> <%=1+i%> </td>
+                      <td> <%=data.name%> </td>
+                      <td> <%=data.mrdnumber%> </td>
+                      <td> <%=data.doctorname%> </td>
+                      <td> <%=data.services%> </td>
+                   
+
+                     
+                      <td>
+
+                        <!-- <a href="/activity_view/<%=data._id%>" class="btn btn-sm bg-light-primary"><i data-feather='eye'></i></a> -->
+                        <!-- <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
+                         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" fill="#444"/>
+</svg>
+
+                        </a> -->
+
+              
+              <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
+  <svg
+    width="20px"
+    height="20px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"
+      stroke="#444"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <circle
+      cx="12"
+      cy="12"
+      r="3"
+      stroke="#444"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</a>
+                        <button onclick="confirmDelete('<%=data._id%>')" class="btn btn-sm bg-danger"> 
+                          <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4V4zm2 2h6V4H9v2zM6.074 8l.857 12H17.07l.857-12H6.074zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1z" fill="#0D0D0D"/></svg>
+                        </button>
+                      </td>
+                    </tr>
+                    <%} )%>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<%- include('../common/footer'); -%>
+
+
+
+<script>
+  setTimeout(function () {
+    $("div.msg").fadeOut();
+  }, 2000);
+</script>
+
+<script>
+  $(document).ready(function () {
+    // alert("ready!");
+  });
+
+  function confirmDelete(id) {
+    console.log(">>>>>>>>done>>>>>>>>>>", id)
+
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-danger',
+        cancelButton: 'btn btn-success'
+      },
+      buttonsStyling: true
+      
+    })
+
+    // console.log("------------------------------result------", id);
+
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((isConfirm) => {
+      // console.log(isConfirm)
+      // return
+      if (isConfirm.isConfirmed) {
+        // alert('asd')
+        $.ajax({
+          url: "/delete_category/:id",
+          type: 'delete',
+          data: {
+            id: id
+          },
+          success: function (result) { }
+        });
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'The category has been deleted .',
+          'success'
+        ).then(() => {
+          location.reload();
+        })
+      } else {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'The category is safe :)',
+          'error'
+        )
+      }
+    })
+
+  }
+</script>
+
+
+<script>
+  const changeStatus = (val) => {
+    console.log(val)
+    let id = val.getAttribute('data-id')
+    let value = val.getAttribute('value')
+    let elemID = val.getAttribute('id')
+    elemID = document.getElementById(elemID)
+
+    $.ajax({
+      type: "post",
+      url: "/category_status",
+      data: {
+        id: id,
+        value: value
+
+      },
+      success: function (data) {
+        if (data) {
+          elemID.setAttribute('value', 0)
+          elemID.innerText = `Active`
+          elemID.classList.remove('btn-danger')
+          elemID.classList.add('btn-success')
+        } else {
+          elemID.setAttribute('value', 1)
+          elemID.innerText = `IN-Active`
+          elemID.classList.remove('btn-success')
+          elemID.classList.add('btn-danger')
+        }
+        window.location.reload();
+      }
+    });
+  }
+
+</script>
+
+<style>
+  .card .card-header,
+.card .card-body,
+.card .card-footer {
+  background-color: #ebe9f1;
+  padding: 20px 25px;
+}
+</style>
+
+
+
+<!-- <script>
+  $(document).ready(function () {
+    new DataTable('#myTable', {
+      layout: {
+        topStart: {
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+        }
+      }
+    });
+  });
+</script> -->
+
+
+<script>
+  $(document).ready(function () {
+    new DataTable('#myTable', {
+      layout: {
+        topStart: {
+        
+          pageLength: true
+        },
+        topEnd: {
+          search: true
+        },
+        bottomStart: {
+          info: true
+        },
+        bottomEnd: {
+          paging: true
+        }
+      }
+    });
+  });
+</script>
+
+
+<style>
+  /* ===== DataTable Buttons Container ===== */
+.dt-buttons {
+  margin-bottom: 15px;
+}
+
+/* ===== Individual Buttons ===== */
+.dt-button {
+  background-color: #7367f0 !important; /* primary theme color */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
+  margin-right: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hover Effect ===== */
+.dt-button:hover {
+  background-color: #5e50ee !important;
+  color: #ffffff !important;
+}
+  
+/* ===== Focus / Active ===== */
+.dt-button:focus,
+.dt-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== Print Button (optional different color) ===== */
+.dt-button.buttons-print {
+  background-color: #2f0c4a !important;
+}
+
+/* ===== PDF Button ===== */
+.dt-button.buttons-pdf {
+  background-color: #e02020 !important;
+}
+
+/* ===== Excel Button ===== */
+.dt-button.buttons-excel {
+  background-color: #08b0c2 !important;
+}
+
+/* ===== CSV Button ===== */
+.dt-button.buttons-csv {
+  background-color: #e8801f !important;
+}
+
+/* ===== Copy Button ===== */
+.dt-button.buttons-copy {
+  background-color: #1083cb !important;
+}
+
+/* ===== Responsive Fix ===== */
+@media (max-width: 768px) {
+  .dt-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+</style>
+
+<style>
+  /* ===============================
+   Card Styling
+================================ */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #1f85f6, #1f85f6);
+  color: #fff;
+  padding: 18px 24px;
+  border-bottom: none;
+}
+
+.card{
+  background-color: #1f85f6 ;
+}
+
+.card-header .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-DataTable {
+  background: #ffffff;
+  padding: 15px;
+}
+
+/* ===============================
+   Table Styling
+================================ */
+table.dataTable {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table.dataTable thead th {
+  background-color: #f8f9fc;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid #e3e6f0 !important;
+  padding: 12px;
+}
+
+table.dataTable tbody td {
+  font-size: 18px;
+  color: #000000;
+  padding: 12px;
+  vertical-align: middle;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+/* ===============================
+   Action Buttons
+================================ */
+.btn.bg-warning{
+padding: 3px 8px ;
+  border-radius: 6px;
+}
+.btn.bg-danger {
+  padding: 3px 8px ;
+  border-radius: 6px;
+}
+.btn.bg-warning {
+  background-color: #ff7d01 !important;
+  border: none;
+}
+
+.btn.bg-danger {
+  background-color: #c81618 !important;
+  border: none;
+}
+
+.btn svg {
+  vertical-align: middle;
+}
+
+/* ===============================
+   DataTables Top Controls
+================================ */
+.dataTables_wrapper .dataTables_filter input {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 6px 10px;
+  margin-left: 6px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 4px 8px;
+}
+
+/* ===============================
+   DataTables Buttons
+================================ */
+.dt-buttons {
+  margin-bottom: 10px;
+}
+
+.dt-button {
+  border: none !important;
+  color: #fff !important;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-right: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dt-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.dt-button.buttons-copy   { background-color: #086ba8 !important; }
+.dt-button.buttons-csv    { background-color: #c36916 !important; }
+.dt-button.buttons-excel  { background-color: #07a0b1 !important; }
+.dt-button.buttons-pdf    { background-color: #c31a1a !important; }
+.dt-button.buttons-print  { background-color: #4d1578 !important; }
+
+/* ===============================
+   Pagination
+================================ */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  margin: 0 2px;
+  border: 1px solid transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: #1788df !important;
+  color: #fff !important;
+  border-color: #1788df;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #e8f0ff !important;
+  color: #1788df !important;
+}
+
+/* ===============================
+   Info Text
+================================ */
+.dataTables_info {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* ===============================
+   Responsive Fix
+================================ */
+@media (max-width: 768px) {
+  .dt-buttons {
+    margin-bottom: 15px;
+  }
+
+  .card-header {
+    text-align: center;
+  }
+}
+
+</style>
+
+<!-- #12e0cb -->
