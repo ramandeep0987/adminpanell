@@ -50,7 +50,7 @@
           <div class="card">
 
             <div class="card-header border-bottom">
-              <h4 class="card-title">Feedback Evening OPD Patients </h4>
+              <h4 class="card-title"> Evening OPD Patient Feedback </h4>
             </div>
  <div class="text-end mb-3">
               <a href="/exporteveningIExcel" class="btn btn-success">
@@ -62,10 +62,12 @@
                 <thead>
                   <tr>
                     <th>S NO.</th>
-                    <th>Patients Name</th>
+                    <th>Patient Name</th>
                     <th>MRD Number</th>
                     <th>Doctor Name</th>
+                     <th>satisfied/dissatisfied</th>
                     <th>Action</th>
+                   
                   </tr>
                 </thead>
 
@@ -76,6 +78,7 @@
                     <td><%= data.name %></td>
                     <td><%= data.mrdnumber %></td>
                     <td><%= data.doctorname %></td>
+                     <td> <%=data.services%> </td>
                     <td>
                       <a href="/edit_category/<%=data._id%>" class="btn btn-sm bg-warning">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

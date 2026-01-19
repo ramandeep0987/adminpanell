@@ -22,12 +22,23 @@
       </li> -->
       <!-- <li class=" <%= title =='worker_list'?'active':'' %> "><a class="d-flex align-items-center" href="/worker_list"><i data-feather="users"></i><span class="menu-title text-truncate">Providers </span></a>
       </li> -->
-      <li class=" <%= title =='category_list'?'active':'' %> "><a class="d-flex align-items-center" href="/category_list"><i data-feather="grid"></i><span class="menu-title text-truncate">Patients</span></a>
+      <li class=" <%= title =='category_list'?'active':'' %> "><a class="d-flex align-items-center" href="/category_list"> 
+         <div class="triangle blue"><i data-feather=""></i></div>
+<span class="menu-title text-truncate">Patients</span></a>
       </li>
+
+
+      <script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+
 
 <li class=" <%= title == 'General_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/General_list">
-    <i data-feather="activity"></i>
+    <div class="warning-triangle">
+  <i data-feather=""></i>
+</div>
     <span class="menu-title text-truncate">General OPD</span>
   </a>
 </li>
@@ -42,7 +53,10 @@
       </li>    -->
   <li class="<%= title == 'Private_list' ? 'active' : '' %>">
   <a class="d-flex align-items-center" href="/Private_list">
-    <i data-feather="shield"></i>
+    <div class="triangle purple">
+  <i data-feather=""></i>
+</div>
+
     <span class="menu-title text-truncate">Private OPD</span>
   </a>
 </li>
@@ -51,180 +65,187 @@
 
 <li class=" <%= title == 'Evening_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/Evening_list">
-    <i data-feather="moon"></i>
+    <div class="triangle red">
+  <i data-feather=""></i>
+</div>
     <span class="menu-title text-truncate">Evening OPD</span>
   </a>
 </li>
 <li class=" <%= title == 'Unsatisfied_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/Unsatisfied_list">
-    <i data-feather="frown"></i>
+    <div class="triangle white">
+  <i data-feather=""></i>
+</div>
     <span class="menu-title text-truncate">Dissatisfied</span>
   </a>
 </li>
 
-<li class="nav-item has-sub <%= title === 'Parking_list' ? 'open active' : '' %>">
+<!-- <li class="nav-item has-sub <%= title === 'Parking_list' ? 'open active' : '' %>">
   <a href="javascript:void(0)" class="d-flex align-items-center">
  <i data-feather="file-text"></i>
     <span class="menu-title text-truncate">Category     Issues</span>
-  </a>
+  </a> -->
 
   <!-- Dropdown items -->
-  <ul class="menu-content">
+  <!-- <ul class="menu-content">
     <li class="<%= title === 'parking' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Parking_list">
         <i data-feather="circle"></i>
         <span class="menu-item text-truncate">Parking</span>
       </a>
-    </li>
+    </li> -->
 
-    <li class="<%= title === 'Wheel_chair' ? 'active' : '' %>">
+    <!-- <li class="<%= title === 'Wheel_chair' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Wheel_chair">
         <i data-feather="disc"></i>
         <span class="menu-item text-truncate">Wheel Chair</span>
       </a>
-    </li>
-
+    </li> -->
+<!-- 
     <li class="<%= title === 'Blood_collection' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Blood_collection">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Blood Collection</span>
       </a>
-    </li>
+    </li> -->
 
     
 
-     <li class="<%= title === 'blood' ? 'active' : '' %>">
+     <!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Registration_Desk">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Registration Dask</span>
       </a>
-    </li>
+    </li> -->
 
 
 
 
- <li class="<%= title === 'blood' ? 'active' : '' %>">
+ <!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Help_Desk">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Help Desk</span>
       </a>
-    </li>
+    </li> -->
 
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Nursing_Care">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Nursing</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/BP_Counter">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">BP Counter</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Doctor_Consult">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Doctor Consult</span>
       </a>
-    </li>
+    </li> -->
  
-
+<!-- 
 <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/XRay_CTScan">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">X-Ray/CT Scan</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/OPD_Waiting">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">OPD Waiting</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Pharmacy_Info">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Pharmacy</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Physiotherapy">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Physiotherapy</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Food_Facilities">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Food Facilities</span>
       </a>
-    </li>
+    </li> -->
  
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Cleanliness">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Cleanliness</span>
       </a>
-    </li>
+    </li> -->
  
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Security">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Security</span>
       </a>
-    </li>
+    </li> -->
  
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Safe_Environment">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Safe Environment</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Patient_Rights">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Patient Rights</span>
       </a>
-    </li>
+    </li> -->
 
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Staff_Commun">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Staff Commun..</span>
       </a>
-    </li>
+    </li> -->
  
 
-<li class="<%= title === 'blood' ? 'active' : '' %>">
+<!-- <li class="<%= title === 'blood' ? 'active' : '' %>">
       <a class="d-flex align-items-center" href="/Any_Other">
         <i data-feather="droplet"></i>
         <span class="menu-item text-truncate">Any Other</span>
       </a>
-    </li>
+    </li> -->
 
-  </ul>
-</li>
+  <!-- </ul>
+</li> -->
+
+
+
 
  
 <!-- 
@@ -267,3 +288,74 @@
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
+
+<style>
+  .warning-triangle {
+  width: 30px;
+  height: 20px;
+  background: #f5f75a; /* Yellow fill */
+  clip-path: polygon(
+    50% 5%,
+    5% 95%,
+    95% 95%
+  );
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.triangle.blue {
+  width: 30px;
+  height: 20px;
+  background: #3b82f6; /* Blue fill */
+  clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle.purple {
+   width: 30px;
+  height: 20px;
+  background: #36dae6; /* Purple fill */
+  clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.triangle.red {
+ width: 30px;
+  height: 20px;
+  background: #791414; /* Red fill */
+  clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle.white {
+ width: 30px;
+  height: 20px;
+  background: #ff0000; /* Red fill */
+  clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+</style>

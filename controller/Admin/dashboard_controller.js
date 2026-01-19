@@ -7,6 +7,9 @@ let FaQ_model = require('../../model/Admin/FaQ_model')
 let report_model = require('../../model/socket/reportrequest')
 const contactus = require('../../model/Admin/contactus')
 let wallet = require ('../../model/Admin/wallet_model')
+const today = new Date();                 // today date & time
+const last3Months = new Date();
+last3Months.setMonth(today.getMonth() - 3);
 
 
 module.exports = {
@@ -19,7 +22,34 @@ module.exports = {
             let Private = await category_model.count({service:"Private"})
             let Evening = await category_model.count({service:"Evening"})
         let Satisfied = await category_model.count({services:"Satisfied"})
-            let Unsatisfied = await category_model.count({services:"Unsatisfied"})
+            let Unsatisfied = await category_model.count({ services: "Unsatisfied" })
+            
+              let Gernalbar =await category_model.countDocuments({
+  service: "Gernal",
+  createdAt: { $gte: last3Months, $lte: today }
+              });
+            console.log(Gernalbar,"GernalbarGernalbarGernalbarGernalbarGernalbar")
+            let Privatebar =  await category_model.countDocuments({
+  service: "Private",
+  createdAt: { $gte: last3Months, $lte: today }
+});        
+            let Eveningbar =await category_model.countDocuments({
+  service: "Evening",
+  createdAt: { $gte: last3Months, $lte: today }
+});
+        let Satisfiedbar =await category_model.countDocuments({
+  services: "Satisfied",
+  createdAt: { $gte: last3Months, $lte: today }
+});
+
+            let Unsatisfiedbar =  await category_model.countDocuments({
+  services: "Unsatisfied",
+  createdAt: { $gte: last3Months, $lte: today }
+});
+
+            let GernalUnsatisfied = await category_model.count({service:"Gernal",services:"Unsatisfied"})
+            let PrivateUnsatisfied = await category_model.count({service:"Private",services:"Unsatisfied"})
+            let EveningUnsatisfied = await category_model.count({service:"Evening",services:"Unsatisfied"})
 
             let user = await category_model.count({facilities:"parking"})
             let worker = await category_model.count({facilities:"Wheel chair and trolly"})
@@ -41,7 +71,7 @@ module.exports = {
             let Hospital = await category_model.count({facilities:"Hospital staff communication"})
             let Other = await category_model.count({facilities:"Any Other"})
      
-            res.render('Admin/dashboard', {title,futfaal,Unsatisfied,Satisfied, Gernal,Private,Evening,Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
+            res.render('Admin/dashboard', {title,futfaal,Gernalbar,Privatebar,Eveningbar,Satisfiedbar,Unsatisfiedbar,PrivateUnsatisfied,EveningUnsatisfied,GernalUnsatisfied,Unsatisfied,Satisfied, Gernal,Private,Evening,Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
         } catch (error) {
             console.log(error)
         }
