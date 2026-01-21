@@ -830,7 +830,7 @@ select.form-control:not([size]):not([multiple]) {
   line-height: 30px;
   -ms-grid-row-align: center;
   align-self: center;
-  width: 100%;
+  width: 104%;
   min-height: 70px;
   padding: 15px 15px;
   display: flex;
