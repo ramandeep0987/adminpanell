@@ -4,7 +4,7 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
 <style>
 
   .form-container {
-  background-color: #7eb0d1; /* light blue */
+  background-color: #1f6a9c; /* light blue */
 }
 /* raman */
   .form-container {
@@ -18,9 +18,9 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
   }
 
   .form-title {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 600;
-    margin-bottom: 28px;
+    margin-bottom: 6px;
     color: #1f2937;
     text-align: center;
   }
@@ -167,16 +167,9 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
 }
 
 
-
-
-
-
 </style>
 
-
-
 <div class="form-container">
-
 
   <li class="nav-item logo-center">
   <img class="big_img" src="/app-assets/1 (4).png" alt="Logo">
@@ -186,7 +179,7 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
 
     <h2 class="form-title">Feedback Form - OPD Services </h2>
     <h1 class="form-title">ਫੀਡਬੈਕ ਫਾਰਮ - ਓਪੀਡੀ  ਸੇਵਾਵਾਂ</h1>
- <h1 class="form-title">    Thank you for your visit to DMC & Hospital, Ludhiana</h1>
+ <h6 class="form-title"> Thank you for your visit to DMC & Hospital, Ludhiana</h6>
  <h1 class="form-title">ਡੀ ਐਮ ਸੀ  ਅਤੇ ਹਸਪਤਾਲ, ਲੁਧਿਆਣਾ ਵਿਖੇ ਆਉਣ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ</h1>
 
 
@@ -195,21 +188,21 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
         <!-- Category Name -->
         <div class="input-group">
           <input type="text" id="name" name="name" class="input-field"required placeholder=" " />
-          <label class="floating-label">Patient name<br> ਮਰੀਜ਼ ਦਾ ਨਾਮ
+          <label class="floating-label">Patient Name<br> ਮਰੀਜ਼ ਦਾ ਨਾਮ
 </label>
         </div>
 
 
            <div class="input-group">
           <input type="number" id="name" name="mrdnumber" class="input-field"required placeholder=" " />
-          <label class="floating-label">MRD number<br> ਐਮ ਆਰ ਡੀ ਨੰਬਰ  
+          <label class="floating-label">MRD Number<br> ਐਮ ਆਰ ਡੀ ਨੰਬਰ  
 </label>
         </div>  
         
   <div class="input-group">
   <input type="date" id="visitDate" name="date" class="input-field" required placeholder=" " />
   <label class="floating-label" for="visitDate">
-    Date Of OPD visit/ ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
+    Date Of OPD visit / ਓਪੀਡੀ ਆਉਣ ਦੀ ਮਿਤੀ
   </label>
 </div>
 
@@ -217,14 +210,14 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
 
         <div class="input-group">
           <input type="text" id="name" name="number" class="input-field"required placeholder=" " />
-          <label class="floating-label">Contact number<br> ਮੋਬਾਈਲ ਨੰਬਰ
+          <label class="floating-label">Contact Number<br> ਮੋਬਾਈਲ ਨੰਬਰ
 </label>
         </div>   
 
 
           <div class="input-group">
           <input type="text" id="name" name="doctorname" class="input-field"required required placeholder=" " />
-          <label class="floating-label">Doctor name<br> ਡਾਕਟਰ ਦਾ ਨਾਮ
+          <label class="floating-label">Doctor Name<br> ਡਾਕਟਰ ਦਾ ਨਾਮ
 </label>
         </div>  
         
@@ -270,9 +263,9 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
   <select id="service" name="service" class="input-field" required
           onchange="this.classList.add('has-value')" style="appearance:none;">
       <option value="" class="floating-label" disabled selected hidden> </option>
-      <option value="Gernal">General</option>
-      <option value="Private">Private</option>
-      <option value="Evening">Evening</option>
+      <option value="Gernal">General OPD</option>
+      <option value="Private">Private OPD</option>
+      <option value="Evening">Evening OPD</option>
   </select>
    <div class="select-placeholder">
     Select OPD types<br>
@@ -332,12 +325,12 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
           onchange="handleServiceChange(this)">
     <option value="" disabled selected hidden></option>
     <option value="Satisfied">Satisfied / ਸੰਤੁਸ਼ਟ</option>
-    <option value="Unsatisfied">Unsatisfied / ਅਸੰਤੁਸ਼ਟ</option>
+    <option value="Unsatisfied">Dissatisfied / ਅਸੰਤੁਸ਼ਟ</option>
   </select>
 
 
   <div class="select-placeholder">
-    Were you satisfied with the hospital services<br>
+    Were you satisfied with the hospital services?<br>
     ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਹੋ?
   </div>
 </div>
@@ -347,8 +340,6 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
 
 
 <style>
-
-
 
 .input-field{
   width:100%;
@@ -389,36 +380,36 @@ select option {
 <div class="input-group" id="parking" style="display:none;">
   <select id="facilities" name="facilities" class="input-field" >
     <option value="" disabled selected >
-As per your experience, which of our areas/services need improvements?
-ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ/ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
-    </option>
-    <option value="parking">Parking/ ਪਾਰਕਿੰਗ</option>
-      <option value="Wheel chair and trolly">Wheel chair and Patient trolly/ ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
-       <option value="Blood Collection Center">Blood collection centre/ ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
-      <option value="X-R/CT Scan/MRI">X-Ray/CT Scan/MRI/ ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
-       <option value="Help Desk">Help desk/Enquiry ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
+As per your experience, which of our areas / services need improvements?
+ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ / ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
+    </option> 
+    <option value="parking">Parking / ਪਾਰਕਿੰਗ</option>
+      <option value="Wheel chair and trolly">Wheel chair and patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+       <option value="Blood Collection Center">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
+      <option value="X-R/CT Scan/MRI">X-Ray / CT Scan / M R I / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+       <option value="Help Desk">Help desk / Enquiry ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ
 </option>
-      <option value="Registration Desk">Registration desk/Billing counter ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
+      <option value="Registration Desk">Registration desk / Billing counter ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ
 </option>
-       <option value="Nursing Care">Nursing care/ ਨਰਸਿੰਗ ਦੇਖਭਾਲ
+       <option value="Nursing Care">Nursing care / ਨਰਸਿੰਗ ਦੇਖਭਾਲ
 </option>
-      <option value="BP Counter">BP counter/ ਬੀਪੀ ਕਾਊਂਟਰ
+      <option value="BP Counter">BP counter / ਬੀਪੀ ਕਾਊਂਟਰ
 </option>
-       <option value="OPD Waiting">OPD waiting area/ ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
-      <option value="Doctor Consult">Doctor consult/ ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
-      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy Information About How To Take Your Medicines/ /ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
+       <option value="OPD Waiting">OPD waiting area / ਓਪੀਡੀ ਵੇਟਿੰਗ ਏਰੀਆ</option>
+      <option value="Doctor Consult">Doctor consult / ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+      <option value="Pharmacy Information About How To Take Your Medicines">Pharmacy / information about how to take your medicines / ਦਵਾਈਆਂ/ਦਵਾਈ ਖਾਣ ਬਾਰੇ ਜਾਣਕਾਰੀ
 </option>
 
-      <option value="Physiotherapy">physiotherapy/ ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
-      <option value="Food And Beverage Facilities">Food And beverage facilities/ ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
+      <option value="Physiotherapy">physiotherapy / ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+      <option value="Food And Beverage Facilities">Food and beverage facilities / ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ
 </option>
-      <option value="Cleanliness">Cleanliness/ ਸਾਫ਼ ਸਫ਼ਾਈ
+      <option value="Cleanliness">Cleanliness / ਸਾਫ਼ ਸਫ਼ਾਈ
 </option>
-      <option value="Security">Security/ ਸੁਰੱਖਿਆ </option>
-      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment/ ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
+      <option value="Security">Security / ਸੁਰੱਖਿਆ </option>
+      <option value="Safe & secure environment for treatment">Safe & secure environment for treatment / ਇਲਾਜ ਲਈ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ
 </option>
-      <option value="Patient rights respected by staff">Patient rights respected by staff/ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
-      <option value="Hospital staff communication">Hospital staff communication/ ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
+      <option value="Patient rights respected by staff">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+      <option value="Hospital staff communication">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।
 </option>
       
   </select>
@@ -456,11 +447,6 @@ function mark(value){
 
 </div>
 
-
- 
-
-
-        
         <br><br>
 
         <button type="submit" class="submit-btn">Submit</button>
