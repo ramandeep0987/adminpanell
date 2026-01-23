@@ -19,13 +19,13 @@ exportParkingExcel : async (req, res) => {
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -76,13 +76,13 @@ exportWheelchairExcel : async (req, res) => {
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -131,14 +131,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("Blood Collection List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -189,14 +189,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("Xray List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -248,13 +248,13 @@ exportWheelchairExcel : async (req, res) => {
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -304,14 +304,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("registrationdesk List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -361,14 +361,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("nursing List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+     worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -419,14 +419,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("BPcounter List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -477,14 +477,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("OPDwaiting List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -533,14 +533,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("doctorconsult List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+ worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -590,14 +590,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("pharmacy List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+     worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -647,14 +647,14 @@ exportWheelchairExcel : async (req, res) => {
     const worksheet = workbook.addWorksheet("physiotherapy List");
 
     // 🔹 Excel columns
-worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+ worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -706,13 +706,13 @@ worksheet.columns = [
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -762,14 +762,14 @@ worksheet.columns = [
     const worksheet = workbook.addWorksheet("cleanliness List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+     worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -820,14 +820,14 @@ worksheet.columns = [
     const worksheet = workbook.addWorksheet("security List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+    worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -877,14 +877,14 @@ worksheet.columns = [
     const worksheet = workbook.addWorksheet("safeenvironment List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+     worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -933,14 +933,14 @@ worksheet.columns = [
     const worksheet = workbook.addWorksheet("patientrights List");
 
     // 🔹 Excel columns
-   worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+ worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -990,14 +990,14 @@ worksheet.columns = [
     const worksheet = workbook.addWorksheet("staffcommunication List");
 
     // 🔹 Excel columns
-    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+     worksheet.columns = [
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -1050,13 +1050,13 @@ worksheet.columns = [
 
     // 🔹 Excel columns
 worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+      { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -1108,13 +1108,13 @@ worksheet.columns = [
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+       { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -1165,18 +1165,17 @@ worksheet.columns = [
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
     ];
-
     // 🔹 Add rows
     parkingData.forEach(item => {
       worksheet.addRow({
@@ -1221,13 +1220,13 @@ worksheet.columns = [
 
     // 🔹 Excel columns
    worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
@@ -1307,13 +1306,13 @@ worksheet.columns = [
 
     // 🔹 Excel columns
     worksheet.columns = [
-      { header: "Patient name ", key: "name", width: 20 },
-      { header: "MRD number", key: "mrdnumber", width: 20 },
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
       
-      { header: "Mobile number", key: "number", width: 20 },
-      { header: "Doctor name ", key: "doctorname", width: 20 },
-      { header: "OPD type", key: "service", width: 20 },
-      { header: "Were you satisfied with hospital", key: "services", width: 20 },
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
