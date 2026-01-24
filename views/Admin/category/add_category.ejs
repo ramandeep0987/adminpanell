@@ -416,7 +416,7 @@ function mark(value){
    Please mention your suggestions for improvement as per your experience <br> ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।
 
   </label>
-
+ 
 </div>
 
         <br><br>
@@ -431,7 +431,7 @@ function mark(value){
 
 <script>
 function mark(value){
-  document.getElementById("parking").style.display= value === 'Unsatisfied' ? "block" : "none";
+  document.getElementById("parking").style.display= value === 'Dissatisfied' ? "block" : "none";
 
 }
 
@@ -462,10 +462,5 @@ document.getElementById("profile").addEventListener("submit", function(e){
     .catch(err => {
         Swal.fire("Error!", "Something went wrong.", "error");
     });
-});
+});   
 </script>
-
-
-
-
-
