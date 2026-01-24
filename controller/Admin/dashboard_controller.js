@@ -18,14 +18,14 @@ module.exports = {
         try {
             let title = "dashboard"
             let futfaal = await category_model.count()
-            let Gernal = await category_model.count({service:"Gernal"})
+            let Gernal = await category_model.count({service:"General"})
             let Private = await category_model.count({service:"Private"})
             let Evening = await category_model.count({service:"Evening"})
         let Satisfied = await category_model.count({services:"Satisfied"})
-            let Unsatisfied = await category_model.count({ services: "Unsatisfied" })
+            let Unsatisfied = await category_model.count({ services: "Dissatisfied" })
             
               let Gernalbar =await category_model.countDocuments({
-  service: "Gernal",
+  service: "General",
   createdAt: { $gte: last3Months, $lte: today }
               });
             console.log(Gernalbar,"GernalbarGernalbarGernalbarGernalbarGernalbar")
@@ -43,13 +43,13 @@ module.exports = {
 });
 
             let Unsatisfiedbar =  await category_model.countDocuments({
-  services: "Unsatisfied",
+  services: "Dissatisfied",
   createdAt: { $gte: last3Months, $lte: today }
 });
 
-            let GernalUnsatisfied = await category_model.count({service:"Gernal",services:"Unsatisfied"})
-            let PrivateUnsatisfied = await category_model.count({service:"Private",services:"Unsatisfied"})
-            let EveningUnsatisfied = await category_model.count({service:"Evening",services:"Unsatisfied"})
+            let GernalUnsatisfied = await category_model.count({service:"General",services:"Dissatisfied"})
+            let PrivateUnsatisfied = await category_model.count({service:"Private",services:"Dissatisfied"})
+            let EveningUnsatisfied = await category_model.count({service:"Evening",services:"Dissatisfied"})
 
             let user = await category_model.count({facilities:"parking"})
             let worker = await category_model.count({facilities:"Wheel chair and trolly"})

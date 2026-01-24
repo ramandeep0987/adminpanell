@@ -253,7 +253,7 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
   <select id="service" name="service" class="input-field" required
           onchange="this.classList.add('has-value')" style="appearance:none;">
       <option value="" class="floating-label" disabled selected hidden> </option>
-      <option value="Gernal">General OPD</option>
+      <option value="General">General OPD</option>
       <option value="Private">Private OPD</option>
       <option value="Evening">Evening OPD</option>
   </select>
@@ -300,7 +300,7 @@ style="margin:0; padding:0; background:linear-gradient(135deg,#e2e8f0,#f8fafc); 
           onchange="handleServiceChange(this)">
     <option value="" disabled selected hidden></option>
     <option value="Satisfied">Satisfied / ਸੰਤੁਸ਼ਟ</option>
-    <option value="Unsatisfied">Dissatisfied / ਅਸੰਤੁਸ਼ਟ</option>
+    <option value="Dissatisfied">Dissatisfied / ਅਸੰਤੁਸ਼ਟ</option>
   </select>
 
 
@@ -402,7 +402,7 @@ function handleServiceChange(el){
 
 function mark(value){
   document.getElementById("parking").style.display =
-    value === "Unsatisfied" ? "block" : "none";
+    value === "Dissatisfied" ? "block" : "none";
 }
 </script>
 

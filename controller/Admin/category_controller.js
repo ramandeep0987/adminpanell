@@ -1043,7 +1043,7 @@ exportWheelchairExcel : async (req, res) => {
       
        exporUnsatisfiedIExcel : async (req, res) => {
   try {
-    const parkingData = await category_model.find({ services: "Unsatisfied" }).sort({ createdAt: -1 });
+    const parkingData = await category_model.find({ services: "Dissatisfied" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Unsatisfied List");
@@ -1158,7 +1158,7 @@ worksheet.columns = [
               
      exportGernalIExcel : async (req, res) => {
   try {
-    const parkingData = await category_model.find({ service: "Gernal" }).sort({ createdAt: -1 });
+    const parkingData = await category_model.find({ service: "General" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Gernal List");
@@ -1269,7 +1269,7 @@ worksheet.columns = [
          GernallIST_satisfied: async(req, res)=> {
         try {
             title = "GernallIST_satisfied"
-            let catedata = await category_model.find({service:"Gernal",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            let catedata = await category_model.find({service:"General",services:"Dissatisfied"}).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/General_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -1279,7 +1279,7 @@ worksheet.columns = [
             PrivatelIST_satisfied: async(req, res)=> {
         try {
             title = "Private_dissatisfied"
-            let catedata = await category_model.find({service:"Private",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            let catedata = await category_model.find({service:"Private",services:"Dissatisfied"}).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Private_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -1289,7 +1289,7 @@ worksheet.columns = [
                  EveningIST_satisfied: async(req, res)=> {
         try {
             title = "Evening_dissatisfied"
-            let catedata = await category_model.find({service:"Evening",services:"Unsatisfied"}).sort({ createdAt: -1 })
+            let catedata = await category_model.find({service:"Evening",services:"Dissatisfied"}).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Evening_dissatisfied.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -1404,7 +1404,7 @@ worksheet.columns = [
    General_list: async(req, res)=> {
         try {
             title = "General_list"
-            let catedata = await category_model.find({ service: "Gernal" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/General_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
@@ -1437,7 +1437,7 @@ worksheet.columns = [
           Unsatisfied_list: async(req, res)=> {
         try {
             title = "Unsatisfied_list"
-            let catedata = await category_model.find({ services: "Unsatisfied" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ services: "Dissatisfied" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Unsatisfied_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {

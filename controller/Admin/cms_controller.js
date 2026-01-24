@@ -16,7 +16,6 @@ module.exports = {
         console.log(error)
     }
   },
-
   Aboutus: async(req, res)=> {
         try {
             let title = "Aboutus"
