@@ -23,11 +23,9 @@
       <!-- <li class=" <%= title =='worker_list'?'active':'' %> "><a class="d-flex align-items-center" href="/worker_list"><i data-feather="users"></i><span class="menu-title text-truncate">Providers </span></a>
       </li> -->
       <li class=" <%= title =='category_list'?'active':'' %> "><a class="d-flex align-items-center" href="/category_list"> 
-         <i class="ph-fill ph-users"></i>
-<span class="menu-title text-truncate">Patients</span></a>
+       <i data-feather="users" class="me-1"></i>
+<span class="menu-title text-truncate">Patient Feedback</span></a>
       </li>
-
-
       <script src="https://unpkg.com/feather-icons"></script>
 <script>
   feather.replace();
@@ -36,10 +34,8 @@
 
 <li class=" <%= title == 'General_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/General_list">
-    <div class="warning-triangle">
-  <i data-feather=""></i>
-</div>
-    <span class="menu-title text-truncate">General OPD</span>
+   
+    <span class="menu-title text-truncate">General OPD Feedback</span>
   </a>
 </li>
 
@@ -53,11 +49,9 @@
       </li>    -->
   <li class="<%= title == 'Private_list' ? 'active' : '' %>">
   <a class="d-flex align-items-center" href="/Private_list">
-    <div class="triangle purple">
-  <i data-feather=""></i>
-</div>
+   
 
-    <span class="menu-title text-truncate">Private OPD</span>
+    <span class="menu-title text-truncate">Private OPD Feedback</span>
   </a>
 </li>
 
@@ -65,20 +59,17 @@
 
 <li class=" <%= title == 'Evening_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/Evening_list">
-    <div class="triangle red">
-  <i data-feather=""></i>
-</div>
-    <span class="menu-title text-truncate">Evening OPD</span>
+   
+    <span class="menu-title text-truncate">Evening OPD Feedback
+</span>
   </a>
 </li>
 
 
 <li class=" <%= title == 'Unsatisfied_list' ? 'active' : '' %> ">
   <a class="d-flex align-items-center" href="/Unsatisfied_list">
-    <div class="triangle white">
-  <i data-feather=""></i>
-</div>
-    <span class="menu-title text-truncate">Dissatisfied</span>
+   
+    <span class="menu-title text-truncate">Dissatisfied Patients</span>
   </a>
 </li>
 
@@ -316,10 +307,12 @@
 <div class="drag-target"></div>
 
 <style>
-  .warning-triangle {
+
+
+ .warning-triangle {
   width: 30px;
   height: 20px;
-  background: #f1d924; /* Yellow fill */
+  background: #f1d924; 
   clip-path: polygon(
     50% 5%,
     5% 95%,
@@ -406,5 +399,6 @@
   display:flex;
   align-items:justify;
 }
+
 
 </style>
