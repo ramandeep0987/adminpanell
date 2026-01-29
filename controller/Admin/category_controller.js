@@ -1720,7 +1720,7 @@ worksheet.columns = [
             title = "OPD_Waiting"
             let catedata = await category_model.find({ facilities: "OPD Waiting" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
-            res.render('Admin/category/OPD_Waiting.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+            res.render('Admin/category/Xray_CTscan.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
