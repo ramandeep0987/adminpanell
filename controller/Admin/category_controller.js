@@ -1085,7 +1085,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Dissatisfied.xlsx"
+      "attachment; filename=Dissatisfied patients.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1268,7 +1268,7 @@ worksheet.columns = [
   }
   },  
                 
-                                exportEveningDissatisfiedIExcel : async (req, res) => {
+         exportEveningDissatisfiedIExcel : async (req, res) => {
   try {
     const parkingData = await category_model.find({ service: "Evening",services: "Dissatisfied", }).sort({ createdAt: -1 });
 
@@ -1366,7 +1366,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=General.xlsx"
+      "attachment; filename=General OPD .xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1422,7 +1422,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Private.xlsx"
+      "attachment; filename=Private OPD.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1509,7 +1509,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Evening.xlsx"
+      "attachment; filename=Evening OPD.xlsx"
     );
 
     await workbook.xlsx.write(res);
