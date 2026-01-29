@@ -800,41 +800,7 @@
 
   
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx = document.getElementById('opdChart').getContext('2d');
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [
-        'General OPD',
-        'Private OPD',
-        'Evening OPD',
-        'Satisfied',
-        'Dissatisfied'
-      ],
-      datasets: [{
-        label: 'OPD Feedback Count',
-        data: [
-          "<%= Gernalbar %>",
-          "<%= Privatebar %>",
-          "<%= Eveningbar %>",
-          "<%= Satisfiedbar %>",
-          "<%= Unsatisfiedbar %>"
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
           </div>
         </section>
       </div>
@@ -873,11 +839,11 @@ document.addEventListener("DOMContentLoaded", function () {
       datasets: [{
         label: "Feedback Count",
         data: [
-         "<%= Number(Gernal) %>",
-          "<%= Number(Private) %>",
-          "<%= Number(Evening) %>",
-          "<%= Number(Satisfied) %>",
-          "<%= Number(Unsatisfied) %>"
+         "<%= Number(Gernalbar) %>",
+          "<%= Number(Privatebar) %>",
+          "<%= Number(Eveningbar) %>",
+          "<%= Number(Satisfiedbar) %>",
+          "<%= Number(Unsatisfiedbar) %>"
         ],
         backgroundColor: [
           "#f8cb1d",

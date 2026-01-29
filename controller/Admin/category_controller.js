@@ -12,7 +12,7 @@ module.exports = {
 
 exportParkingExcel : async (req, res) => {
   try {
-    const parkingData = await category_model.find({ facilities: "parking" }).sort({ createdAt: -1 });
+    const parkingData = await category_model.find({ facilities: "Parking" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Parking List");
@@ -55,7 +55,7 @@ exportParkingExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Parking_List.xlsx"
+      "attachment; filename=Parking .xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -225,7 +225,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Xray.xlsx"
+      "attachment; filename=X-Ray/CTscan/MRI.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -283,7 +283,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=helpdesk.xlsx"
+      "attachment; filename=Help Desk.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -340,7 +340,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=registrationdesk.xlsx"
+      "attachment; filename=Registration Desk.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -397,7 +397,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=nursing.xlsx"
+      "attachment; filename=Nursing Care.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -455,7 +455,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=PBcounter.xlsx"
+      "attachment; filename=BP Counter.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -512,7 +512,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=OPDwaiting.xlsx"
+      "attachment; filename=OPD Waiting.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -569,7 +569,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=doctorconsult.xlsx"
+      "attachment; filename=Doctor Consult.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -626,7 +626,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=pharmacy.xlsx"
+      "attachment; filename=Pharmacy.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -683,7 +683,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=physiotherapy.xlsx"
+      "attachment; filename=Physiotherapy.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -798,7 +798,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=cleanliness.xlsx"
+      "attachment; filename=Cleanliness.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -856,7 +856,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=security.xlsx"
+      "attachment; filename=Security.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -912,7 +912,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=safeenvironment.xlsx"
+      "attachment; filename=Safe & secure environment for treatment.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -969,7 +969,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=patientrights.xlsx"
+      "attachment; filename=Patient rights.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1026,7 +1026,7 @@ exportWheelchairExcel : async (req, res) => {
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=staffcommunication.xlsx"
+      "attachment; filename=Staff communication.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1085,7 +1085,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Unsatisfied.xlsx"
+      "attachment; filename=Dissatisfied.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1143,7 +1143,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=FeedbackPatents.xlsx"
+      "attachment; filename= Patent Feedback.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1154,8 +1154,175 @@ worksheet.columns = [
     res.status(500).send("Error exporting Excel");
   }
   },
-              
-              
+   
+   
+        exportGernalDissatisfiedIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ service: "General",services: "Dissatisfied", }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Gernal List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
+      { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
+      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+    ];
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=General OPD Dissatisfied.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },           
+        
+        
+        
+                exportPrivateDissatisfiedIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ service: "Private",services: "Dissatisfied", }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Private List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
+      { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
+      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+    ];
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename= Private OPD Dissatisfied.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },  
+                
+                                exportEveningDissatisfiedIExcel : async (req, res) => {
+  try {
+    const parkingData = await category_model.find({ service: "Evening",services: "Dissatisfied", }).sort({ createdAt: -1 });
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet("Evening List");
+
+    // 🔹 Excel columns
+    worksheet.columns = [
+         { header: "Patient Name ", key: "name", width: 20 },
+      { header: "MRD Number", key: "mrdnumber", width: 20 },
+      
+      { header: "Mobile Number", key: "number", width: 20 },
+      { header: "Doctor Name ", key: "doctorname", width: 20 },
+  { header: "OPD types", key: "service", width: 20 },
+      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
+      { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
+      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+    ];
+    // 🔹 Add rows
+    parkingData.forEach(item => {
+      worksheet.addRow({
+        name: item.name,
+        mrdnumber: item.mrdnumber,
+       
+        number: item.number,
+        doctorname: item.doctorname,
+        service: item.service,
+        services: item.services,
+        facilities: item.facilities,
+        Suggestion: item.Suggestion,
+        createdAt: item.createdAt,
+      });
+    });
+
+   
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename= Evening OPD Dissatisfied.xlsx"
+    );
+
+    await workbook.xlsx.write(res);
+    res.end();
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error exporting Excel");
+  }
+  },  
+                
      exportGernalIExcel : async (req, res) => {
   try {
     const parkingData = await category_model.find({ service: "General" }).sort({ createdAt: -1 });
@@ -1199,7 +1366,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=Gernal.xlsx"
+      "attachment; filename=General.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1255,7 +1422,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=private.xlsx"
+      "attachment; filename=Private.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1342,7 +1509,7 @@ worksheet.columns = [
     );
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=evning.xlsx"
+      "attachment; filename=Evening.xlsx"
     );
 
     await workbook.xlsx.write(res);
@@ -1382,7 +1549,8 @@ worksheet.columns = [
          abhaid:req.body.abhaid,
   
   
-})
+     })
+          console.log(user,"useruseruser")
         req.flash("msg", "Category created successfully")
       
         res.json(user)
@@ -1448,7 +1616,7 @@ worksheet.columns = [
     Parking_list: async (req, res) => {
         try {
             title = "Parking_list"
-            let catedata = await category_model.find({ facilities: "parking" }).sort({ createdAt: -1 })
+            let catedata = await category_model.find({ facilities: "Parking" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/Parking_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {

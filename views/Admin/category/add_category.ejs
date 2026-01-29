@@ -358,7 +358,7 @@ select option {
 As per your experience, which of our areas / services need improvements?
 ਤੁਹਾਡੇ ਅਨੁਸਾਰ ਸਾਨੂੰ ਕਿਹੜੀਆਂ ਸੇਵਾਵਾਂ / ਖੇਤਰਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
     </option> 
-    <option value="parking">Parking / ਪਾਰਕਿੰਗ</option>
+    <option value="Parking">Parking / ਪਾਰਕਿੰਗ</option>
       <option value="Wheel chair and trolly">Wheel chair and patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
        <option value="Blood Collection Center">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ</option>
       <option value="X-R/CT Scan/MRI">X-Ray / CT Scan / MRI / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
@@ -390,8 +390,28 @@ As per your experience, which of our areas / services need improvements?
   </select>
 </div>
 
-
 <script>
+function handleServiceChange(el){
+  el.classList.add('has-value');
+  mark(el.value);
+}
+
+function mark(value){
+  const parkingDiv = document.getElementById("parking");
+  const facilities = document.getElementById("facilities");
+
+  if(value === "Dissatisfied"){
+    parkingDiv.style.display = "block";
+    facilities.setAttribute("required", "required");
+  } else {
+    parkingDiv.style.display = "none";
+    facilities.removeAttribute("required");
+    facilities.value = ""; // reset select
+  }
+}
+</script>
+
+<!-- <script>
 function handleServiceChange(el){
 
   el.classList.add('has-value');
@@ -404,14 +424,14 @@ function mark(value){
   document.getElementById("parking").style.display =
     value === "Dissatisfied" ? "block" : "none";
 }
-</script>
+</script> -->
 
 
 
 
 
 <div class="input-group">
-  <textarea id="Suggestion" name="Suggestion" class="input-field" placeholder=" "></textarea>
+  <textarea id="Suggestion" name="Suggestion" class="input-field" placeholder=" " required></textarea>
   <label for="Suggestion" class="floating-label">
    Please mention your suggestions for improvement as per your experience <br> ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸੁਧਾਰ ਲਈ ਆਪਣੇ ਸੁਝਾਅ ਦਿਓ।
 
@@ -430,10 +450,7 @@ function mark(value){
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-function mark(value){
-  document.getElementById("parking").style.display= value === 'Dissatisfied' ? "block" : "none";
 
-}
 
 document.getElementById("profile").addEventListener("submit", function(e){
     e.preventDefault(); // stop normal submit

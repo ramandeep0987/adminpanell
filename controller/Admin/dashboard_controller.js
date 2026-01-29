@@ -51,7 +51,7 @@ module.exports = {
             let PrivateUnsatisfied = await category_model.count({service:"Private",services:"Dissatisfied"})
             let EveningUnsatisfied = await category_model.count({service:"Evening",services:"Dissatisfied"})
 
-            let user = await category_model.count({facilities:"parking"})
+            let user = await category_model.count({facilities:"Parking"})
             let worker = await category_model.count({facilities:"Wheel chair and trolly"})
             let category = await category_model.count({facilities:"Blood Collection Center"})
             let messages = await category_model.count({facilities:"X-R/CT Scan/MRI"})
