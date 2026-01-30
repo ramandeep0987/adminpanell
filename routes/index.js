@@ -93,9 +93,9 @@ router.get("/exportPatentsExcel", session, category_controller.exportPatentsExce
 router.get("/exportGernalIExcel",session,category_controller.  exportGernalIExcel);
 router.get("/exportPrivateIExcel",session,category_controller.  exportPrivateIExcel);
 router.get("/exporteveningIExcel", session, category_controller.exporteveningIExcel);
-router.get("/GernallIST_satisfied", session, category_controller.GernallIST_satisfied);
-router.get("/PrivatelIST_satisfied", session, category_controller.PrivatelIST_satisfied);
-router.get("/EveningIST_satisfied", session, category_controller.EveningIST_satisfied);
+router.get("/General_dissatisfied", session, category_controller.GernallIST_satisfied);
+router.get("/Private_dissatisfied", session, category_controller.PrivatelIST_satisfied);
+router.get("/Evening_dissatisfied", session, category_controller.EveningIST_satisfied);
 
 router.get("/exportGernalDissatisfiedIExcel", session, category_controller.exportGernalDissatisfiedIExcel);
 router.get("/exportPrivateDissatisfiedIExcel", session, category_controller.exportPrivateDissatisfiedIExcel);
@@ -111,7 +111,7 @@ router.get('/category_list', session, category_controller.category_list)
 router.get('/Evening_list', session,  category_controller.Evening_list)
 router.get('/Private_list', session,  category_controller.Private_list)
 router.get('/General_list', session,  category_controller.General_list)
-router.get('/Unsatisfied_list', session, category_controller.Unsatisfied_list)
+router.get('/Dissatisfied_list', session, category_controller.Unsatisfied_list)
 router.get('/Parking_list', session, category_controller.Parking_list)
 router.get('/Wheel_chair', session, category_controller.Wheel_Chair)
 router.get('/Blood_collection', session, category_controller.Blood_Collection)
