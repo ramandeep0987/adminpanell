@@ -802,7 +802,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header,
 .card .card-body,
 .card .card-footer {
-  background-color: #25647f;
+  background-color: #1283e0;
   padding: 20px 25px;
 }
 .card .navbar {

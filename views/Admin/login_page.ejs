@@ -43,20 +43,25 @@
 <% } %>
 
 <style>
-  .error {
-    color: red !important;
-  }
+.error {
+  color: red !important;
+}
 
+.passwordEye {
+  position: relative;
+}
 
-  .passwordEye {
-    position: relative;
-  }
+.passwordEye .int_eye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 5;
+}
 
-  .passwordEye .int_eye {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-  }
+  
 </style>
 
 <style>
@@ -119,9 +124,9 @@
             <div class="card mb-0">
               <div class="card-body">
                 <a href="#" class="brand-logo">
-                  <img src="/app-assets/sundayicon.png" alt="logo" width="150">
+                  <!-- <img src="/app-assets/sundayicon.png" alt="logo" width="150"> -->
                 </a>
-                <h4 class="card-title mb-1" style="color: rgb(32, 30, 30);">Sign in</h4>
+                <h4 class="card-title mb-1" style="color: rgb(32, 30, 30);" hidden>Sign in</h4>
                 <form class="needs-validation" action="/Login" id="addForm" method="POST">
                   <div class="mb-1">
                     <label for="login-email" class="form-label">Email</label>
@@ -135,12 +140,23 @@
                     <input id="password" type="password" class="form-control" name="password" tabindex="2" 
                     placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                     aria-describedby="login-password" required>
-                    <i class="fas fa-eye-slash int_eye" data-feather="eye" id="eye" ></i>
+                    <i  data-feather="eye" id="eye" ></i>
                   </div> -->
-                    <div class="input-group input-group-merge form-password-toggle interror">
-                      <input type="password" class="form-control form-control-merge" id="password" name="password" tabindex="2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="login-password" />
-                      <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
-                    </div>
+                 <div class="input-group input-group-merge form-password-toggle interror passwordEye">
+  <input
+    type="password"
+    class="form-control form-control-merge"
+    id="password"
+    name="password"
+    tabindex="2"
+    placeholder="••••••••••••"
+  />
+
+  <span class="input-group-text cursor-pointer int_eye" id="togglePassword">
+    <i data-feather="eye"></i>
+  </span>
+</div>
+
                   </div>
                   <div class="mb-0 row justify-content-center">
                     <div class="col-sm-5 text-center">
