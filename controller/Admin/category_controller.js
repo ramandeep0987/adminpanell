@@ -15,7 +15,7 @@ exportParkingExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Parking" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Parking List");
+    const worksheet = workbook.addWorksheet("Parking");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -69,10 +69,10 @@ exportParkingExcel : async (req, res) => {
 
 exportWheelchairExcel : async (req, res) => {
   try {
-    const parkingData = await category_model.find({ facilities: "Wheel chair and trolly" }).sort({ createdAt: -1 });
+    const parkingData = await category_model.find({ facilities: "Wheelchair and trolly" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("WheelChair List");
+    const worksheet = workbook.addWorksheet("Wheelchair List");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -128,7 +128,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Blood Collection Center" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Blood Collection List");
+    const worksheet = workbook.addWorksheet("Blood Collection ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -183,10 +183,10 @@ exportWheelchairExcel : async (req, res) => {
     
       exportXrayIExcel : async (req, res) => {
   try {
-    const parkingData = await category_model.find({ facilities: "X-R/CT Scan/MRI" }).sort({ createdAt: -1 });
+    const parkingData = await category_model.find({ facilities: "X-Ray/CT Scan/MRI" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Xray List");
+    const worksheet = workbook.addWorksheet("X-ray/CT Scan");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -244,7 +244,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Help Desk" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("helpdesk List");
+    const worksheet = workbook.addWorksheet("Helpdesk List");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -301,7 +301,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Registration Desk" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("registrationdesk List");
+    const worksheet = workbook.addWorksheet("Registration Desk");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -358,7 +358,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Nursing Care" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("nursing List");
+    const worksheet = workbook.addWorksheet("Nursing Care");
 
     // 🔹 Excel columns
      worksheet.columns = [
@@ -416,7 +416,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "BP Counter" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("BPcounter List");
+    const worksheet = workbook.addWorksheet("BP Counter");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -474,7 +474,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "OPD Waiting" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("OPDwaiting List");
+    const worksheet = workbook.addWorksheet("OPD waiting ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -530,7 +530,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Doctor Consult" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("doctorconsult List");
+    const worksheet = workbook.addWorksheet("Doctor Consult ");
 
     // 🔹 Excel columns
  worksheet.columns = [
@@ -587,7 +587,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Pharmacy Information About How To Take Your Medicines" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("pharmacy List");
+    const worksheet = workbook.addWorksheet("Pharmacy ");
 
     // 🔹 Excel columns
      worksheet.columns = [
@@ -644,7 +644,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Physiotherapy" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("physiotherapy List");
+    const worksheet = workbook.addWorksheet("Physiotherapy");
 
     // 🔹 Excel columns
  worksheet.columns = [
@@ -702,7 +702,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Food And Beverage Facilities" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Foodfacilities List");
+    const worksheet = workbook.addWorksheet("Food Facilities ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -759,7 +759,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Cleanliness" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("cleanliness List");
+    const worksheet = workbook.addWorksheet("Cleanliness ");
 
     // 🔹 Excel columns
      worksheet.columns = [
@@ -817,7 +817,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Security" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("security List");
+    const worksheet = workbook.addWorksheet("Security ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -874,7 +874,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Safe & secure environment for treatment" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("safeenvironment List");
+    const worksheet = workbook.addWorksheet("Safe environment ");
 
     // 🔹 Excel columns
      worksheet.columns = [
@@ -930,7 +930,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Patient rights respected by staff" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("patientrights List");
+    const worksheet = workbook.addWorksheet("Patient rights ");
 
     // 🔹 Excel columns
  worksheet.columns = [
@@ -987,7 +987,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ facilities: "Hospital staff communication" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("staffcommunication List");
+    const worksheet = workbook.addWorksheet("staff communication ");
 
     // 🔹 Excel columns
      worksheet.columns = [
@@ -1046,7 +1046,7 @@ exportWheelchairExcel : async (req, res) => {
     const parkingData = await category_model.find({ services: "Dissatisfied" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Unsatisfied List");
+    const worksheet = workbook.addWorksheet("Dissatisfied ");
 
     // 🔹 Excel columns
 worksheet.columns = [
@@ -1104,7 +1104,7 @@ worksheet.columns = [
     const parkingData = await category_model.find().sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Patents List");
+    const worksheet = workbook.addWorksheet("Patents ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -1161,7 +1161,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "General",services: "Dissatisfied", }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Gernal List");
+    const worksheet = workbook.addWorksheet("General Dissatisfied ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -1218,7 +1218,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "Private",services: "Dissatisfied", }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Private List");
+    const worksheet = workbook.addWorksheet("Private Dissatisfied");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -1273,7 +1273,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "Evening",services: "Dissatisfied", }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Evening List");
+    const worksheet = workbook.addWorksheet("Evening Dissatisfied");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -1328,7 +1328,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "General" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("Gernal List");
+    const worksheet = workbook.addWorksheet("General ");
 
     // 🔹 Excel columns
     worksheet.columns = [
@@ -1383,7 +1383,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "Private" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("private List");
+    const worksheet = workbook.addWorksheet("Private ");
 
     // 🔹 Excel columns
    worksheet.columns = [
@@ -1469,7 +1469,7 @@ worksheet.columns = [
     const parkingData = await category_model.find({ service: "Evening" }).sort({ createdAt: -1 });
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet("evening List");
+    const worksheet = workbook.addWorksheet("Evening ");
 
     // 🔹 Excel columns
     worksheet.columns = [
