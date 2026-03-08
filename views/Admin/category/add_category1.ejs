@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DMC&H</title>
+
+   <style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0ebf8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.form-card {
+  width: 500px;
+  background: #06508c;
+  padding: 40px 35px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-center {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.big_img {
+  width: 105px;   /* Logo size chhota */
+  height: auto;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 17px;
+  font-weight: 500;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-bottom: 2px solid #673ab7;
+}
+
+.btn-submit {
+  display: block;
+  margin: 0 auto;   /* Button center */
+  width: 40%;
+  padding: 12px;
+  border: none;
+  background: #21145070;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #5a32a3;
+}
+
+</style>
+
+  </head>
+
+  <body>
+    <div class="form-container">
+      <div class="form-card">
+        <li class="nav-item logo-center">
+          <img class="big_img" src="/app-assets/1 (4).png" alt="Logo" />
+        </li>
+        <h2> Feedback Form - IPD Services</h2>
+        <h2>ਫੀਡਬੈਕ ਫਾਰਮ – ਆਈ.ਪੀ.ਡੀ ਸੇਵਾਵਾਂ</h2>
+   <h3 class="thank-heading">Thank you for your visit to DMC & Hospital, Ludhiana</h3>
+<h4 class="thank-heading">ਡੀ ਐਮ ਸੀ ਅਤੇ ਹਸਪਤਾਲ, ਲੁਧਿਆਣਾ ਵਿਖੇ ਆਉਣ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ</h4>
+
+        <style>
+          .thank-heading {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
+        </style>
+
+        <div class="form-group">
+          <label>Patient Name / ਮਰੀਜ਼ ਦਾ ਨਾਮ</label>
+          <input type="text" placeholder="Enter Name" />
+
+           <label>MRD Number / ਐਮ.ਆਰ.ਡੀ. ਨੰਬਰ</label>
+          <input type="number" placeholder="Enter MRD" />
+
+          <label>Phone Number / ਫੋਨ ਨੰਬਰ</label>
+          <input type="number" placeholder="Enter Phone Number" />
+
+
+         <label>Date Of Admission / ਦਾਖਲੇ ਦੀ ਤਾਰੀਖ</label>
+<input type="date" id="todayDate" class="form-control" />
+
+<script>
+  document.getElementById("todayDate").valueAsDate = new Date();
+</script>
+
+
+
+       
+<br><br>
+
+          <label>Please indicate the floor of your ward / room?</label>
+
+<select class="form-select" name="wardRoom" required>
+  <option value="" disabled selected>select Option.</option>
+  <option value="Ward-101">Groung Floor</option>
+  <option value="Ward-102">First Floor</option>
+  <option value="Ward-103">Second Floor</option>
+  <option value="Room-201">Third Floor</option>
+  <option value="Room-202">Fourth Floor</option>
+ 
+</select>
+
+<br><br><br>
+
+
+<label>Ward / Department</label>
+
+<select class="form-select" name="wardRoom" id="wardSelect" onchange="showInputBox()" required>
+  <option value="" disabled selected>Select Option</option>
+  <option value="Ward">Ward</option>
+  <option value="Private Room">Private Room</option>
+  <option value="ICU">ICU</option>
+  <option value="Emergency">Emergency</option>
+</select>
+
+<!-- Hidden Input Field -->
+<div id="customInputDiv" style="display:none; margin-top:10px;">
+    <label> Patient location Details (Ward No./Room No./Bed No.) / ਮਰੀਜ਼ ਦੇ ਟਿਕਾਣੇ ਦੀ ਜਾਣਕਾਰੀ (ਵਾਰਡ ਨੰਬਰ / ਕਮਰਾ ਨੰਬਰ / ਬਿਸਤਰਾ ਨੰਬਰ) </label>
+  <input type="text" class="form-control" placeholder="Enter details here">
+</div>
+
+<script>
+  function showInputBox() {
+    var select = document.getElementById("wardSelect");
+    var inputDiv = document.getElementById("customInputDiv");
+
+    if (select.value !== "") {
+      inputDiv.style.display = "block";
+    } else {
+      inputDiv.style.display = "none";
+    }
+  }
+</script>
+
+<br><br><br>
+
+ <label>Doctor Name / ਡਾਕਟਰ ਦਾ ਨਾਮ</label>
+
+<select class="form-select" name="dr name" required>
+  <option value="" disabled selected>select Option.</option>
+  <option value="dr name">Dr. Aarish Bali</option>
+  <option value="dr name">Dr. Ajit Sood</option>
+  <option value="dr name">Dr. Akashdeep Singh</option>
+  <option value="dr name">Dr. Alka Gupta Grewal </option>
+  <option value="dr name">Dr. Amandeep Singh </option>
+   <option value="dr name">Dr. Amandeep Singh Nar</option>
+  <option value="dr name">Dr. Anil Kumar Kashyap</option>
+  <option value="dr name">Dr. Anubhav Sharma</option>
+  <option value="dr name">Dr. Arshdeep Singh </option>
+  <option value="dr name">Dr. Ashima Taneja </option>
+   <option value="dr name">Dr. Ashish Ahuja</option>
+  <option value="dr name">Dr. Ashvind Bawa</option>
+  <option value="dr name">Dr. Ashwani K. Chaudhary</option>
+  <option value="dr name">Dr. Atul Mishra </option>
+  <option value="dr name">Dr. Barinder Singh Paul </option>
+   <option value="dr name">Dr. Deepak Bhatt</option>
+  <option value="dr name">Dr. Deepak Jain</option>
+  <option value="dr name">Dr. Dhananjay Gupta</option>
+  <option value="dr name">Dr. Dinesh Jain </option>
+  <option value="dr name">Dr. Gagandeep Singh </option>
+   <option value="dr name">Dr. Gurdeep S. Dhooria</option>
+  <option value="dr name">Dr. Gurmeet Singh</option>
+  <option value="dr name">Dr. Gurpreet Singh</option>
+  <option value="dr name">Dr. Gurvinder Kaur </option>
+  <option value="dr name">Dr. Hanish Bansal </option>
+   <option value="dr name">Dr. Harmandeep Singh Chahal</option>
+  <option value="dr name">Dr. Harmeet Pal Singh Dhooria</option>
+  <option value="dr name">Dr. Harpal Singh</option>
+  <option value="dr name">Dr. Anil Kumar Kashyap </option>
+  <option value="dr name">Dr. Isha </option>
+   <option value="dr name">Dr. Jagminder Singh</option>
+  <option value="dr name">Dr. Jaspriya Sandhu</option>
+  <option value="dr name">Dr. Jatinder Singh Goraya</option>
+  <option value="dr name">Dr. Joban Preet Deol </option>
+  <option value="dr name">Dr. Jyoti Jindal </option>
+   <option value="dr name">Dr. Kajal Arora</option>
+  <option value="dr name">Dr. Kamaldeep Arora</option>
+  <option value="dr name">Dr. Kanwar Aggarwal</option>
+  <option value="dr name">Dr. Karambir Singh Gill </option>
+  <option value="dr name">Dr. Kunwar Aggarwal </option>
+   <option value="dr name">Dr. Mitthat Miglani</option>
+  <option value="dr name">Dr. Monica</option>
+  <option value="dr name">Dr. Monika Singla</option>
+  <option value="dr name">Dr. Munish Trehan </option>
+  <option value="dr name">Dr. Namita Bhuhiraja</option>
+   <option value="dr name">Dr. Narinder Pal Jain</option>
+  <option value="dr name">Dr. Naveen Mitaal</option>
+  <option value="dr name">Dr. Navkiran Mahajan</option>
+  <option value="dr name">Dr. Navneet Kaur </option>
+  <option value="dr name">Dr. Omesh Goyal </option>
+   <option value="dr name">Dr. Pallavi Singh</option>
+  <option value="dr name">Dr. Pankaj Kumar</option>
+  <option value="dr name">Dr. Pankaj Mahindra</option>
+  <option value="dr name">Dr. Parveen Goel </option>
+  <option value="dr name">Dr. Poornima Sharma </option>
+   <option value="dr name">Dr. Pooja Tondon</option>
+  <option value="dr name">Dr. Prabhdeep Singh</option>
+  <option value="dr name">Dr. Prabhdeep Singh Nain</option>
+  <option value="dr name">Dr. Priyanka Arora </option>
+  <option value="dr name">Dr. Puneet A. Pooni </option>
+   <option value="dr name">Dr. Purnendu Bhardwah</option>
+  <option value="dr name">Dr. Rajesh Mahajan</option>
+  <option value="dr name">Dr. Rajinder Mittal</option>
+  <option value="dr name">Dr. Rajnish Garg </option>
+  <option value="dr name">Dr. Ramit Mahajan </option>
+   <option value="dr name">Dr. Ramneesh Garg</option>
+  <option value="dr name">Dr. Rashmi Malhotra</option>
+  <option value="dr name">Dr. Ravinder Pal Singh</option>
+  <option value="dr name">Dr. Rita Rai </option>
+  <option value="dr name">Dr. Ritesh Verma </option>
+   <option value="dr name">Dr. Rohit Verma</option>
+  <option value="dr name">Dr. Sahil Maingi</option>
+  <option value="dr name">Dr. Sandeep Chhabra</option>
+  <option value="dr name">Dr. Sandeep Sharma</option>
+  <option value="dr name">Dr. Sanjeev K. Singla </option>
+   <option value="dr name">Dr. Sanjeev Puri</option>
+  <option value="dr name">Dr. Saurabh</option>
+  <option value="dr name">Dr. Sheerin Shah</option>
+  <option value="dr name">Dr. Shivender Sobti </option>
+  <option value="dr name">Dr. Sidharth Bhargava </option>
+   <option value="dr name">Dr. Simran Kaur</option>
+  <option value="dr name">Dr. Sumti Verma</option>
+  <option value="dr name">Dr. Sukhjot Kaur</option>
+  <option value="dr name">Dr. Suman Puri </option>
+  <option value="dr name">Dr. Sunil Juneja </option>
+   <option value="dr name">Dr. Tanish Dhir</option>
+  <option value="dr name">Dr. Varun Gupta</option>
+  <option value="dr name">Dr. Varun Mehta</option>
+  <option value="dr name">Dr. Vikas Garg</option>
+  <option value="dr name">Dr. Vikas Kumar </option>
+   <option value="dr name">Dr. Vikas Makkar</option>
+  <option value="dr name">Dr. Vineet Galhotraa</option>
+  <option value="dr name">Dr. Vipin Kumar</option>
+  <option value="dr name">Dr. Vandana Midha </option>
+  <option value="dr name">Dr. Yogesh Gupta </option>
+      
+ 
+</select>
+
+
+      <br><br><br>
+<div class="mb-2">
+  <label>
+   Were you satisfied with the hospital services? /  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਦੀਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਸੀ?
+  </label>
+
+  <select class="form-select" id="staffStatus"
+          onchange="handleStaffChange(this)" required>
+    <option value="" disabled selected>Select Option</option>
+    <option value="Satisfied">Satisfied</option>
+    <option value="Dissatisfied">Dissatisfied</option>
+  </select>
+</div>
+
+<!-- Hidden Dropdown -->
+<div id="staffReasonDiv" style="display:none;">
+  <label>
+  As per your experience which of our areas / services need improvements? / ਤੁਹਾਡੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸਾਡੇ ਕਿਹੜੇ ਖੇਤਰਾਂ / ਸੇਵਾਵਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
+  </label>
+
+  <select id="staffReason" class="form-select"
+          onchange="showExtraInput()">
+    <option value="" disabled selected>Select option</option>
+<option value="Rude Behavior">Parking / ਪਾਰਕਿੰਗ</option>
+    <option value="Late Response">Wheel chair and Patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+    <option value="Not Helpful">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ </option>
+   <option value="Not Helpful"> X-Ray / CT Scan / MRI / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+      <option value="Not Helpful"> Corporate cell / ਕਾਰਪੋਰੇਟ ਸੈੱਲ </option>
+    <option value="Unprofessional Conduct">Help desk / Enquiry / ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ</option>
+    <option value="Other">Registration desk / Billing counter / ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ</option>
+    <option value="Other">Nursing care / ਨਰਸਿੰਗ ਦੇਖਭਾਲ</option>
+    <option value="Other">Doctor consult / ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+     <option value="Other">Pharmacy / ਦਵਾਖਾਨਾ </option> 
+    <option value="Other">Physiotherapy / ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+    <option value="Other">Food and beverage facilities / ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ</option>
+    <option value="Other">Cleanliness / ਸਾਫ਼ ਸਫ਼ਾਈ</option>
+    <option value="Other">Security / ਸੁਰੱਖਿਆ</option>
+    <option value="Other">Safe & secure environment / ਮਹਫੂਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ</option>
+    <option value="Other">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।</option>
+     <option value="Other">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+  </select>
+</div>
+
+<!-- Extra Input Field -->
+<div id="extraInputDiv" style="display:none;" class="mt-2">
+  <label>Please describe your issue</label>
+  <input type="text" class="form-control"
+         placeholder="Type your issue here...">
+</div>
+
+<script>
+  function handleStaffChange(select) {
+    var reasonDiv = document.getElementById("staffReasonDiv");
+    var extraInputDiv = document.getElementById("extraInputDiv");
+
+    if (select.value === "Dissatisfied") {
+      reasonDiv.style.display = "block";
+    } else {
+      reasonDiv.style.display = "none";
+      extraInputDiv.style.display = "none";
+    }
+  }
+
+  function showExtraInput() {
+    document.getElementById("extraInputDiv").style.display = "block";
+  }
+</script>
+
+
+
+
+
+
+
+
+<!-- <div class="mb-2">
+  <label>
+    Were you satisfied with the hospital services? /  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਦੀਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਸੀ?
+  </label>
+
+  <select class="form-select" id="staffStatus"
+          onchange="handleStaffChange(this)" required>
+    <option value="" disabled selected>Select Option</option>
+    <option value="Satisfied">Satisfied</option>
+    <option value="Dissatisfied">Dissatisfied</option>
+  </select>
+</div>
+
+
+<div id="staffReasonDiv" style="display:none;">
+  <label> As per your experience which of our areas / services need improvements? / ਤੁਹਾਡੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸਾਡੇ ਕਿਹੜੇ ਖੇਤਰਾਂ / ਸੇਵਾਵਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ? </label>
+  <select id="staffReason" class="form-select">
+    <option value="" disabled selected>Select option</option>
+    <option value="Rude Behavior">Parking / ਪਾਰਕਿੰਗ</option>
+    <option value="Late Response">Wheel chair and Patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+    <option value="Not Helpful">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ </option>
+   <option value="Not Helpful"> X-Ray / CT Scan / MRI / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+      <option value="Not Helpful"> Corporate cell / ਕਾਰਪੋਰੇਟ ਸੈੱਲ </option>
+    <option value="Unprofessional Conduct">Help desk / Enquiry / ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ</option>
+    <option value="Other">Registration desk / Billing counter / ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ</option>
+    <option value="Other">Nursing care / ਨਰਸਿੰਗ ਦੇਖਭਾਲ</option>
+    <option value="Other">Doctor consult / ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+     <option value="Other">Pharmacy / ਦਵਾਖਾਨਾ </option> 
+    <option value="Other">Physiotherapy / ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+    <option value="Other">Food and beverage facilities / ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ</option>
+    <option value="Other">Cleanliness / ਸਾਫ਼ ਸਫ਼ਾਈ</option>
+    <option value="Other">Security / ਸੁਰੱਖਿਆ</option>
+    <option value="Other">Safe & secure environment / ਮਹਫੂਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ</option>
+    <option value="Other">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।</option>
+     <option value="Other">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+
+  </select>
+</div> -->
+
+
+
+<br><br>
+
+  <div class="mb-2">
+  <label>Room Facilities / ਕਮਰੇ ਦੀਆਂ ਸਹੂਲਤਾਂ</label>
+
+  <select class="form-select" id="roomFacility"
+          onchange="handleRoomChange(this)" required>
+    <option value="" disabled selected>Select Option</option>
+
+    <option value="clean_room">Cleanliness of the room / ਕਮਰੇ ਦੀ ਸਫ਼ਾਈ</option>
+    <option value="blowers">Functioning of the blowers / fans / AC / ਬਲੋਅਰ / ਪੱਖਿਆਂ / ਏ.ਸੀ. ਦੀ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਸਥਿਤੀ</option>
+    <option value="bed_linens">Cleanliness and availability of bed linens, pillows, and blankets / ਬਿਸਤਰੇ ਦੀਆਂ ਚਾਦਰਾਂ, ਤਕੀਆਂ ਅਤੇ ਕੰਬਲਾਂ ਦੀ ਸਫ਼ਾਈ ਅਤੇ ਉਪਲਬਧਤਾ</option>
+    <option value="lights">Functioning of lights, switches, and electrical points / ਲਾਈਟਾਂ, ਸਵਿੱਚਾਂ ਅਤੇ ਬਿਜਲੀ ਦੇ ਪਾਇੰਟਾਂ ਦੀ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਸਥਿਤੀ</option>
+    <option value="toilets">Cleanliness of toilets and washrooms / ਟਾਇਲਟ ਅਤੇ ਵਾਸ਼ਰੂਮ ਦੀ ਸਫ਼ਾਈ</option>
+    <option value="overall_good">Overall good / ਕੁੱਲ ਮਿਲਾ ਕੇ ਵਧੀਆ ਹੈ।</option>
+  </select>
+</div>
+
+<!-- Hidden Textarea -->
+<div id="roomReasonDiv" style="display:none;">
+  <label>If dissatisfied, please mention the reason / ਜੇ ਤੁਸੀਂ ਅਸੰਤੁਸ਼ਟ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਕਾਰਨ ਦਰਜ ਕਰੋ। </label>
+  <input id="roomReason" class="form-control" rows="3"
+            placeholder="Write your reason here..."></input>
+</div>
+
+
+<br><br>
+
+  <!-- <div class="mb-2">
+  <label>
+    Are you satisfied with the hospital food services (taste, quality, and timely delivery)?
+  </label>
+
+ 
+
+  <select class="form-select" id="foodStatus"
+          onchange="handleFoodChange(this)" required>
+    <option value="" disabled selected>Select Option</option>
+    <option value="Satisfied">Satisfied</option>
+    <option value="Dissatisfied">Dissatisfied</option>
+  </select>
+</div> -->
+
+<!-- Hidden Textarea -->
+<!-- <div id="foodReasonDiv" style="display:none;">
+  <label>If dissatisfied, please mention the reason:</label>
+  <input id="foodReason" class="form-control" rows="3"
+            placeholder="Write your reason here..."></input>
+</div> -->
+
+ 
+
+
+
+
+
+ <!-- <div class="mb-2">
+  <label>Parking Facility</label>
+
+  <select class="form-select" id="parkingStatus" 
+          onchange="handleParkingChange(this)" required>
+    <option value="" disabled selected>Select Option</option>
+    <option value="Satisfied">Satisfied</option>
+    <option value="Dissatisfied">Dissatisfied</option>
+  </select>
+</div> -->
+ 
+<!-- Textarea (Hidden by default) -->
+<!-- <div id="parkingReasonDiv" style="display:none;">
+  <label>If dissatisfied, please mention the reason:</label>
+  <input id="parkingReason" class="form-control" rows="3"
+            placeholder="Write your reason here..."></input>
+</div> -->
+
+
+  <label>
+    Overall Experience / ਕੁੱਲ ਮਿਲਾ ਕੇ ਤਜਰਬਾ
+  </label>
+  <select class="form-select">
+    <option value="" disabled selected>Select Option</option> 
+    <option value="Satisfied">Excellent / ਬਹੁਤ ਹੀ ਵਧੀਆ</option>
+    <option value="Dissatisfied">Good / ਵਧੀਆ</option>
+    <option value="Satisfied"> Average / ਦਰਮਿਆਨਾ</option>
+    <option value="Dissatisfied">Poor / ਖਰਾਬ</option>
+  </select>
+
+  <br><br>
+
+   <label>Remarks / ਸੁਝਾਅ</label>
+          <input type="text" placeholder="Enter Remarks" />
+
+
+         
+        </div>
+
+        <button class="btn-submit">submit </button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+function handleParkingChange(el) {
+
+  const reasonDiv = document.getElementById("parkingReasonDiv");
+  const reasonTextarea = document.getElementById("parkingReason");
+
+  if (el.value === "Dissatisfied") {
+    reasonDiv.style.display = "block";
+    reasonTextarea.setAttribute("required", "required");
+  } else {
+    reasonDiv.style.display = "none";
+    reasonTextarea.removeAttribute("required");
+    reasonTextarea.value = ""; // reset textarea
+  }
+}
+</script>
+
+<script>
+function handleFoodChange(el) {
+
+  const reasonDiv = document.getElementById("foodReasonDiv");
+  const reasonTextarea = document.getElementById("foodReason");
+
+  if (el.value === "Dissatisfied") {
+    reasonDiv.style.display = "block";
+    reasonTextarea.setAttribute("required", "required");
+  } else {
+    reasonDiv.style.display = "none";
+    reasonTextarea.removeAttribute("required");
+    reasonTextarea.value = ""; // reset textarea
+  }
+}
+</script>
+
+<script>
+function handleStaffChange(el) {
+
+  const reasonDiv = document.getElementById("staffReasonDiv");
+  const reasonTextarea = document.getElementById("staffReason");
+
+  if (el.value === "Dissatisfied") {
+    reasonDiv.style.display = "block";
+    reasonTextarea.setAttribute("required", "required");
+  } else {
+    reasonDiv.style.display = "none";
+    reasonTextarea.removeAttribute("required");
+    reasonTextarea.value = ""; // reset textarea
+  }
+}
+</script>
+
+
+<script>
+function handleRoomChange(el) {
+
+  const reasonDiv = document.getElementById("roomReasonDiv");
+  const reasonTextarea = document.getElementById("roomReason");
+
+  if (el.value !== "overall_good" && el.value !== "") {
+    reasonDiv.style.display = "block";
+    reasonTextarea.setAttribute("required", "required");
+  } else {
+    reasonDiv.style.display = "none";
+    reasonTextarea.removeAttribute("required");
+    reasonTextarea.value = "";
+  }
+}
+</script>
+
+
+
+<style>
+.form-select{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-bottom:2px solid #ccc;
+  font-size:14px; 
+  outline:none;
+  background:transparent;
+  color:white; /* white text because your card is dark */
+  transition:0.3s;
+}
+
+.form-select option{
+  color:black; /* dropdown options readable */
+}
+
+.form-select:focus{
+  border-bottom:2px solid #673ab7;
+}
+</style>
+
+

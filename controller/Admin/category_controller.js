@@ -23,7 +23,7 @@ exportParkingExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -39,7 +39,7 @@ exportParkingExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -80,7 +80,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -95,7 +95,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -136,7 +136,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -151,7 +151,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -194,7 +194,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -209,7 +209,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -252,7 +252,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -267,7 +267,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -309,7 +309,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -324,7 +324,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -366,7 +366,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -381,7 +381,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -424,7 +424,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -439,7 +439,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -482,7 +482,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -496,7 +496,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -538,7 +538,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -553,7 +553,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -595,7 +595,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -610,7 +610,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -652,7 +652,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -667,7 +667,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -710,7 +710,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -725,7 +725,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -767,7 +767,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -782,7 +782,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -825,7 +825,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -840,7 +840,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -882,7 +882,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -896,7 +896,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -938,7 +938,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -953,7 +953,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -995,7 +995,7 @@ exportWheelchairExcel : async (req, res) => {
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
       { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
@@ -1010,7 +1010,7 @@ exportWheelchairExcel : async (req, res) => {
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1054,7 +1054,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1069,7 +1069,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1112,7 +1112,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1127,7 +1127,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1169,7 +1169,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1183,7 +1183,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1226,7 +1226,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1240,7 +1240,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1281,7 +1281,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1295,7 +1295,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1336,7 +1336,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1350,7 +1350,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1391,7 +1391,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1406,7 +1406,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1477,7 +1477,7 @@ worksheet.columns = [
       { header: "MRD Number", key: "mrdnumber", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
-      { header: "Doctor Name ", key: "doctorname", width: 20 },
+      
   { header: "OPD types", key: "service", width: 20 },
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
@@ -1493,7 +1493,7 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
-        doctorname: item.doctorname,
+       
         service: item.service,
         services: item.services,
         facilities: item.facilities,
@@ -1525,6 +1525,14 @@ worksheet.columns = [
         try {
             let title = "category_list"
             res.render('Admin/category/add_category', { msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+      add_category1: async(req, res)=> {
+        try {
+            let title = "category_list"
+            res.render('Admin/category/add_category1', { msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -1575,6 +1583,26 @@ worksheet.columns = [
             let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
             console.log(catedata,"catedatacatedata")
             res.render('Admin/category/General_list.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+    Roomipd: async(req, res)=> {
+        try {
+            title = "General_listipd"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/General_list_ipd.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+      toiletipd: async(req, res)=> {
+        try {
+            title = "toiletipd"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/toilet.ejs', {title, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -1682,7 +1710,7 @@ worksheet.columns = [
         }
     },
           
-             BP_Counter: async (req, res) => {
+       BP_Counter: async (req, res) => {
         try {
             title = "BP_Counter"
             let catedata = await category_model.find({ facilities: "BP Counter" }).sort({ createdAt: -1 })
@@ -1805,7 +1833,7 @@ worksheet.columns = [
         }
     },  
        
-            Staff_Commun: async (req, res) => {
+        Staff_Commun: async (req, res) => {
         try {
             title = "Staff_Commun"
             let catedata = await category_model.find({ facilities: "Hospital staff communication" }).sort({ createdAt: -1 })
@@ -1902,17 +1930,5 @@ worksheet.columns = [
           console.log(error)
         }
     },
-
-
-
-    
-
-   
-
-    
-
-
-
-
 
 }

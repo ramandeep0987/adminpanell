@@ -51,7 +51,8 @@ module.exports = {
             let PrivateUnsatisfied = await category_model.count({service:"Private",services:"Dissatisfied"})
             let EveningUnsatisfied = await category_model.count({service:"Evening",services:"Dissatisfied"})
 
-            let user = await category_model.count({facilities:"Parking"})
+          let user = await category_model.count({ facilities: "Parking" })
+ 
             let worker = await category_model.count({facilities:"Wheel chair and trolly"})
             let category = await category_model.count({facilities:"Blood Collection Center"})
             let messages = await category_model.count({facilities:"X-R/CT Scan/MRI"})
@@ -71,12 +72,109 @@ module.exports = {
             let Hospital = await category_model.count({facilities:"Hospital staff communication"})
             let Other = await category_model.count({facilities:"Any Other"})
      
-            res.render('Admin/dashboard', {title,futfaal,Gernalbar,Privatebar,Eveningbar,Satisfiedbar,Unsatisfiedbar,PrivateUnsatisfied,EveningUnsatisfied,GernalUnsatisfied,Unsatisfied,Satisfied, Gernal,Private,Evening,Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
+          
+          function percent(val){
+    return ((val / Unsatisfied) * 100).toFixed(2);
+}
+
+let thiskey={
+  Parking: percent(user) + "%",
+  Wheelchair: percent(worker) + "%",
+  Blood: percent(category) + "%",
+  Scan: percent(messages) + "%",
+  HelpDesk: percent(reviews) + "%",
+  Registration: percent(booking) + "%",
+  Nursing: percent(completejobs) + "%",
+  BP: percent(withdraw) + "%",
+  OPD: percent(FAQ) + "%",
+  Doctor: percent(reports) + "%",
+  Pharmacy: percent(Pharmacy) + "%",
+  Physiotherapy: percent(Physiotherapy) + "%",
+  Food: percent(Food) + "%",
+  Cleanliness: percent(Cleanliness) + "%",
+  Security: percent(Security) + "%",
+  Safe: percent(Safe) + "%",
+  Patient: percent(Patient) + "%",
+  Hospital: percent(Hospital) + "%",
+  Other: percent(Other) + "%"
+}
+          
+          
+          
+          
+          
+          
+            res.render('Admin/dashboard', {thiskey,title,futfaal,Gernalbar,Privatebar,Eveningbar,Satisfiedbar,Unsatisfiedbar,PrivateUnsatisfied,EveningUnsatisfied,GernalUnsatisfied,Unsatisfied,Satisfied, Gernal,Private,Evening,Pharmacy, user,Physiotherapy,Food,Cleanliness,Security,Safe,Patient,Hospital,Other, worker, withdraw, category, messages, reviews, FAQ, booking, reports, completejobs, session: req.session.user, msg: req.flash('msg')  })
         } catch (error) {
             console.log(error)
         }
     },
 
+
+
+  dashboard1: async (req, res) => {
+    try {
+      const title = "dashboard";
+    
+
+      // Aggregate usersData for the current year
+    
+
+    
+
+    
+
+     
+      // Aggregate counts for the current year
+ 
+
+    
+
+      res.render("Admin/dashboard1", {
+        title,
+      
+        session: req.session.user,
+        msg: req.flash("msg"),
+        message: req.flash("message"),
+        formattedDate: new Date().toLocaleDateString("en-GB"),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    },
+  
+  
+  
+    section2: async (req, res) => {
+    try {
+      const title = "section2";
+    
+
+      // Aggregate usersData for the current year
+    
+
+    
+
+    
+
+     
+      // Aggregate counts for the current year
+ 
+
+    
+
+      res.render("Admin/section2", {
+        title,
+      
+        session: req.session.user,
+        msg: req.flash("msg"),
+        message: req.flash("message"),
+        formattedDate: new Date().toLocaleDateString("en-GB"),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
     forgot_password: async(req, res)=> {
         try {
             let title = "forgot_password"

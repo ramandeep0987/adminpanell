@@ -1,4 +1,4 @@
-<%- include('../common/header'); -%> <%- include('../common/sidebar'); -%>
+<%- include('../common/header'); -%> <%- include('../common1/sidebar1'); -%>
 
 <!-- ================== DataTables CSS ================== -->
 <link
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="card">
             <div class="card-header1 border-bottom">
-              <h4 class="card-title"> General OPD Patient Feedback</h4>
+              <h4 class="card-title"> toilet IPD Patient Feedback</h4>
             </div>
             <div class="text-end mb-3">
               <a href="/exportGernalIExcel" class="btn btn-success">
@@ -56,18 +56,15 @@
                 </thead>
 
                 <tbody>
-                  <% catedata.forEach(function(data,i){ %>
+                 
                   <tr>
-                    <td><%= i + 1 %></td>
-                    <td><%= data.name %></td>
-                    <td><%= data.mrdnumber %></td>
-                    <!-- <td><%= data.doctorname %></td> -->
-                     <td> <%=data.services%> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                     <td>  </td>
                     <td>
-                      <a
-                        href="/edit_category/<%=data._id%>"
-                        class="btn btn-sm bg-warning"
-                      >
+                  
                         <svg
                           width="20px"
                           height="20px"
@@ -93,11 +90,9 @@
                           />
                         </svg>
                       </a>
-                      <!-- <button onclick="confirmDelete('<%=data._id%>')" class="btn btn-sm bg-danger">
-                        🗑
-                      </button> -->
+                  
                       <button
-                        onclick="confirmDelete('<%=data._id%>')"
+                        onclick=""
                         class="btn btn-sm bg-danger"
                       >
                         <svg
@@ -115,7 +110,7 @@
                       </button>
                     </td>
                   </tr>
-                  <% }) %>
+             
                 </tbody>
               </table>
             </div>
@@ -241,7 +236,7 @@
   .card .card-header1,
   .card .card-body,
   .card .card-footer {
-    background-color: #e2b916cc;
+    background-color: #1283e0;
     padding: 20px 25px;
   }
 
@@ -375,13 +370,13 @@
   }
 
   .card-header1 {
-    background: linear-gradient(135deg, #f6ed91, #f6ed91);
-    color: #f6ed91;
+    background: linear-gradient(135deg, #1283e0, #1283e0);
+    color: #1283e0;
     padding: 18px 24px;
     border-bottom: none;
   }
   .card {
-    background-color: #f6ed91;
+    background-color: #1283e0;
     
   }
 

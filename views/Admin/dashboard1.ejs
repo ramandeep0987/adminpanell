@@ -1,0 +1,510 @@
+<%- include('common/header'); -%> <%- include('common1/sidebar1'); -%>
+<style>
+
+    @media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 30%;
+    }
+}
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    flex: 1;
+    /* min-width: 300px; */
+    /* Adjust the minimum width as needed */
+  }
+.card-header {
+    padding: 1.0rem 0.5rem;
+    margin-bottom: 0px;
+    background-color: #2196f3  !important;
+    border-bottom: 0 solid rgba(34, 41, 47, 0.125);
+}
+  #userGrowthChart,
+  #chart {
+    width: 100%;
+    height: 300px;
+    /* Set height for both charts */
+  }
+  .bg-light-primary1 {
+  background: #273264  !important;
+  color: #fafdff !important;
+}
+.card-text:last-child {
+    margin-bottom: 0;
+  color: #fafdff !important;
+  font-size: large;
+
+}
+</style>
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>IPD-Dashboard</h1>
+          </div>
+
+
+
+          <div class="row">
+
+
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/userList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Parking Facility</p>
+                  </div>
+                <div class="avatar bg-light-primary1 p-50 m-0">
+  <div class="avatar-content">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         height="48px"
+         viewBox="0 -960 960 960"
+         width="48px"
+         fill="#F3F3F3">
+      <path d="M200-560 280-760h400l80 200h40q17 0 28.5 11.5T840-520v240q0 17-11.5 28.5T800-240h-40v80h-80v-80H280v80h-80v-80h-40q-17 0-28.5-11.5T120-280v-240q0-17 11.5-28.5T160-560h40Zm100 0h360l-50-120H350l-50 120Zm-60 200q25 0 42.5-17.5T300-420q0-25-17.5-42.5T240-480q-25 0-42.5 17.5T180-420q0 25 17.5 42.5T240-360Zm480 0q25 0 42.5-17.5T780-420q0-25-17.5-42.5T720-480q-25 0-42.5 17.5T660-420q0 25 17.5 42.5T720-360Z"/>
+    </svg>
+  </div>
+</div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CategoryList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Wheelchair</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <i class="ph-fill ph-wheelchair" style="font-size:32px; color:#F3F3F3;"></i>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+    <div class="card-header">
+      <div>
+        <h2 class="fw-bolder mb-0">
+         0
+        </h2>
+        <p class="card-text">Blood collection</p>
+      </div>
+      <div class="avatar bg-light-primary1 p-50 m-0">
+        <div class="avatar-content">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="35px"
+               height="35px"
+               viewBox="0 -960 960 960"
+               fill="#F3F3F3">
+            <path d="M480-80q-116 0-198-82t-82-198q0-88 49-163t231-277q182 202 231 277t49 163q0 116-82 198T480-80Zm0-80q83 0 141.5-58.5T680-360q0-54-30.5-103T480-679q-139 165-169.5 214T280-360q0 83 58.5 141.5T480-160Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/reportList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">X-Ray/MRI </p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                      <i class="fa-solid fa-x-ray"style="font-size:32px; color:#F3F3F3;"></i>
+
+                      <link
+                        rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+<div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="card" onclick="location.href='/SubCategoryList'" style="cursor: pointer;">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <h2 class="fw-bolder mb-0">
+         0
+        </h2>
+        <p class="card-text">Corporate cell</p>
+      </div>
+      <div class="avatar bg-light-primary1 p-50 m-0">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="35px"
+             height="35px"
+             viewBox="0 -960 960 960"
+             fill="#F3F3F3">
+          <path d="M120-160v-560h720v560H120Zm80-80h560v-400H200v400Zm160 160v-80h240v80H360Z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/contactUsList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Help desk</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#F3F3F3">
+                      <path d="M440-120v-60h340v-304q0-123.69-87.32-209.84Q605.36-780 480-780q-125.36 0-212.68 86.16Q180-607.69 180-484v244h-20q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v69q0 24.75-17.62 42.37Q804.75-120 780-120H440Zm-80.18-290q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm240 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5ZM241-462q-7-106 64-182t177-76q87 0 151 57.5T711-519q-89-1-162.5-50T434.72-698Q419-618 367.5-555.5T241-462Z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="card" onclick="location.href='/FaQList'" style="cursor: pointer;">
+    <div class="card-header">
+      <div>
+        <h2 class="fw-bolder mb-0">
+      0
+        </h2>
+        <p class="card-text"> Billing counter</p>
+      </div>
+      <div class="avatar bg-light-primary1 p-50 m-0">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             height="35px"
+             viewBox="0 -960 960 960"
+             width="35px"
+             fill="#F3F3F3">
+          <path d="M280-80v-800l80 40 80-40 80 40 80-40 80 40 80-40v800l-80-40-80 40-80-40-80 40-80-40-80 40Zm80-200h240v-80H360v80Zm0-160h240v-80H360v80Zm0-160h240v-80H360v80Z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+<div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="card" onclick="location.href='/StoreList'" style="cursor: pointer;">
+    <div class="card-header">
+      <div>
+        <h2 class="fw-bolder mb-0">
+        0
+        </h2>
+        <p class="card-text">Nursing care</p>
+      </div>
+      <div class="avatar bg-light-primary1 p-50 m-0">
+       <div class="avatar-content">
+  <i class="fa-solid fa-user-nurse" style="font-size:35px; color:#F3F3F3;"></i>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+  <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+    <div class="card-header">
+      <div>
+        <h2 class="fw-bolder mb-0">
+         0
+        </h2>
+        <p class="card-text">Doctor Consult</p>
+      </div>
+      <div class="avatar bg-light-primary1 p-50 m-0">
+        <div class="avatar-content">
+                       <i class="fa-solid fa-user-doctor" style="font-size: 32px"></i>
+                    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Pharmacy</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                    <div class="avatar-content">
+                      <i class="ph-fill ph-pill"style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+ <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Physiotherapy</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                    <div class="avatar-content">
+         <div class="avatar-content">
+  <i class="fa-solid fa-person-walking-with-cane"style="font-size:32px; color:#F3F3F3;"></i>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Food facilities</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                      <i class="ph-fill ph-fork-knife"style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Cleanliness</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                      <i class="ph-fill ph-broom"style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                    0
+                    </h2>
+                    <p class="card-text">Security</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                 <div class="avatar-content">
+                      <i class="ph-fill ph-camera" style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Safe environment</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                     <div class="avatar-content">
+  <i class="fa-solid fa-user-shield"style="font-size:32px; color:#F3F3F3;"></i>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                      0
+                    </h2>
+                    <p class="card-text">Hospital staff</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                      <i class="ph-fill ph-handshake"style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
+              <div class="card" onclick="location.href='/CommentList'" style="cursor: pointer;">
+                <div class="card-header">
+                  <div>
+                    <h2 class="fw-bolder mb-0">
+                     0
+                    </h2>
+                    <p class="card-text">Patient rights</p>
+                  </div>
+                  <div class="avatar bg-light-primary1 p-50 m-0">
+                   <div class="avatar-content">
+                      <i class="ph-fill ph-user"style="font-size:32px; color:#F3F3F3;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Patient Record</h4>
+            </div>
+            <div class="card-body">
+              <div id="userGrowthChart"></div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Products</h4>
+            </div>
+            <div class="card-body">
+              <div id="productGrowthChart"></div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    
+
+    <!-- Load ApexCharts Script -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.2/apexcharts.min.css" integrity="sha512-qc0GepkUB5ugt8LevOF/K2h2lLGIloDBcWX8yawu/5V8FXSxZLn3NVMZskeEyOhlc6RxKiEj6QpSrlAoL1D3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.2/apexcharts.min.js" integrity="sha512-0C7wVtM3EhVJMUXV6o50mKRgLwKZf+aRws1BhqmNabPNIkGEvyPncYBmXhpl4A3+TdpkY2HFiI3Eyv32uVGo4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    
+        var userOptions = {
+          chart: {
+            type: 'bar',
+            height: 350
+          },
+          series: [{
+            name: 'Current Year Users',
+            data: // Ensure `userCounts` is passed from the server
+          }],
+          yaxis: {
+          title: {
+            text: 'Current Year Users',
+          },
+        },
+          xaxis: {
+            
+            categories: [
+              "January", "February", "March", "April",
+              "May", "June", "July", "August",
+              "September", "October", "November", "December"
+            ]
+          },
+        };
+        var userChart = new ApexCharts(document.querySelector("#userGrowthChart"), userOptions);
+        userChart.render();
+
+        // Product Growth Chart
+        var productOptions = {
+          chart: {
+            type: 'bar',
+            height: 350
+          },
+          series: [{
+            name: 'Current Year Products',
+            data: 
+          }],
+          yaxis: {
+          title: {
+            text: 'Current Year Products',
+          },
+        },
+          xaxis: {
+            categories: [
+              "January", "February", "March", "April",
+              "May", "June", "July", "August",
+              "September", "October", "November", "December"
+            ]
+          }
+        };
+        var productChart = new ApexCharts(document.querySelector("#productGrowthChart"), productOptions);
+        productChart.render();
+      });
+    </script> -->
+
+   <%- include('common/footer'); -%>

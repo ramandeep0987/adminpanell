@@ -26,6 +26,9 @@ router.get('/login_page', user_controller.login_page)
 router.post('/Login', user_controller.Login)
 router.get('/forgot_password', dashboard_controller.forgot_password)
 router.get('/dashboard', session, dashboard_controller.dashboard)
+router.get('/dashboard1', session, dashboard_controller.dashboard1)
+router.get('/section', session, dashboard_controller.section2)
+
 
 //////////////// ADMIN //////////////////////////
 router.get('/admin_profile', session, user_controller.admin_profile)
@@ -110,7 +113,11 @@ router.get("/exportEveningDissatisfiedIExcel",session,category_controller.  expo
 router.get('/category_list', session, category_controller.category_list)
 router.get('/Evening_list', session,  category_controller.Evening_list)
 router.get('/Private_list', session,  category_controller.Private_list)
-router.get('/General_list', session,  category_controller.General_list)
+router.get('/General_list', session, category_controller.General_list)
+router.get('/Roomipd', session, category_controller.Roomipd)
+router.get('/toiletipd', session,  category_controller.toiletipd)
+
+
 router.get('/Dissatisfied_list', session, category_controller.Unsatisfied_list)
 router.get('/Parking_list', session, category_controller.Parking_list)
 router.get('/Wheel_chair', session, category_controller.Wheel_Chair)
@@ -139,6 +146,8 @@ router.get('/Any_Other', session, category_controller.Any_Other)
 
 
 router.get('/add_category', category_controller.add_category)
+router.get('/add_category1', category_controller.add_category1)
+
 router.post('/Create_category', category_controller.Create_category)
 router.get('/view_category/:id', session, category_controller.view_category)
 router.get('/edit_category/:id',  session, category_controller.edit_category)

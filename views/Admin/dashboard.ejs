@@ -129,12 +129,60 @@
           <div class="card-header border-bottom">
             <div class="row">
               <div class="col-6">
-                <h2 class="card-title">Dashboard</h2>
+                <h2 class="card-title">OPD-Dashboard</h2>
               </div>
             </div>
           </div>
 
+
+
+<style>
+.horizontal-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.horizontal-table th {
+  background-color: #343a40;
+  color: #fff;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.horizontal-table td {
+  padding: 12px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+.horizontal-table tr {
+  border: 1px solid #dee2e6;
+}
+</style>
+
+<table class="horizontal-table">
+  <tr>
+    <th>Total Feedback</th>
+    <th>Satisfied</th>
+    <th>Dissatisfied</th>
+  </tr>
+  <tr>
+    <td><%= futfaal %></td>
+    <td><%= Satisfied %></td>
+    <td><%= Unsatisfied %></td>
+  </tr>
+</table>
+
+
+
+<br>
+
+          
+
           <h4 class="mb-0"> Category of Issues   </h4>
+
           <div class="row">
             <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
@@ -144,7 +192,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=user%></h2>
+                    <h2 class="fw-bolder mb-0"><%=user%> - <%=thiskey.Parking%>  </h2>
                     <p class="card-text">Parking</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -164,7 +212,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=worker%></h2>
+                    <h2 class="fw-bolder mb-0"><%=worker%> - <%=thiskey.Wheelchair%></h2>
                     <p class="card-text">Wheelchair</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -187,7 +235,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=category%></h2>
+                    <h2 class="fw-bolder mb-0"><%=category%> - <%=thiskey.Blood %></h2>
                     <p class="card-text">Blood collection</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -210,7 +258,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=messages%></h2>
+                    <h2 class="fw-bolder mb-0"><%=messages%> - <%=thiskey.Scan %></h2>
                     <p class="card-text">X-Ray/MRI</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -236,7 +284,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=reviews%></h2>
+                    <h2 class="fw-bolder mb-0"><%=reviews%> - <%=thiskey.HelpDesk %></h2>
                     <p class="card-text">Help desk</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -256,7 +304,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=booking%></h2>
+                    <h2 class="fw-bolder mb-0"><%=booking%> - <%=thiskey.Registration %></h2>
                     <p class="card-text">Registration desk</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -276,7 +324,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=completejobs%></h2>
+                    <h2 class="fw-bolder mb-0"><%=completejobs%> - <%=thiskey.Nursing %></h2>
                     <p class="card-text">Nursing care</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -299,7 +347,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=withdraw%></h2>
+                    <h2 class="fw-bolder mb-0"><%=withdraw%> - <%=thiskey.BP %></h2>
                     <p class="card-text">BP counter</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -319,7 +367,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=FAQ%></h2>
+                    <h2 class="fw-bolder mb-0"><%=FAQ%> - <%=thiskey.OPD %></h2>
                     <p class="card-text">OPD waiting area</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -339,7 +387,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=reports%></h2>
+                    <h2 class="fw-bolder mb-0"><%=reports%> - <%=thiskey.Doctor %></h2>
                     <p class="card-text">Doctor consult</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -359,7 +407,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Pharmacy%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Pharmacy%> - <%=thiskey.Pharmacy %></h2>
                     <p class="card-text">Pharmacy </p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -378,7 +426,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Physiotherapy%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Physiotherapy%> - <%=thiskey.Physiotherapy %></h2>
                     <p class="card-text">Physiotherapy</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -399,7 +447,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Food%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Food%> - <%=thiskey.Food %></h2>
                     <p class="card-text">Food facilities</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -418,7 +466,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Cleanliness%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Cleanliness%> - <%=thiskey.Cleanliness %></h2>
                     <p class="card-text">Cleanliness</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -437,7 +485,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Security%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Security%> - <%=thiskey.Security %></h2>
                     <p class="card-text">Security</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -456,7 +504,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Safe%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Safe%> - <%=thiskey.Safe %></h2>
                     <p class="card-text">Safe environment</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -477,7 +525,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Patient%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Patient%> - <%=thiskey.Patient %></h2>
                     <p class="card-text">Patient rights</p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -497,7 +545,7 @@
               >
                 <div class="card-header">
                   <div>
-                    <h2 class="fw-bolder mb-0"><%=Hospital%></h2>
+                    <h2 class="fw-bolder mb-0"><%=Hospital%> - <%=thiskey.Hospital %></h2>
                     <p class="card-text">Hospital staff </p>
                   </div>
                   <div class="avatar bg-light-primary p-50 m-0">
@@ -571,14 +619,12 @@
 </ul>
 
 
-<div class="issue-row">
+<!-- <div class="issue-row">
     <div class="label">
       <span class="dot Gray"></span> Total Feedback
     </div>
     <span class="count"><%= futfaal %></span>
   </div>
-
-
 
 
   <div class="issue-row">
@@ -593,7 +639,9 @@
       <span class="dot purple"></span> Dissatisfied 
     </div>
     <span class="count"><%= Unsatisfied %></span>
-  </div>
+  </div> -->
+
+  
 </div>
 <!-- <canvas id="opdChart" height="120"></canvas> -->
 </div>
@@ -609,7 +657,7 @@
     </div>
   </div>
 </div>
-      
+
             <!-- <div class="col-lg-3 col-md-5 col-sm-5 col-12">
               <div
                 class="card dashboard-card card-darkgreen"

@@ -22,7 +22,7 @@ module.exports = {
 
           console.log("Login Successfully");
           req.flash("msg", "Login Successfully");
-          res.redirect('/dashboard');
+          res.redirect('/section');
           // res.json("login successful")
         } else {
           console.log("Please enter valid password");
