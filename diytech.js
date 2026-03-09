@@ -28,7 +28,7 @@ var usersRouter = require("./routes/users");
 var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
-var apiRouter = require("./routes/api")(io);
+// var apiRouter = require("./routes/api")(io);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -64,7 +64,7 @@ async function main() {
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/api", apiRouter);
+// app.use("/api", apiRouter);
 
 const port = process.env.PORT || 5050;
 const socket = require("./socket/socket")(io);

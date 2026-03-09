@@ -115,7 +115,17 @@ router.get('/Evening_list', session,  category_controller.Evening_list)
 router.get('/Private_list', session,  category_controller.Private_list)
 router.get('/General_list', session, category_controller.General_list)
 router.get('/Roomipd', session, category_controller.Roomipd)
-router.get('/toiletipd', session,  category_controller.toiletipd)
+router.get('/toiletipd', session, category_controller.toiletipd)
+router.get('/blowerfans', session, category_controller.blowerfans)
+router.get('/bedlines', session, category_controller.bedlines)
+router.get('/lights', session, category_controller.lights)
+router.get('/Patientipd', session, category_controller.Patientipd)
+router.get('/exmplepage', session,  category_controller.exmplepage)
+
+
+
+
+
 
 
 router.get('/Dissatisfied_list', session, category_controller.Unsatisfied_list)

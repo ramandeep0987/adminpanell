@@ -1592,7 +1592,7 @@ worksheet.columns = [
             title = "General_listipd"
             // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
             // console.log(catedata,"catedatacatedata")
-            res.render('Admin/category/General_list_ipd.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+            res.render('Admin/category/roomcleaning.ejs', {title, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -1603,6 +1603,56 @@ worksheet.columns = [
             // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
             // console.log(catedata,"catedatacatedata")
             res.render('Admin/category/toilet.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+          blowerfans: async(req, res)=> {
+        try {
+            title = "blowerfans"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/blowerfans.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+               bedlines: async(req, res)=> {
+        try {
+            title = "bedlines"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/bedlines.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+                       lights: async(req, res)=> {
+        try {
+            title = "lights"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/lights.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+                                     Patientipd: async(req, res)=> {
+        try {
+            title = "Patientipd"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Patientipd.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
+  },
+                                                                        exmplepage: async(req, res)=> {
+        try {
+            title = "exmplepage"
+            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
+            // console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/exmplepage.ejs', {title, session: req.session.user, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
