@@ -1927,22 +1927,16 @@ worksheet.columns = [
 
     update_category: async(req, res)=> {
         try {
-            if (req.files && req.files.image) {
-                var image = req.files.image;
-          
-                if (image) {
-                  req.body.image = helper.imageUpload(image, "images");
-                }
-              }
+        
             
             let user = await category_model.updateOne({_id: req.body.id},
                 {
-                    image: req.body.image,
-                    name: req.body.name,
+                   
+                    Suggestion: req.body.Suggestion
 
                 } );
                 req.flash("msg", "Updated successfully")
-                res.redirect('/category_list')
+                res.redirect('back')
                 
             } catch (error) {
                 console.log(error)

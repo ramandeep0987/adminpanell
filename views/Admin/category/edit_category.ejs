@@ -1,15 +1,13 @@
 <%- include('../common/header'); -%> <%- include('../common/sidebar'); -%>
 
 <style>
-
   .card .card-header h4 {
     font-size: 31px;
     line-height: 28px;
     color: #fefefe;
     padding-right: 10px;
     margin-bottom: 0;
-}
-
+  }
 
   .img-thumbnail {
     padding: 0.25rem;
@@ -83,8 +81,6 @@
                 >
                   <div class="row">
                     <div class="col-md-8" style="margin-top: 17px">
-
-                      
                       <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
@@ -108,9 +104,6 @@
                           />
                         </div>
                       </div>
-
-
-                      
 
                       <div class="mb-1 row">
                         <div class="col-sm-2">
@@ -183,7 +176,7 @@
                           />
                         </div>
                       </div> -->
-     <div class="mb-1 row">
+                      <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
                             >OPD type</label
@@ -209,11 +202,11 @@
                       <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
-                            >Were you satisfied with the hospital services?  </label
-                          >
+                            >Were you satisfied with the hospital services?
+                          </label>
                         </div>
                         <div class="col-sm-10">
-                          <input   
+                          <input
                             type="text"
                             id="name"
                             class="form-control"
@@ -229,12 +222,12 @@
                           />
                         </div>
                       </div>
-                    
 
                       <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
-                            >Please select the facilities which need better management</label
+                            >Please select the facilities which need better
+                            management</label
                           >
                         </div>
                         <div class="col-sm-10">
@@ -257,17 +250,18 @@
 
                       <div class="mb-1 row">
                         <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name"
-                            > Please mention your suggestions as per your experience</label
+                          <label class="col-form-label new_lable" for="name">
+                            Please mention your suggestions as per your
+                            experience</label
                           >
                         </div>
                         <div class="col-sm-10">
                           <textarea
                             id="name"
+                            type="text"
                             class="form-control"
-                            name="name"
-                            maxlength="60"
-                            disabled
+                            name="Suggestion"
+                           
                           >
 <%=editData.Suggestion%></textarea
                           >
@@ -279,7 +273,7 @@
                         </div>
                       </div>
 
-                         <!-- <div class="mb-1 row">
+                      <!-- <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
                             >AbhaID</label
@@ -313,6 +307,17 @@
                             Back
                           </button>
                         </div>
+<br>
+
+                        <div class="col-sm-9 offset-sm-5">
+                          <button
+                            type="submit"
+                            class="btn waves-effect waves-float waves-light">
+                            Update
+                          </button>
+                        </div>
+
+
                       </div>
                     </div>
                   </div>
@@ -350,7 +355,7 @@
       function (value, element) {
         return value == "" || value.trim().length != 0;
       },
-      "No space allowed"
+      "No space allowed",
     );
 
     jQuery.validator.addMethod(
@@ -359,7 +364,7 @@
         // Regular expression to disallow special characters
         return /^[a-zA-Z0-9\s]*$/.test(value);
       },
-      "Special characters are not allowed"
+      "Special characters are not allowed",
     );
 
     $("#profile").validate({
@@ -391,7 +396,7 @@
           {
             queue: false,
             duration: 700,
-          }
+          },
         );
       },
 
