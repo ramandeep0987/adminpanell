@@ -40,7 +40,7 @@
             </div>
 
               <div class="text-end mb-3">
-        <a href="/exportPatentsExcel" class="btn btn-success">
+        <a href="/exporUnsatisfiedIExcel" class="btn btn-success">
   <i class="fa-solid fa-file-export me-1"></i> Export Excel
 </a>
             </div>
@@ -52,7 +52,7 @@
                     <th>S NO.</th>
                     <th>Patient Name</th>
                     <th>MRD Number</th>
-                    <th>Doctor Name</th>
+                    <!-- <th>Doctor Name</th> -->
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -63,7 +63,7 @@
                     <td><%= i + 1 %></td>
                     <td><%= data.name %></td>
                     <td><%= data.mrdnumber %></td>
-                    <td><%= data.doctorname %></td>
+                    <!-- <td><%= data.doctorname %></td> -->
                     <td>
                       <a href="/edit_category/<%= data._id %>" class="btn btn-sm bg-warning">
                          <svg
@@ -136,7 +136,7 @@
   $(document).ready(function () {
     new DataTable('#myTable', {
       columnDefs: [
-        { targets: 4, orderable: false }
+        { targets: 3, orderable: false }
       ],
       layout: {
         topStart: {
