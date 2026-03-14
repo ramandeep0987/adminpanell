@@ -24,6 +24,7 @@ const categorySchema = new mongoose.Schema({
 
 
   Suggestion: { type: String },
+  submited :{type: String},
 
   abhaid:{type:String},
 

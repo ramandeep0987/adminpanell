@@ -1553,7 +1553,8 @@ worksheet.columns = [
   service: req.body.service,//opd type
   
   facilities: req.body.facilities,
-         Suggestion: req.body.Suggestion,
+       Suggestion: req.body.Suggestion,
+         submited:req.body.submited,
          abhaid:req.body.abhaid,
   
   
