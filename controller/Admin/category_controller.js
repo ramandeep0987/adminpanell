@@ -29,6 +29,7 @@ exportParkingExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "Submited by  ", key: "submited ", width: 20 },
     ];
    
 
@@ -45,6 +46,7 @@ exportParkingExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -86,6 +88,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -101,6 +105,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -142,6 +147,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -157,6 +164,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -200,6 +208,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -215,6 +225,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -258,6 +269,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -273,6 +286,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -315,6 +329,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -330,6 +346,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -371,7 +388,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -387,6 +406,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -430,6 +450,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -445,6 +467,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -488,6 +511,7 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -502,6 +526,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -543,7 +568,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+   { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -559,6 +586,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -600,7 +628,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -616,6 +646,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -657,7 +688,10 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+   { header: "Date of OPD visit", key: "createdAt", width: 25 },
+   { header: "submmited", key: "submited", width: 20 },
+
+      
     ];
 
     // 🔹 Add rows
@@ -673,6 +707,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -716,6 +751,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -731,6 +768,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -772,7 +810,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -788,6 +828,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -831,6 +872,8 @@ exportWheelchairExcel : async (req, res) => {
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -846,6 +889,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -887,7 +931,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -902,6 +948,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -943,7 +990,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+   { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -959,6 +1008,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1000,7 +1050,9 @@ exportWheelchairExcel : async (req, res) => {
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -1016,6 +1068,7 @@ exportWheelchairExcel : async (req, res) => {
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1056,10 +1109,12 @@ worksheet.columns = [
       { header: "Mobile Number", key: "number", width: 20 },
       
   { header: "OPD types", key: "service", width: 20 },
-      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      // { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+  { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -1075,6 +1130,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1118,6 +1174,8 @@ worksheet.columns = [
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
     // 🔹 Add rows
@@ -1127,12 +1185,15 @@ worksheet.columns = [
         mrdnumber: item.mrdnumber,
        
         number: item.number,
+
        
         service: item.service,
         services: item.services,
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
+
       });
     });
 
@@ -1171,10 +1232,12 @@ worksheet.columns = [
       { header: "Mobile Number", key: "number", width: 20 },
       
   { header: "OPD types", key: "service", width: 20 },
-      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      // { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -1189,6 +1252,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1228,10 +1292,12 @@ worksheet.columns = [
       { header: "Mobile Number", key: "number", width: 20 },
       
   { header: "OPD types", key: "service", width: 20 },
-      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      // { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -1246,6 +1312,8 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
+        
       });
     });
 
@@ -1283,10 +1351,12 @@ worksheet.columns = [
       { header: "Mobile Number", key: "number", width: 20 },
       
   { header: "OPD types", key: "service", width: 20 },
-      { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
+      // { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -1301,6 +1371,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1342,6 +1413,8 @@ worksheet.columns = [
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
     // 🔹 Add rows
     parkingData.forEach(item => {
@@ -1356,6 +1429,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1396,7 +1470,8 @@ worksheet.columns = [
       { header: "Were you satisfied with the hospital services?", key: "services", width: 20 },
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
-      { header: "Date of OPD visit", key: "createdAt", width: 25 },
+     { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
     ];
 
     // 🔹 Add rows
@@ -1412,6 +1487,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1483,6 +1559,8 @@ worksheet.columns = [
       { header: "Please select the facilites which need better management", key: "facilities", width: 15 },
       { header: "Please mention your suggestion for improvement as per your experience", key: "Suggestion", width: 30 },
       { header: "Date of OPD visit", key: "createdAt", width: 25 },
+      { header: "submmited", key: "submited", width: 20 },
+
     ];
 
 
@@ -1499,6 +1577,7 @@ worksheet.columns = [
         facilities: item.facilities,
         Suggestion: item.Suggestion,
         createdAt: item.createdAt,
+        submited: item.submited,
       });
     });
 
@@ -1548,7 +1627,7 @@ worksheet.columns = [
   mrdnumber: req.body.mrdnumber,
   date: req.body.date,
   number: req.body.number,
-  doctorname: req.body.doctorname,
+  doctorComplaint: req.body.doctorComplaint,
          services: req.body.services,//satfified unsatsfied
   service: req.body.service,//opd type
   

@@ -7,7 +7,7 @@ const categorySchema = new mongoose.Schema({
   mrdnumber: { type: String },
   date: { type: String },
   number: { type: String },
-  doctorname: { type: String },
+  doctorComplaint: { type: String },
 
    services: {
     type: String,
