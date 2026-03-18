@@ -560,7 +560,8 @@ exportWheelchairExcel : async (req, res) => {
     // 🔹 Excel columns
  worksheet.columns = [
       { header: "Patient Name ", key: "name", width: 20 },
-      { header: "MRD Number", key: "mrdnumber", width: 20 },
+   { header: "MRD Number", key: "mrdnumber", width: 20 },
+      { header: "Doctor Name", key: "doctorComplaint", width: 20 },
       
       { header: "Mobile Number", key: "number", width: 20 },
       
@@ -581,6 +582,8 @@ exportWheelchairExcel : async (req, res) => {
        
         number: item.number,
        
+        doctorComplaint: item.doctorComplaint,
+
         service: item.service,
         services: item.services,
         facilities: item.facilities,
