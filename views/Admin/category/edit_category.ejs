@@ -425,3 +425,48 @@
     image.src = URL.createObjectURL(event.target.files[0]);
   }
 </script>
+
+
+<style>
+  * {
+  box-sizing: border-box;  /* VERY IMPORTANT */
+}
+
+.input-field {
+  width: 100%;             /* FIXED */
+  max-width: 100%;
+}
+
+.form-container {
+  width: 95%;
+  max-width: 100%;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;   /* STOP horizontal scroll */
+}
+
+@media (max-width: 600px) {
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-field {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
