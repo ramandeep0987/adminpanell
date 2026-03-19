@@ -595,3 +595,51 @@ document.getElementById("profile").addEventListener("submit", function(e){
     });
 });   
 </script>
+
+
+<style>
+  .input-field {
+  width: 101%;
+}
+
+.input-field {
+  width: 100%;
+  box-sizing: border-box; /* important */
+}
+
+.form-container {
+  max-width: 721px;
+  width: 95%;   /* mobile friendly */
+  margin: 20px auto;
+  padding: 20px;   /* reduce padding for mobile */
+}
+
+@media (max-width: 600px) {
+
+  .form-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .input-field {
+    font-size: 14px;
+    padding: 14px 10px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .big_img {
+    height: 90px;
+  }
+
+}
+
+body {
+  overflow-x: hidden;
+}
+
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
