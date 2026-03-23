@@ -248,6 +248,10 @@
                         </div>
                       </div>
 
+
+
+ <div class="fix-mobile">
+
                       <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name">
@@ -255,14 +259,14 @@
                             experience</label
                           >
                         </div>
+
+
                         <div class="col-sm-10">
                           <textarea
+                            class="form-control"
                             id="name"
                             type="text"
-                            class="form-control"
-                            name="Suggestion"
-                           
-                          >
+                            name="Suggestion">
 <%=editData.Suggestion%></textarea
                           >
                           <input
@@ -272,6 +276,8 @@
                           />
                         </div>
                       </div>
+</div>
+
 
                       <!-- <div class="mb-1 row">
                         <div class="col-sm-2">
@@ -426,6 +432,29 @@
   }
 </script>
 
+<style>
+ 
+  [class*="col-"] {
+    padding: 0 !important;
+  }
 
 
+
+
+
+
+
+
+
+  .fix-mobile {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+
+
+
+
+
+</style>
 
