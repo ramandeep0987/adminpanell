@@ -1,6 +1,7 @@
 let category_model = require('../../model/Admin/category_model')
 let helper = require('../../Helper/helper')
 const ExcelJS = require("exceljs");
+const category_model2 = require('../../model/Admin/category_model2');
 
 
 
@@ -1651,6 +1652,45 @@ worksheet.columns = [
       }
     },
 
+    Create_category2: async (req, res) => {
+        try {
+    
+   
+  let user = await category_model2.create({
+  name: req.body.name,
+  mrdnumber: req.body.mrdnumber,
+  date: req.body.date,
+  number: req.body.number,
+
+  doctorComplaint: req.body.doctorComplaint,
+
+  floor: req.body.floor,
+  wardRoom: req.body.wardRoom,
+  Patientlocation: req.body.Patientlocation,
+
+  hospitalservices: req.body.hospitalservices,
+  servicesimprovements: req.body.servicesimprovements,
+
+  issue: req.body.issue,
+  roomFacility: req.body.roomFacility,
+  roomReason: req.body.roomReason,
+
+  OverallExperience: req.body.OverallExperience,
+  remark: req.body.remark,
+});
+          console.log(user, "useruseruser")
+          
+
+
+        
+        req.flash("msg", "Category created successfully")
+      
+        res.json(user)
+    
+      } catch (error) {
+          console.log(error)
+      }
+    },
     category_list: async(req, res)=> {
         try {
             title = "category_list"
@@ -2056,6 +2096,27 @@ worksheet.columns = [
         } catch (error) {
           console.log(error)
         }
+  },
+    
+    
+    
+    
+    
+  // 
+         Parkingipd: async(req, res)=> {
+        try {
+            title = "Parkingipd"
+            let catedata = await category_model2.find({ servicesimprovements: "Parking" }).sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Parking_ipd.ejs', {title, catedata, session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
     },
 
 }
+
+
+
+
+// 

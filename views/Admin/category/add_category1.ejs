@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>DMC&H</title>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <style>
 body {
   margin: 0;
@@ -94,6 +94,8 @@ body {
   </head>
 
   <body>
+    <form id="profile" action="/Create_category2" method="POST" enctype="multipart/form-data">
+
     <div class="form-container">
       <div class="form-card">
         <li class="nav-item logo-center">
@@ -116,17 +118,17 @@ body {
 
         <div class="form-group">
           <label>Patient Name / ਮਰੀਜ਼ ਦਾ ਨਾਮ</label>
-          <input type="text" placeholder="Enter Name" />
+          <input type="text"  id="name" name="name" placeholder="Enter Name" />
 
            <label>MRD Number / ਐਮ.ਆਰ.ਡੀ. ਨੰਬਰ</label>
-          <input type="number" placeholder="Enter MRD" />
+          <input type="number" id="name" name="mrdnumber" placeholder="Enter MRD" />
 
           <label>Phone Number / ਫੋਨ ਨੰਬਰ</label>
-          <input type="number" placeholder="Enter Phone Number" />
+          <input type="number"  id="name" name="number" placeholder="Enter Phone Number" />
 
 
          <label>Date Of Admission / ਦਾਖਲੇ ਦੀ ਤਾਰੀਖ</label>
-<input type="date" id="todayDate" class="form-control" />
+<input type="date" id="todayDate" name="date" class="form-control" />
 
 <script>
   document.getElementById("todayDate").valueAsDate = new Date();
@@ -139,13 +141,13 @@ body {
 
           <label>Please indicate the floor of your ward / room? / ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਵਾਰਡ / ਕਮਰੇ ਦੀ ਮੰਜ਼ਿਲ ਦੱਸੋ?</label>
 
-<select class="form-select" name="wardRoom" required>
+<select class="form-select" name="floor" required>
   <option value="" disabled selected>select Option.</option>
-  <option value="Ward-101">Groung Floor</option>
-  <option value="Ward-102">First Floor</option>
-  <option value="Ward-103">Second Floor</option>
-  <option value="Room-201">Third Floor</option>
-  <option value="Room-202">Fourth Floor</option>
+  <option value="Groung-Floor">Groung Floor</option>
+  <option value="First Floor">First Floor</option>
+  <option value="Second Floor">Second Floor</option>
+  <option value="Third Floor">Third Floor</option>
+  <option value="Fourth Floor">Fourth Floor</option>
  
 </select>
 
@@ -165,7 +167,7 @@ body {
 <!-- Hidden Input Field -->
 <div id="customInputDiv" style="display:none; margin-top:10px;">
     <label> Patient location Details  (Ward No./Room No./Bed No.) / ਮਰੀਜ਼ ਦੇ ਟਿਕਾਣੇ ਦੀ ਜਾਣਕਾਰੀ (ਵਾਰਡ ਨੰਬਰ / ਕਮਰਾ ਨੰਬਰ / ਬਿਸਤਰਾ ਨੰਬਰ) </label>
-  <input type="text" class="form-control" placeholder="Enter details here">
+  <input type="text" class="form-control" name="Patientlocation" placeholder="Enter details here">
 </div>
 
 <script>
@@ -293,7 +295,7 @@ body {
    Were you satisfied with the hospital services? /  ਕੀ ਤੁਸੀਂ ਹਸਪਤਾਲ ਦੀਆਂ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਤੁਸ਼ਟ ਸੀ?
   </label>
 
-  <select class="form-select" id="staffStatus"
+  <select class="form-select" id="staffStatus" name="hospitalservices"
           onchange="handleStaffChange(this)" required>
     <option value="" disabled selected>Select Option</option>
     <option value="Satisfied">Satisfied</option>
@@ -307,33 +309,33 @@ body {
   As per your experience which of our areas / services need improvements? / ਤੁਹਾਡੇ ਅਨੁਭਵ ਅਨੁਸਾਰ ਸਾਡੇ ਕਿਹੜੇ ਖੇਤਰਾਂ / ਸੇਵਾਵਾਂ ਵਿੱਚ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ?
   </label>
 
-  <select id="staffReason" class="form-select"
+  <select id="staffReason" class="form-select" name="servicesimprovements"
           onchange="showExtraInput()">
     <option value="" disabled selected>Select option</option>
-<option value="Rude Behavior">Parking / ਪਾਰਕਿੰਗ</option>
-    <option value="Late Response">Wheel chair and Patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
-    <option value="Not Helpful">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ </option>
-   <option value="Not Helpful"> X-Ray / CT Scan / MRI / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
-      <option value="Not Helpful"> Corporate cell / ਕਾਰਪੋਰੇਟ ਸੈੱਲ </option>
-    <option value="Unprofessional Conduct">Help desk / Enquiry / ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ</option>
-    <option value="Other">Registration desk / Billing counter / ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ</option>
-    <option value="Other">Nursing care / ਨਰਸਿੰਗ ਦੇਖਭਾਲ</option>
-    <option value="Other">Doctor consult / ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
-     <option value="Other">Pharmacy / ਦਵਾਖਾਨਾ </option> 
-    <option value="Other">Physiotherapy / ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
-    <option value="Other">Food and beverage facilities / ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ</option>
-    <option value="Other">Cleanliness / ਸਾਫ਼ ਸਫ਼ਾਈ</option>
-    <option value="Other">Security / ਸੁਰੱਖਿਆ</option>
-    <option value="Other">Safe & secure environment / ਮਹਫੂਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ</option>
-    <option value="Other">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।</option>
-     <option value="Other">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
+<option value="Parking">Parking / ਪਾਰਕਿੰਗ</option>
+    <option value="Wheel chair and Patient trolly ">Wheel chair and Patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
+    <option value="Blood collection centre">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ </option>
+   <option value="X-Ray / CT Scan / MRI / "> X-Ray / CT Scan / MRI / ਐਕਸ-ਰੇ/ਸੀ ਟੀ ਸਕੈਨ/ਐਮ ਆਰ ਆਈ</option>
+      <option value="Corporate cell"> Corporate cell / ਕਾਰਪੋਰੇਟ ਸੈੱਲ </option>
+    <option value="Help desk">Help desk / Enquiry / ਹੈਲਪ ਡੈਸਕ / ਪੁੱਛਗਿੱਛ</option>
+    <option value="Registration desk / Billing counter">Registration desk / Billing counter / ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਡੈਸਕ / ਬਿਲਿੰਗ ਕਾਊਂਟਰ</option>
+    <option value="Nursing care">Nursing care / ਨਰਸਿੰਗ ਦੇਖਭਾਲ</option>
+    <option value="Doctor consult">Doctor consult / ਡਾਕਟਰ ਦੀ ਸਲਾਹ।</option>
+     <option value="Pharmacy">Pharmacy / ਦਵਾਖਾਨਾ </option> 
+    <option value="Physiotherapy">Physiotherapy / ਫਿਜ਼ੀਓਥੈਰੇਪੀ</option>
+    <option value="Food and beverage facilities">Food and beverage facilities / ਖਾਣ-ਪੀਣ ਦਾ ਪ੍ਰਬੰਧ</option>
+    <option value="Cleanliness">Cleanliness / ਸਾਫ਼ ਸਫ਼ਾਈ</option>
+    <option value="Security">Security / ਸੁਰੱਖਿਆ</option>
+    <option value="Safe & secure environment">Safe & secure environment / ਮਹਫੂਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ</option>
+    <option value="Hospital staff communication">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।</option>
+     <option value="Patient rights respected by staff">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
   </select>
 </div>
 
 <!-- Extra Input Field -->
 <div id="extraInputDiv" style="display:none;" class="mt-2">
   <label>Please describe your issue</label>
-  <input type="text" class="form-control"
+  <input type="text" class="form-control" name="issue"
          placeholder="Type your issue here...">
 </div>
 
@@ -403,7 +405,7 @@ body {
   <div class="mb-2">
   <label>Room Facilities / ਕਮਰੇ ਦੀਆਂ ਸਹੂਲਤਾਂ</label>
 
-  <select class="form-select" id="roomFacility"
+  <select class="form-select" id="roomFacility" name="roomFacility"
           onchange="handleRoomChange(this)" required>
     <option value="" disabled selected>Select Option</option>
 
@@ -418,7 +420,7 @@ body {
 <!-- Hidden Textarea -->
 <div id="roomReasonDiv" style="display:none;">
   <label>If dissatisfied, please mention the reason / ਜੇ ਤੁਸੀਂ ਅਸੰਤੁਸ਼ਟ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਕਾਰਨ ਦਰਜ ਕਰੋ। </label>
-  <input id="roomReason" class="form-control" rows="3"
+  <input id="roomReason" name="roomReason" class="form-control" rows="3"
             placeholder="Write your reason here..."></input>
 </div>
 
@@ -475,29 +477,61 @@ body {
   <label>
     Overall Experience / ਕੁੱਲ ਮਿਲਾ ਕੇ ਤਜਰਬਾ
   </label>
-  <select class="form-select">
+  <select class="form-select" name="OverallExperience">
     <option value="" disabled selected>Select Option</option> 
-    <option value="Satisfied">Excellent / ਬਹੁਤ ਹੀ ਵਧੀਆ</option>
-    <option value="Dissatisfied">Good / ਵਧੀਆ</option>
-    <option value="Satisfied"> Average / ਦਰਮਿਆਨਾ</option>
-    <option value="Dissatisfied">Poor / ਖਰਾਬ</option>
+    <option value="Excellent">Excellent / ਬਹੁਤ ਹੀ ਵਧੀਆ</option>
+    <option value="Good">Good / ਵਧੀਆ</option>
+    <option value="Average"> Average / ਦਰਮਿਆਨਾ</option>
+    <option value="Poor">Poor / ਖਰਾਬ</option>
   </select>
 
   <br><br>
 
    <label>Remarks / ਸੁਝਾਅ</label>
-          <input type="text" placeholder="Enter Remarks" />
+          <input type="text" placeholder="Enter Remarks"  name="remark"/>
 
 
          
         </div>
 
-        <button class="btn-submit">submit </button>
+       <button type="submit" class="btn-submit">Submit</button>
       </div>
     </div>
+    </form>
   </body>
 </html>
+<script>
 
+
+document.getElementById("profile").addEventListener("submit", function(e){
+    e.preventDefault(); // stop normal submit
+
+    let formData = new FormData(this);
+
+    fetch("/Create_category2", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        Swal.fire({
+            title: "Success!",
+            text: "Your response has been submitted.",
+            icon: "success",
+            confirmButtonText: "OK"
+        }).then(() => {
+        // Reload page after popup is closed
+        window.location.reload();
+    });
+
+        // you can also reset the form
+        document.getElementById("profile").reset();
+    })
+    .catch(err => {
+        Swal.fire("Error!", "Something went wrong.", "error");
+    });
+});   
+</script>
 <script>
 function handleParkingChange(el) {
 

@@ -150,6 +150,11 @@ router.get('/Staff_Commun', session, category_controller.Staff_Commun)
 router.get('/Any_Other', session, category_controller.Any_Other)
 
 
+// /////////////////////////////////////////////////////////
+router.get('/Parking_ipd', session, category_controller.Parkingipd)
+
+
+
 
 
 
@@ -157,6 +162,8 @@ router.get('/add_category', category_controller.add_category)
 router.get('/add_category1', category_controller.add_category1)
 
 router.post('/Create_category', category_controller.Create_category)
+router.post('/Create_category2', category_controller.Create_category2)
+
 router.get('/view_category/:id', session, category_controller.view_category)
 router.get('/edit_category/:id',  session, category_controller.edit_category)
 router.post('/update_category', category_controller.update_category)
