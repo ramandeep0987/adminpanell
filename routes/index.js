@@ -165,7 +165,9 @@ router.post('/Create_category', category_controller.Create_category)
 router.post('/Create_category2', category_controller.Create_category2)
 
 router.get('/view_category/:id', session, category_controller.view_category)
-router.get('/edit_category/:id',  session, category_controller.edit_category)
+router.get('/edit_category/:id', session, category_controller.edit_category)
+router.get('/edit_category1/:id',  session, category_controller.edit_category1)
+
 router.post('/update_category', category_controller.update_category)
 router.delete('/delete_category/:id', category_controller.delete_category)
 router.post('/category_status', category_controller.category_status)

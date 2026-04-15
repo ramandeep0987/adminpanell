@@ -1763,9 +1763,9 @@ worksheet.columns = [
                                      Patientipd: async(req, res)=> {
         try {
             title = "Patientipd"
-            // let catedata = await category_model.find({ service: "General" }).sort({ createdAt: -1 })
-            // console.log(catedata,"catedatacatedata")
-            res.render('Admin/category/Patientipd.ejs', {title, session: req.session.user, msg: req.flash('msg') })
+            let catedata = await category_model2.find().sort({ createdAt: -1 })
+            console.log(catedata,"catedatacatedata")
+            res.render('Admin/category/Patientipd.ejs', {title, session: req.session.user,catedata, msg: req.flash('msg') })
         } catch (error) {
             console.log(error)
         }
@@ -2046,7 +2046,17 @@ worksheet.columns = [
         } catch (error) {
             console.log(error)
         }
+  },
+      edit_category1: async(req, res)=> {
+        try {
+            let title = ""
+            let editData = await category_model2.findById({_id: req.params.id})
+            res.render('Admin/category/edit_category1', { title, editData,  session: req.session.user, msg: req.flash('msg') })
+        } catch (error) {
+            console.log(error)
+        }
     },
+
 
     update_category: async(req, res)=> {
         try {

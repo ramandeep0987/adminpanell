@@ -1,4 +1,4 @@
-<%- include('../common/header'); -%> <%- include('../common/sidebar'); -%>
+<%- include('../common/header'); -%> <%- include('../common1/sidebar1'); -%>
 
 <style>
   .card .card-header h4 {
@@ -132,7 +132,7 @@
                       <div class="mb-1 row">
                         <div class="col-sm-2">
                           <label class="col-form-label new_lable" for="name"
-                            >Date Of OPD visit</label
+                            >Date Of IPD visit</label
                           >
                         </div>
                         <div class="col-sm-10">
@@ -153,131 +153,7 @@
                         </div>
                       </div>
 
-                      <!-- <div class="mb-1 row">
-                        <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name"
-                            >Doctor Name</label
-                          >
-                        </div>
-                        <div class="col-sm-10">
-                          <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            name="name"
-                            value="<%=editData.doctorname%>"
-                            maxlength="60"
-                            disabled
-                          />
-                          <input
-                            type="hidden"
-                            name="id"
-                            value="<%=editData._id%>"
-                          />
-                        </div>
-                      </div> -->
-                      <div class="mb-1 row">
-                        <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name"
-                            >OPD type</label
-                          >
-                        </div>
-                        <div class="col-sm-10">
-                          <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            name="name"
-                            value="<%=editData.service%>"
-                            maxlength="60"
-                            disabled
-                          />
-                          <input
-                            type="hidden"
-                            name="id"
-                            value="<%=editData._id%>"
-                          />
-                        </div>
-                      </div>
-                      <div class="mb-1 row">
-                        <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name"
-                            >Were you satisfied with the hospital services?
-                          </label>
-                        </div>
-                        <div class="col-sm-10">
-                          <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            name="name"
-                            value="<%=editData.services%>"
-                            maxlength="60"
-                            disabled
-                          />
-                          <input
-                            type="hidden"
-                            name="id"
-                            value="<%=editData._id%>"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="mb-1 row">
-                        <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name"
-                            >Please select the facilities which need better
-                            management</label
-                          >
-                        </div>
-                        <div class="col-sm-10">
-                          <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            name="name"
-                            value="<%=editData.facilities%>"
-                            maxlength="60"
-                            disabled
-                          />
-                          <input
-                            type="hidden"
-                            name="id"
-                            value="<%=editData._id%>"
-                          />
-                        </div>
-                      </div>
-
-
-
- <div class="fix-mobile">
-
-                      <div class="mb-1 row">
-                        <div class="col-sm-2">
-                          <label class="col-form-label new_lable" for="name">
-                            Please mention your suggestions as per your
-                            experience</label
-                          >
-                        </div>
-
-
-                        <div class="col-sm-10">
-                          <textarea
-                            class="form-control"
-                            id="name"
-                            type="text"
-                            name="Suggestion">
-<%=editData.Suggestion%></textarea
-                          >
-                          <input
-                            type="hidden"
-                            name="id"
-                            value="<%=editData._id%>"
-                          />
-                        </div>
-                      </div>
-</div>
-
+           
 
                       <!-- <div class="mb-1 row">
                         <div class="col-sm-2">
@@ -457,10 +333,6 @@
     width: 100% !important;
     overflow-x: hidden !important;
   }
-
-
-
-
 
 
 </style>
