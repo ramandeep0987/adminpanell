@@ -155,7 +155,10 @@ function loadQuestion() {
   answered = false;
 
   let q = quiz[current];
-  document.getElementById("question").innerText = q.q;
+
+  // ✅ Question number added here
+  document.getElementById("question").innerText =
+    `Q${current + 1}. ${q.q}`;
 
   let labels = ["A", "B", "C", "D"];
 
