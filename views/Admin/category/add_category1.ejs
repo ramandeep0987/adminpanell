@@ -142,8 +142,8 @@ body {
           <label>Please indicate the floor of your ward / room? / ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਵਾਰਡ / ਕਮਰੇ ਦੀ ਮੰਜ਼ਿਲ ਦੱਸੋ?</label>
 
 <select class="form-select" name="floor" required>
-  <option value="" disabled selected>select Option.</option>
-  <option value="Groung-Floor">Groung Floor</option>
+  <option value="" disabled selected>Select Option.</option>
+  <option value="Groung-Floor">Ground Floor</option>
   <option value="First Floor">First Floor</option>
   <option value="Second Floor">Second Floor</option>
   <option value="Third Floor">Third Floor</option>
@@ -311,7 +311,7 @@ body {
 
   <select id="staffReason" class="form-select" name="servicesimprovements"
           onchange="showExtraInput()">
-    <option value="" disabled selected>Select option</option>
+    <option value="" disabled selected>Select Option</option>
 <option value="Parking">Parking / ਪਾਰਕਿੰਗ</option>
     <option value="Wheel chair and Patient trolly ">Wheel chair and Patient trolly / ਵ੍ਹੀਲਚੇਅਰ ਅਤੇ ਮਰੀਜ਼ ਟ੍ਰਾਲੀ</option>
     <option value="Blood collection centre">Blood collection centre / ਬਲੱਡ ਕਲੇਕਸ਼ਨ ਸੈਂਟਰ </option>
@@ -328,6 +328,7 @@ body {
     <option value="Security">Security / ਸੁਰੱਖਿਆ</option>
     <option value="Safe & secure environment">Safe & secure environment / ਮਹਫੂਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਵਾਤਾਵਰਣ</option>
     <option value="Hospital staff communication">Hospital staff communication / ਹਸਪਤਾਲ ਸਟਾਫ ਦਾ ਸੰਚਾਰ।</option>
+    <option value="Security">Room Facilities / ਕਮਰੇ ਦੀਆਂ ਸਹੂਲਤਾਂ</option>
      <option value="Patient rights respected by staff">Patient rights respected by staff / ਸਟਾਫ ਦੁਆਰਾ ਮਰੀਜ਼ਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਦਾ ਠੀਕ ਤਰੀਕੇ ਨਾਲ ਸਤਿਕਾਰ</option>
   </select>
 </div>
@@ -364,7 +365,7 @@ body {
 
 <br><br>
 
-  <div class="mb-2">
+  <!-- <div class="mb-2">
   <label>Room Facilities / ਕਮਰੇ ਦੀਆਂ ਸਹੂਲਤਾਂ</label>
 
   <select class="form-select" id="roomFacility" name="roomFacility"
@@ -377,7 +378,7 @@ body {
     <option value="lights">Functioning of lights, switches, and electrical points / ਲਾਈਟਾਂ, ਸਵਿੱਚਾਂ ਅਤੇ ਬਿਜਲੀ ਦੇ ਪਾਇੰਟਾਂ ਦੀ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਸਥਿਤੀ</option>
     <option value="overall_good">Overall good / ਕੁੱਲ ਮਿਲਾ ਕੇ ਵਧੀਆ ਹੈ।</option>
   </select>
-</div>
+</div> -->
 
 <!-- Hidden Textarea -->
 <div id="roomReasonDiv" style="display:none;">
@@ -406,7 +407,7 @@ body {
 
           <br><br>
           <label>Submited by <br> ਕਿਸ ਦੁਆਰਾ ਜਮ੍ਹਾ ਕੀਤਾ ਗਿਆ</label>
-          <input type="text" placeholder="Enter Remarks"  name="remark"/>
+          <input type="text" placeholder=" Please Enter "  name="remark"/>
 
 
          
@@ -502,7 +503,7 @@ function handleStaffChange(el) {
 </script>
 
 
-<script>
+<!-- <script>
 function handleRoomChange(el) {
 
   const reasonDiv = document.getElementById("roomReasonDiv");
@@ -517,7 +518,7 @@ function handleRoomChange(el) {
     reasonTextarea.value = "";
   }
 }
-</script>
+</script> -->
 
 
 
@@ -547,7 +548,7 @@ function handleRoomChange(el) {
 </style>
 
 
-<script>
+<!-- <script>
   function handleStaffChange(select) {
     var reasonDiv = document.getElementById("staffReasonDiv");
     var extraInputDiv = document.getElementById("extraInputDiv");
@@ -580,7 +581,7 @@ function handleRoomChange(el) {
       roomReasonDiv.style.display = "none";
     }
   }
-</script>
+</script> -->
 
 <script>
   window.onload = function() {

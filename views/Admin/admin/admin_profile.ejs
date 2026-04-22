@@ -1,127 +1,233 @@
-    <%- include('../common/header'); -%>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz App</title>
 
-    <style>
-      .img-thumbnail {
-        padding: 0.25rem;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 50%;
-        max-width: 100%;
-        height: 17rem;
-        width: 18rem;
-      }
-
-      .new_lable {
-        color: black;
-        font-size: 13px;
-        font-weight: 500;
-      }
-
-      ::-webkit-file-upload-button {
-        display: none;
-      }
-
-      ::file-selector-button {
-        display: none;
-      }
-
-      input[type="file"] {
-        color: transparent;
-      }
-
-      .fe-24 {
-        position: absolute;
-        top: 282px;
-        left: 260px;
-        color: #ffffff;
-        border: 0px solid #878181fc;
-        border-radius: 40%;
-        background: #282828c9;
-      }
-
-      .camera_icon {
-        height: 3rem;
-        width: 3rem;
-        padding: 8px;
-        display: inline-block;
-      }
-    </style>
-
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
-      <div class="content-overlay"></div>
-      <div class="header-navbar-shadow"></div>
-      <div class="content-wrapper container-xxl p-0">
-        <div class="content-header row">
-        </div>
-        <div class="content-body">
-          <section id="multiple-column-form">
-            <div class="row">
-              <div class="col-md-12 col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Admin Profile</h4>
-                  </div>
-                  <div class="card-body">
-                    <form class="needs-validation" action="/" id="profile" method="POST" enctype="multipart/form-data">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="profile-widget-header text-center">
-                            <img src="<%=session.image%>" id="output2" alt="" class="ms-md-0 mx-auto img-thumbnail user_bigimg">
-
-                          </div>
-                        </div>
-                        <div class="col-md-8" style="margin-top: 17px;">
-                          <div class="mb-1 row">
-                            <div class="col-sm-2">
-                              <label class="col-form-label new_lable" for="name">Name</label>
-                            </div>
-                            <div class="col-sm-10">
-                              <input type="text" id="firstname" class="form-control" name="firstname" value="<%=session.firstname%>" maxlength="30" disabled>
-                              <input type="hidden" name="id" value="<%=session.id%>">
-                            </div>
-                          </div>
-
-                          <div class="mb-1 row">
-                            <div class="col-sm-2">
-                              <label class="col-form-label new_lable" for="email">Email</label>
-                            </div>
-                            <div class="col-sm-10">
-                              <input type="email" id="email" class="form-control" name="email" value="<%=session.email%>" disabled>
-                            </div>
-                          </div>
-
-                          <div class="mb-1 row">
-                            <div class="col-sm-2">
-                              <label class="col-form-label new_lable" for="phone">Phone</label>
-                            </div>
-                            <div class="col-sm-10">
-                              <input type="number" id="phone" class="form-control" name="phone" value="<%=session.phone%>" maxlength="15" disabled>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="col-sm-9 offset-sm-5">
-                              <a href="/editProfile" class="btn float-right" title="Edit Profile"> Edit </a>
-                               <a href="/section" class="btn float-right" title="Edit Profile"> Back </a>
-                            </div>
-                          </div>
-                        </div>
-                    
-                        <style>
-                          .btn {
-      font-size: 18px;
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4cbaeb, #2c3e50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-                        </style>
 
-                      </div>
+/* HEADING */
+.main-heading {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff;
+}
 
+/* QUIZ BOX */
+.quiz-box {
+  background: #fff;
+  padding: 52px;
+  width: 544px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-                      
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
+h2 {
+  margin-bottom: 15px;
+}
+
+/* FLASH */
+#flash {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  display: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-size: 22px;
+}
+
+.correct-msg { background: #2ecc71; }
+.wrong-msg { background: #e74c3c; }
+
+/* OPTIONS */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.option {
+  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.option:hover { background: #ddd; }
+
+.option span {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* disabled style */
+.option.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #3498db;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover { background: #2980b9; }
+</style>
+</head>
+
+<body>
+
+<h1 class="main-heading">techX Spark</h1>
+
+<div id="flash"></div>
+
+<div class="quiz-box">
+  <h2 id="question"></h2>
+  <div id="options"></div>
+  <button onclick="nextQuestion()">Next</button>
+</div>
+
+<script>
+
+const quiz = [
+
+ {q:"Which MS Office app is used to make slides?", options:["Word","Excel","PowerPoint","OneNote"], answer:2},
+
+ {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiply","Add numbers","Subtract","Average"], answer:1},
+
+ {q:"Maximum slides in PowerPoint?", options:["500","10,000","50,000","Unlimited"], answer:3},
+
+ {q:"Which is the Oldest Microsoft Office program?", options:["Word","Excel","PowerPoint","Outlook"], answer:0},
+
+ {q:"What does Alt + Tab do?", options:["Task Manager","Switch apps","Close window","New tab"], answer:1},
+
+ {q:"What does AI stand for?", options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"], answer:1},
+
+ {q:"ChatGPT is example of?", options:["Narrow AI","General AI","Super AI","Quantum AI"], answer:0},
+
+ {q:"Excel formula =AVERAGE(A1:A10)?", options:["Add","Middle number","Average","Multiply"], answer:2},
+
+ {q:"What is cloud storage?", options:["Files in sky","Files on internet","Weather data","USB in plane"], answer:1},
+
+ {q:"Why many file names Final_v2?", options:["Creative","Forgot version","Tradition","All"], answer:3}
+
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+  answered = false;
+
+  let q = quiz[current];
+  document.getElementById("question").innerText = q.q;
+
+  let labels = ["A", "B", "C", "D"];
+
+  let html = '<div class="options-grid">';
+  q.options.forEach((opt, i) => {
+    html += `
+      <div class="option" onclick="selectAnswer(${i})">
+        <span>${labels[i]}.</span> ${opt}
+      </div>
+    `;
+  });
+  html += '</div>';
+
+  document.getElementById("options").innerHTML = html;
+}
+
+/* FLASH */
+function showFlash(message, type) {
+  let flash = document.getElementById("flash");
+
+  flash.innerHTML = message;
+  flash.className = type;
+  flash.style.display = "block";
+
+  setTimeout(() => { flash.style.opacity = "1"; }, 10);
+
+  setTimeout(() => {
+    flash.style.opacity = "0";
+    setTimeout(() => { flash.style.display = "none"; }, 500);
+  }, 2000);
+}
+
+/* ANSWER LOGIC */
+function selectAnswer(index) {
+
+  let options = document.querySelectorAll(".option");
+
+  if (answered) return;
+
+  if (index === quiz[current].answer) {
+    score++;
+    answered = true;
+
+    showFlash("✅ Correct Answer!", "correct-msg");
+
+    options.forEach(opt => opt.classList.add("disabled"));
+
+  } else {
+    options[index].classList.add("disabled");
+    showFlash("😢❌ Wrong Answer! Try Again", "wrong-msg");
+  }
+}
+
+function nextQuestion() {
+  if (!answered) {
+    showFlash("⚠️ First select correct answer!", "wrong-msg");
+    return;
+  }
+
+  current++;
+
+  if (current < quiz.length) {
+    loadQuestion();
+  } else {
+    document.querySelector(".quiz-box").innerHTML =
+      `<h2>Your Score: ${score}/${quiz.length}</h2>
+       <button onclick="location.reload()">Restart</button>`;
+  }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
