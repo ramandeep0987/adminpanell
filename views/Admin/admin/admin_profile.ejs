@@ -6,10 +6,6 @@
 
 <style>
 
-  .quiz-box {
-  width: 100%;
-  max-width: 544px;
-  }
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #4cbaeb, #2c3e50);
@@ -23,7 +19,7 @@ body {
 /* HEADING */
 .main-heading {
   position: absolute;
-  top: 20px;
+  top: 12px;
   width: 100%;
   text-align: center;
   font-size: 42px;
@@ -35,34 +31,35 @@ body {
 
 /* QUIZ BOX */
 .quiz-box {
+  position: relative;   /* 🔥 IMPORTANT */
   background: #fff;
   padding: 52px;
-  width: 544px;
+  width: 717px;
+  height: 308px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 h2 {
-  margin-bottom: 15px;
+  margin-bottom: 46px;
 }
 
-/* FLASH */
+/* FLASH INSIDE BOX */
 #flash {
-  position: fixed;
-  top: 20px;
+  position: absolute;   /* 🔥 changed from fixed */
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 250px;
-  padding: 12px;
-  border-radius: 8px;
+  width: 80%;
+  padding: 10px;
+  border-radius: 6px;
   text-align: center;
   font-weight: bold;
   color: white;
   display: none;
-  z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .correct-msg { background: #2ecc71; }
@@ -72,7 +69,7 @@ h2 {
 .options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 27px;
 }
 
 .option {
@@ -93,24 +90,27 @@ h2 {
   margin-right: 8px;
 }
 
-/* disabled style */
 .option.disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px;
-  width: 100%;
+  margin-top: 62px;
+  padding: 16px;
+  width: 24%;
   border: none;
   background: #3498db;
   color: white;
   border-radius: 6px;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover { background: #2980b9; }
+
 </style>
 </head>
 
@@ -118,9 +118,8 @@ button:hover { background: #2980b9; }
 
 <h1 class="main-heading">techX Spark</h1>
 
-<div id="flash"></div>
-
 <div class="quiz-box">
+  <div id="flash"></div> <!-- 🔥 moved inside -->
   <h2 id="question"></h2>
   <div id="options"></div>
   <button onclick="nextQuestion()">Next</button>
@@ -129,27 +128,11 @@ button:hover { background: #2980b9; }
 <script>
 
 const quiz = [
-
  {q:"Which MS Office app is used to make slides?", options:["Word","Excel","PowerPoint","OneNote"], answer:2},
-
- {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiply","Add numbers","Subtract","Average"], answer:1},
-
- {q:"Maximum slides in PowerPoint?", options:["500","10,000","50,000","Unlimited"], answer:3},
-
- {q:"Which is the Oldest Microsoft Office program?", options:["Word","Excel","PowerPoint","Outlook"], answer:0},
-
- {q:"What does Alt + Tab do?", options:["Task Manager","Switch apps","Close window","New tab"], answer:1},
-
- {q:"What does AI stand for?", options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"], answer:1},
-
- {q:"ChatGPT is example of?", options:["Narrow AI","General AI","Super AI","Quantum AI"], answer:0},
-
- {q:"Excel formula =AVERAGE(A1:A10)?", options:["Add","Middle number","Average","Multiply"], answer:2},
-
- {q:"What is cloud storage?", options:["Files in sky","Files on internet","Weather data","USB in plane"], answer:1},
-
- {q:"Why many file names Final_v2?", options:["Creative","Forgot version","Tradition","All"], answer:3}
-
+ {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"], answer:1},
+ {q:"Maximum number of slides in a single PowerPoint presentation?", options:["500","10,000","50,000","Unlimited"], answer:3},
+ {q:"Which is the oldest Microsoft Office program?", options:["Word","Excel","PowerPoint","Outlook"], answer:0},
+ {q:"Who is known as the “Father of Computers”?", options:["Steve Jobs","Charles Babbage","Bill Gates","Alan Turing"], answer:1}
 ];
 
 let current = 0;
@@ -160,27 +143,22 @@ function loadQuestion() {
   answered = false;
 
   let q = quiz[current];
-
-  // ✅ Question number added here
-  document.getElementById("question").innerText =
-    `Q${current + 1}. ${q.q}`;
+  document.getElementById("question").innerText = `Q${current + 1}. ${q.q}`;
 
   let labels = ["A", "B", "C", "D"];
-
   let html = '<div class="options-grid">';
+
   q.options.forEach((opt, i) => {
     html += `
       <div class="option" onclick="selectAnswer(${i})">
         <span>${labels[i]}.</span> ${opt}
-      </div>
-    `;
+      </div>`;
   });
-  html += '</div>';
 
+  html += '</div>';
   document.getElementById("options").innerHTML = html;
 }
 
-/* FLASH */
 function showFlash(message, type) {
   let flash = document.getElementById("flash");
 
@@ -196,9 +174,7 @@ function showFlash(message, type) {
   }, 2000);
 }
 
-/* ANSWER LOGIC */
 function selectAnswer(index) {
-
   let options = document.querySelectorAll(".option");
 
   if (answered) return;
@@ -206,14 +182,11 @@ function selectAnswer(index) {
   if (index === quiz[current].answer) {
     score++;
     answered = true;
-
     showFlash("✅ Correct Answer!", "correct-msg");
-
     options.forEach(opt => opt.classList.add("disabled"));
-
   } else {
     options[index].classList.add("disabled");
-    showFlash("😢❌ Wrong Answer! Try Again", "wrong-msg");
+    showFlash("❌ Wrong Answer! Try Again", "wrong-msg");
   }
 }
 
@@ -235,8 +208,52 @@ function nextQuestion() {
 }
 
 loadQuestion();
+
 </script>
 
 </body>
 </html>
 
+<style>
+  /* 📱 MOBILE VIEW */
+@media (max-width: 768px) {
+
+  body {
+    align-items: flex-start;   /* top ton start */
+    padding-top: 60px;
+  }
+
+  .quiz-box {
+    width: 100%;        /* full width */
+    height: 100vh;      /* full screen height */
+    border-radius: 0;   /* remove rounded corners */
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;   /* 1 column (better for phone) */
+    gap: 15px;
+  }
+
+  button {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  #flash {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .main-heading {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+}
+
+</style>
