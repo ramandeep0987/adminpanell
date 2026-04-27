@@ -2,295 +2,475 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Quiz App</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>techX Spark</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #4cbaeb, #2c3e50);
+  font-family: 'DM Sans', sans-serif;
+  background: #f7f3ee;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-/* INTRO */
-.intro-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: #00ffcc;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 50px;
+  overflow: hidden;
 }
 
-/* 🔥 SPINNER */
-.spinner-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000d9;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
+/* DECORATIVE BG BLOBS */
+body::before {
+  content:'';
+  position:fixed; top:-120px; right:-120px;
+  width:420px; height:420px; border-radius:50%;
+  background: radial-gradient(circle, #ffe0b2 0%, #ffcc80 60%, transparent 100%);
+  opacity:0.55; pointer-events:none;
+}
+body::after {
+  content:'';
+  position:fixed; bottom:-100px; left:-80px;
+  width:340px; height:340px; border-radius:50%;
+  background: radial-gradient(circle, #b3e5fc 0%, #81d4fa 60%, transparent 100%);
+  opacity:0.5; pointer-events:none;
 }
 
-.spinner-wheel {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 10px solid #00ffcc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  cursor: pointer;
-  box-shadow: 0 0 30px #00ffcc;
+/* ─── INTRO ─── */
+#intro {
+  position:fixed; inset:0; z-index:100;
+  background: #1a1a2e;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap: 16px;
 }
-
-.spin {
-  animation: spin 0.1s linear infinite;
+.intro-brand {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size: clamp(48px,8vw,80px);
+  letter-spacing:-2px;
+  color:#fff;
 }
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.intro-brand span { color:#f59e0b; }
+#introTyped {
+  font-family:'DM Sans',sans-serif;
+  font-size: clamp(16px,2.5vw,22px);
+  color:#94a3b8;
+  letter-spacing:1px;
+  min-height:32px;
 }
+.cursor {
+  display:inline-block; width:2px; height:1.1em;
+  background:#f59e0b; margin-left:3px;
+  vertical-align:middle;
+  animation: blink .65s steps(1) infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* HEADING */
+/* ─── SPINNER ─── */
+#spinnerScreen {
+  position:fixed; inset:0; z-index:90;
+  background:#1a1a2e;
+  display:none; flex-direction:column;
+  align-items:center; justify-content:center; gap:24px;
+}
+.spin-label {
+  font-family:'Syne',sans-serif; font-weight:700;
+  font-size:13px; letter-spacing:4px; text-transform:uppercase;
+  color:#64748b;
+}
+.spin-dial {
+  width:200px; height:200px; border-radius:50%;
+  background: conic-gradient(#f59e0b 0deg, #ef4444 90deg, #8b5cf6 180deg, #06b6d4 270deg, #f59e0b 360deg);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; position:relative;
+  transition: transform 0.15s;
+}
+.spin-dial:hover { transform:scale(1.04); }
+.spin-dial::after {
+  content:'';
+  position:absolute; inset:12px; border-radius:50%;
+  background:#1a1a2e;
+}
+.spin-inner {
+  position:relative; z-index:2; text-align:center;
+}
+.spin-number {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:52px; color:#fff; line-height:1;
+}
+.spin-tap { font-size:11px; color:#64748b; letter-spacing:3px; text-transform:uppercase; margin-top:4px; }
+@keyframes dialSpin { to { transform: rotate(360deg); } }
+.spinning { animation: dialSpin 0.35s linear infinite; }
+
+/* ─── MAIN HEADING ─── */
 .main-heading {
-  position: absolute;
-  top: 12px;
-  width: 100%;
-  text-align: center;
-  font-size: 42px;
-  color: #fff;
+  position:fixed; top:20px; left:0; right:0;
+  text-align:center; z-index:10; pointer-events:none;
+}
+.main-heading span {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:clamp(20px,3vw,28px);
+  background: linear-gradient(135deg,#1a1a2e,#374151);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
 
-/* QUIZ BOX */
+/* ─── QUIZ BOX ─── */
 .quiz-box {
-  position: relative;
-  background: #fff;
-  padding: 52px;
-  width: 717px;
-  height: 308px;
-  border-radius: 12px;
-  display: none;
+  display:none;
+  background:#fff;
+  border-radius:24px;
+  width: min(720px, 96vw);
+  padding: 40px 44px 36px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 1px 0 rgba(0,0,0,0.04);
+  position:relative;
+  overflow:hidden;
+}
+/* top colour strip */
+.quiz-box::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:5px;
+  background: linear-gradient(90deg,#f59e0b,#ef4444,#8b5cf6,#06b6d4);
 }
 
-/* FLASH */
-#flash {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-  color: white;
-  display: none;
+/* progress */
+.prog-row {
+  display:flex; align-items:center; gap:12px; margin-bottom:28px;
+}
+.prog-track {
+  flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden;
+}
+.prog-fill {
+  height:100%; border-radius:3px;
+  background: linear-gradient(90deg,#f59e0b,#ef4444);
+  transition: width .5s ease;
+}
+.prog-text {
+  font-size:12px; font-weight:600; color:#94a3b8; letter-spacing:.5px; white-space:nowrap;
 }
 
-.correct-msg { background: #2ecc71; }
-.wrong-msg { background: #d73421; }
+/* question */
+.q-chip {
+  display:inline-block;
+  background:#fef3c7; color:#d97706;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  padding:4px 12px; border-radius:20px; margin-bottom:12px;
+}
+#question {
+  font-family:'Syne',sans-serif; font-weight:700;
+  font-size:clamp(16px,2.2vw,20px); color:#1a1a2e;
+  line-height:1.5; margin-bottom:28px;
+}
 
+/* options */
 .options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;
 }
+@media(max-width:520px){ .options-grid{ grid-template-columns:1fr; } }
 
 .option {
-  background: #f1f1f1;
-  padding: 12px;
-  border-radius: 6px;
-  cursor: pointer;
+  background:#f8fafc;
+  border:1.5px solid #e2e8f0;
+  padding:14px 16px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:14px; font-weight:500; color:#334155;
+  display:flex; align-items:center; gap:12px;
+  transition: all .18s;
 }
-
-button {
-  margin-top: 40px;
-  padding: 12px;
-  width: 40%;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.option:hover { border-color:#f59e0b; background:#fffbeb; color:#1a1a2e; transform:translateY(-2px); box-shadow:0 4px 12px rgba(245,158,11,.15); }
+.option-letter {
+  width:28px; height:28px; border-radius:8px; flex-shrink:0;
+  background:#e2e8f0; color:#64748b;
+  font-size:12px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  transition: all .18s;
 }
+.option:hover .option-letter { background:#f59e0b; color:#fff; }
+.option.correct { border-color:#22c55e !important; background:#f0fdf4 !important; color:#166534 !important; transform:none; }
+.option.correct .option-letter { background:#22c55e; color:#fff; }
+.option.wrong { border-color:#ef4444 !important; background:#fef2f2 !important; }
+.option.wrong .option-letter { background:#ef4444; color:#fff; }
+.option.disabled { cursor:default; pointer-events:none; }
 
+/* flash */
+#flash {
+  background:#fef9c3; border:1px solid #fde047;
+  color:#854d0e; border-radius:10px;
+  padding:10px 14px; font-size:14px; font-weight:600;
+  text-align:center; margin-bottom:16px;
+  display:none;
+}
+#flash.correct-msg { background:#dcfce7; border-color:#86efac; color:#166534; }
+#flash.wrong-msg   { background:#fee2e2; border-color:#fca5a5; color:#991b1b; }
+
+/* lifeline */
+.lifeline-box { text-align:center; margin-bottom:16px; }
+.lifeline-title {
+  font-family:'Syne',sans-serif; font-weight:700;
+  font-size:13px; letter-spacing:2px; text-transform:uppercase;
+  color:#94a3b8; margin-bottom:10px;
+}
+.extra-choices { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+.choice-btn {
+  padding:9px 20px;
+  background:#f1f5f9; border:1.5px solid #e2e8f0;
+  border-radius:20px; cursor:pointer;
+  font-size:13px; font-weight:600; color:#475569;
+  font-family:'DM Sans',sans-serif;
+  transition: all .18s;
+}
+.choice-btn:hover { background:#fef3c7; border-color:#f59e0b; color:#d97706; }
+.choice-btn.active { background:#d1fae5; border-color:#6ee7b7; color:#065f46; }
+
+/* next button */
+.next-btn {
+  display:block; width:100%; margin-top:8px;
+  padding:14px;
+  background: linear-gradient(135deg,#f59e0b,#ef4444);
+  color:#fff; border:none; border-radius:14px;
+  font-family:'Syne',sans-serif; font-size:15px; font-weight:700;
+  letter-spacing:1px; cursor:pointer;
+  transition: all .2s;
+  box-shadow: 0 4px 16px rgba(245,158,11,.3);
+}
+.next-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,158,11,.4); }
+.next-btn:active { transform:translateY(0); }
+
+/* end screen */
+.end-wrap {
+  text-align:center; padding:8px 0;
+}
+.end-trophy { font-size:64px; margin-bottom:16px; }
+.end-title {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:32px; color:#1a1a2e; margin-bottom:6px;
+}
+.end-sub { font-size:15px; color:#64748b; margin-bottom:28px; }
+.end-score {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:72px; line-height:1;
+  background: linear-gradient(135deg,#f59e0b,#ef4444);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.end-of { font-size:14px; color:#94a3b8; margin-top:4px; letter-spacing:1px; }
+.restart-btn {
+  margin-top:32px; display:inline-block;
+  padding:14px 48px;
+  background:#1a1a2e; color:#fff;
+  border:none; border-radius:14px;
+  font-family:'Syne',sans-serif; font-size:15px; font-weight:700;
+  cursor:pointer; letter-spacing:1px;
+  transition: all .2s;
+}
+.restart-btn:hover { background:#374151; transform:translateY(-2px); }
 </style>
 </head>
-
 <body>
 
 <!-- INTRO -->
-<div id="intro" class="intro-screen"></div>
-
-<!-- 🔥 SPINNER -->
-<div id="spinnerScreen" class="spinner-screen">
-  <div class="spinner-wheel" onclick="startSpin()">🎯</div>
-  <h2 id="spinNumber">Click to Spin</h2>
+<div id="intro">
+  <div class="intro-brand">tech<span>X</span></div>
+  <div id="introTyped"><span class="cursor"></span></div>
 </div>
 
-<h1 class="main-heading">techX Spark</h1>
+<!-- SPINNER -->
+<div id="spinnerScreen">
+  <div class="spin-label">Round</div>
+  <div class="spin-dial" id="spinDial" onclick="startSpin()">
+    <div class="spin-inner">
+      <div class="spin-number" id="spinNumber">?</div>
+      <div class="spin-tap">tap</div>
+    </div>
+  </div>
+</div>
 
-<div class="quiz-box">
+<!-- HEADING -->
+<div class="main-heading"><span>techX Spark</span></div>
+
+<!-- QUIZ -->
+<div class="quiz-box" id="quizBox">
+  <div class="prog-row">
+    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    <div class="prog-text" id="progText">1 / 16</div>
+  </div>
+
   <div id="flash"></div>
+
+  <div class="q-chip" id="qChip">Question 01</div>
   <h2 id="question"></h2>
   <div id="options"></div>
-  <button onclick="nextQuestion()">Next</button>
+
+  <div class="lifeline-box">
+    <div class="lifeline-title">Lifelines</div>
+    <div class="extra-choices">
+      <button class="choice-btn" onclick="chooseOption(this,'poll')">👥 Audience Poll Right / Left</button>
+      <button class="choice-btn" onclick="chooseOption(this,'5050')">⚖️ 50 : 50</button>
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="nextQuestion()">Next →</button>
 </div>
 
 <script>
-
 const quiz = [
- {q:"Which MS Office app is used to make slides?", options:["Word","Excel","PowerPoint","OneNote"], answer:2},
- {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"], answer:1}
+  {q:"Which MS Office app is used to make slides?", options:["Word","Excel","PowerPoint","OneNote"], answer:2},
+  {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"], answer:1},
+  {q:"Maximum number of slides in a single PowerPoint presentation?", options:["500","10,000","50,000","Unlimited"], answer:3},
+  {q:"Which is the oldest Microsoft Office program?", options:["Word","Excel","PowerPoint","Outlook"], answer:0},
+  {q:"Who is known as the Father of Computers?", options:["Steve Jobs","Charles Babbage","Bill Gates","Alan Turing"], answer:1},
+  {q:"What does Alt + Tab do?", options:["Opens Task Manager","Switches between open applications","Closes the current window","Opens a new tab in browser"], answer:1},
+  {q:"What does AI stand for?", options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"], answer:1},
+  {q:"ChatGPT is an example of which type of AI?", options:["Narrow AI","General AI","Super AI","Quantum AI"], answer:0},
+  {q:"In Excel, what does =AVERAGE(A1:A10) do?", options:["Adds numbers","Finds the middle number","Finds the average","Multiplies numbers"], answer:2},
+  {q:"What does Ctrl + Z mean in office life?", options:["Save file","Undo mistake","Go home early","Restart boss"], answer:1},
+  {q:"What is cloud storage?", options:["Files in sky","Files on internet servers","Data in weather system","USB in airplane"], answer:1},
+  {q:"Why did Excel break up with Word?", options:["No formula for love","Too many pages","PowerPoint interference","Missing file"], answer:0},
+  {q:"What does AI do best in offices today?", options:["Write drafts","Summarize data","Automate repetitive tasks","All of the above"], answer:3},
+  {q:"Why does laptop become hot sometimes?", options:["It is angry","Processor is working hard","Keyboard friction","Too many emails"], answer:1},
+  {q:"Why do people keep many file names like Final_v2_Final_Last?", options:["Creativity","Forgot original version","Office tradition","All of the above"], answer:3},
+  {q:"What is the full form of COMPUTER?", options:["Common Operating Machine Particularly Used for Technical Education and Research","Central Output Machine Processing User Terminal","Control Output Memory Program Understanding Technology Electronic Resource","Common Online Machine Providing Useful Technology Education Router"], answer:0},
 ];
 
-let current = 0;
-let score = 0;
-let answered = false;
+const letters = ['A','B','C','D'];
+let current = 0, score = 0, answered = false;
 
 /* INTRO */
 function startIntro() {
-  let text = "Welcome to techX Spark 😊";
+  const text = "Welcome to techX Spark 😊";
   let i = 0;
-  let intro = document.getElementById("intro");
-
+  const el = document.getElementById("introTyped");
+  el.innerHTML = '<span class="cursor"></span>';
   function type() {
     if (i < text.length) {
-      intro.innerHTML += text.charAt(i);
+      el.innerHTML = text.slice(0, i+1) + '<span class="cursor"></span>';
       i++;
-      setTimeout(type, 200);
+      setTimeout(type, 80);
     } else {
       setTimeout(() => {
-        intro.style.display = "none";
-        showSpinner();
-      }, 800);
+        document.getElementById("intro").style.opacity = "0";
+        document.getElementById("intro").style.transition = "opacity .5s";
+        setTimeout(() => {
+          document.getElementById("intro").style.display = "none";
+          showSpinner();
+        }, 500);
+      }, 900);
     }
   }
   type();
 }
 
-/* 🔥 SHOW SPINNER */
+/* SPINNER */
 function showSpinner() {
   document.getElementById("spinnerScreen").style.display = "flex";
 }
 
-/* 🔥 SPIN LOGIC */
 function startSpin() {
-  let wheel = document.querySelector(".spinner-wheel");
-  let text = document.getElementById("spinNumber");
+  const dial = document.getElementById("spinDial");
+  const num  = document.getElementById("spinNumber");
+  if (dial.classList.contains('spinning')) return;
 
-  wheel.classList.add("spin");
-
+  dial.classList.add("spinning");
   let count = 1;
+  const interval = setInterval(() => {
+    num.textContent = count;
+    count = count > 30 ? 1 : count + 1;
+  }, 45);
 
-  let interval = setInterval(() => {
-    text.innerText = count;
-    count++;
-    if (count > 30) count = 1;
-  }, 50);
-
-  let stopTime = Math.random() * 2000 + 2000;
-
+  const stopTime = Math.random() * 2000 + 2000;
   setTimeout(() => {
     clearInterval(interval);
-    wheel.classList.remove("spin");
-
-    let final = Math.floor(Math.random() * 30) + 1;
-    text.innerText = final;
-
+    dial.classList.remove("spinning");
+    num.textContent = Math.floor(Math.random() * 30) + 1;
     setTimeout(() => {
       document.getElementById("spinnerScreen").style.display = "none";
-      document.querySelector(".quiz-box").style.display = "block";
+      document.getElementById("quizBox").style.display = "block";
       loadQuestion();
-    }, 800);
-
+    }, 700);
   }, stopTime);
 }
 
-/* LOAD QUESTION (NO CHANGE) */
+/* LOAD QUESTION */
 function loadQuestion() {
   answered = false;
+  const q = quiz[current];
+  const pct = Math.round((current / quiz.length) * 100);
 
-  let q = quiz[current];
-  document.getElementById("question").innerText =
-    `Q${current + 1}. ${q.q}`;
+  document.getElementById("progFill").style.width = pct + "%";
+  document.getElementById("progText").textContent = `${current+1} / ${quiz.length}`;
+  document.getElementById("qChip").textContent = `Question ${String(current+1).padStart(2,'0')}`;
+  document.getElementById("question").textContent = q.q;
+
+  const flash = document.getElementById("flash");
+  flash.style.display = "none"; flash.className = "";
 
   let html = '<div class="options-grid">';
   q.options.forEach((opt, i) => {
-    html += `<div class="option" onclick="selectAnswer(${i})">${opt}</div>`;
+    html += `<div class="option" id="opt${i}" onclick="selectAnswer(${i})">
+      <div class="option-letter">${letters[i]}</div>
+      <span>${opt}</span>
+    </div>`;
   });
   html += '</div>';
-
   document.getElementById("options").innerHTML = html;
 }
 
 /* FLASH */
-function showFlash(msg, type) {
-  let flash = document.getElementById("flash");
-  flash.innerHTML = msg;
-  flash.className = type;
-  flash.style.display = "block";
-
-  setTimeout(() => flash.style.display = "none", 1500);
+function showFlash(msg, cls) {
+  const f = document.getElementById("flash");
+  f.textContent = msg;
+  f.className = cls;
+  f.style.display = "block";
+  setTimeout(() => { f.style.display = "none"; f.className = ""; }, 1500);
 }
 
 /* SELECT */
 function selectAnswer(i) {
   if (answered) return;
-
   if (i === quiz[current].answer) {
     score++;
     answered = true;
-    showFlash("✅ Correct", "correct-msg");
+    document.querySelectorAll('.option').forEach(o => o.classList.add('disabled'));
+    document.getElementById("opt"+i).classList.add("correct");
+    showFlash("✅ Correct!", "correct-msg");
   } else {
-    showFlash("❌ Wrong", "wrong-msg");
+    document.getElementById("opt"+i).classList.add("wrong");
+    showFlash("❌ Wrong! Try again.", "wrong-msg");
+    setTimeout(() => {
+      document.getElementById("opt"+i).classList.remove("wrong");
+    }, 900);
   }
 }
 
-/* NEXT (ONLY ADD SPINNER HERE) */
+/* LIFELINE */
+function chooseOption(btn, val) {
+  btn.classList.toggle("active");
+  console.log("Selected:", val);
+}
+
+/* NEXT */
 function nextQuestion() {
   if (!answered) {
-    showFlash("⚠️ Select correct answer first", "wrong-msg");
+    showFlash("⚠️ Select the correct answer first!", "wrong-msg");
     return;
   }
-
   current++;
-
   if (current < quiz.length) {
-    document.querySelector(".quiz-box").style.display = "none";
-    showSpinner();   // 🔥 spinner before next question
+    document.getElementById("quizBox").style.display = "none";
+    document.getElementById("spinDial").classList.remove("spinning");
+    document.getElementById("spinNumber").textContent = "?";
+    showSpinner();
   } else {
-    document.querySelector(".quiz-box").innerHTML =
-    `
-    <h2 style="text-align:center;">🎉 Thank You! 🎉</h2>
-    <button onclick="location.reload()">Restart</button>
-    `;
+    document.getElementById("quizBox").innerHTML = `
+      <div class="end-wrap">
+        <div class="end-trophy">🏆</div>
+        <div class="end-title">Well Done!</div>
+        <div class="end-sub">You completed techX Spark</div>
+        <div class="end-score">${score}</div>
+        <div class="end-of">out of ${quiz.length}</div>
+        <button class="restart-btn" onclick="location.reload()">Play Again</button>
+      </div>`;
   }
 }
 
-/* START */
 startIntro();
-
 </script>
-
 </body>
 </html>
-
-
-   
