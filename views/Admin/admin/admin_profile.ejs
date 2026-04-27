@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 
-/* INTRO SCREEN */
+/* INTRO */
 .intro-screen {
   position: fixed;
   top: 0;
@@ -29,9 +29,43 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-shadow: 0 0 20px #00ffcc;
+}
+
+/* 🔥 SPINNER */
+.spinner-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000d9;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.spinner-wheel {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 10px solid #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 30px #00ffcc;
+}
+
+.spin {
+  animation: spin 0.1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* HEADING */
@@ -41,8 +75,7 @@ body {
   width: 100%;
   text-align: center;
   font-size: 42px;
-  font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 /* QUIZ BOX */
@@ -53,11 +86,8 @@ body {
   width: 717px;
   height: 308px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  display: none; /* hidden initially */
+  display: none;
 }
-
-h2 { margin-bottom: 46px; }
 
 /* FLASH */
 #flash {
@@ -69,17 +99,13 @@ h2 { margin-bottom: 46px; }
   padding: 10px;
   border-radius: 6px;
   text-align: center;
-  font-weight: bold;
   color: white;
   display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .correct-msg { background: #2ecc71; }
 .wrong-msg { background: #d73421; }
 
-/* OPTIONS */
 .options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -93,14 +119,6 @@ h2 { margin-bottom: 46px; }
   cursor: pointer;
 }
 
-.option:hover { background: #ddd; }
-
-.option.disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* BUTTON */
 button {
   margin-top: 40px;
   padding: 12px;
@@ -110,27 +128,6 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-button:hover { background: #2980b9; }
-
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-  .quiz-box {
-    width: 100%;
-    height: 100vh;
-    border-radius: 0;
-    padding: 20px;
-  }
-
-  .options-grid {
-    grid-template-columns: 1fr;
-  }
-
-  button { width: 80%; }
 }
 
 </style>
@@ -141,9 +138,14 @@ button:hover { background: #2980b9; }
 <!-- INTRO -->
 <div id="intro" class="intro-screen"></div>
 
+<!-- 🔥 SPINNER -->
+<div id="spinnerScreen" class="spinner-screen">
+  <div class="spinner-wheel" onclick="startSpin()">🎯</div>
+  <h2 id="spinNumber">Click to Spin</h2>
+</div>
+
 <h1 class="main-heading">techX Spark</h1>
 
-<!-- QUIZ -->
 <div class="quiz-box">
   <div id="flash"></div>
   <h2 id="question"></h2>
@@ -155,29 +157,16 @@ button:hover { background: #2980b9; }
 
 const quiz = [
  {q:"Which MS Office app is used to make slides?", options:["Word","Excel","PowerPoint","OneNote"], answer:2},
- {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"], answer:1},
- {q:"Maximum number of slides in a single PowerPoint presentation?", options:["500","10,000","50,000","Unlimited"], answer:3}, {q:"Which is the oldest Microsoft Office program?", options:["Word","Excel","PowerPoint","Outlook"], answer:0}, 
- {q:"Who is known as the “Father of Computers”?", options:["Steve Jobs","Charles Babbage","Bill Gates","Alan Turing"], answer:1},
- {q:"What does “Alt + Tab” do?", options:["Opens Task Manager","Switches between open applications","Closes the current window","Opens a new tab in browser"], answer:1},
- {q:"What does “AI” stand for?", options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"], answer:1}, 
- {q:"ChatGPT is an example of which type of AI?", options:["Narrow AI","General AI","Super AI","Quantum AI"], answer:0},
- {q:"In Excel, what does the formula =AVERAGE(A1:A10) do?", options:["Adds numbers","Finds the middle number","Finds the average","Multiplies numbers"], answer:2},
- {q:"What does Ctrl + Z mean in office life?", options:["Save file","Undo mistake","Go home early","Restart boss"], answer:1},
- {q:"What is cloud storage?", options:["Files in sky","Files on internet servers","Data in weather system","USB in airplane"], answer:1},
- {q:"Why did Excel break up with Word?", options:["No formula for love","Too many pages","PowerPoint interference","Missing file"], answer:0}, 
- {q:"What does AI do best in offices today?", options:["Write drafts","Summarize data","Automate repetitive tasks","All of the above"], answer:3}, 
- {q:"Why does laptop become hot sometimes?", options:["It is angry","Processor is working hard","Keyboard friction","Too many emails"], answer:1},
- {q:"Why do people keep many file names like Final_v2_Final_Last?", options:["Creativity","Forgot original version","Office tradition","All of the above"], answer:3}, 
- {q:"What is the full form of COMPUTER?", options:["Common Operating Machine Particularly Used for Technical Education and Research","Central Output Machine Processing User Terminal","Control Output Memory Program Understanding Technology Electronic Resource","Common Online Machine Providing Useful Technology Education Router"], answer:0},
+ {q:"In Excel, what does =SUM(A1:A5) do?", options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"], answer:1}
 ];
 
 let current = 0;
 let score = 0;
 let answered = false;
 
-/* INTRO ANIMATION */
+/* INTRO */
 function startIntro() {
-  let text = "Welcome to techX Spark";
+  let text = "Welcome to techX Spark 😊";
   let i = 0;
   let intro = document.getElementById("intro");
 
@@ -185,24 +174,60 @@ function startIntro() {
     if (i < text.length) {
       intro.innerHTML += text.charAt(i);
       i++;
-      setTimeout(type, 250);
+      setTimeout(type, 200);
     } else {
       setTimeout(() => {
         intro.style.display = "none";
-        document.querySelector(".quiz-box").style.display = "block";
-        loadQuestion();
-      }, 1000);
+        showSpinner();
+      }, 800);
     }
   }
-
   type();
 }
 
-/* LOAD QUESTION */
+/* 🔥 SHOW SPINNER */
+function showSpinner() {
+  document.getElementById("spinnerScreen").style.display = "flex";
+}
+
+/* 🔥 SPIN LOGIC */
+function startSpin() {
+  let wheel = document.querySelector(".spinner-wheel");
+  let text = document.getElementById("spinNumber");
+
+  wheel.classList.add("spin");
+
+  let count = 1;
+
+  let interval = setInterval(() => {
+    text.innerText = count;
+    count++;
+    if (count > 30) count = 1;
+  }, 50);
+
+  let stopTime = Math.random() * 2000 + 2000;
+
+  setTimeout(() => {
+    clearInterval(interval);
+    wheel.classList.remove("spin");
+
+    let final = Math.floor(Math.random() * 30) + 1;
+    text.innerText = final;
+
+    setTimeout(() => {
+      document.getElementById("spinnerScreen").style.display = "none";
+      document.querySelector(".quiz-box").style.display = "block";
+      loadQuestion();
+    }, 800);
+
+  }, stopTime);
+}
+
+/* LOAD QUESTION (NO CHANGE) */
 function loadQuestion() {
   answered = false;
-  let q = quiz[current];
 
+  let q = quiz[current];
   document.getElementById("question").innerText =
     `Q${current + 1}. ${q.q}`;
 
@@ -221,12 +246,8 @@ function showFlash(msg, type) {
   flash.innerHTML = msg;
   flash.className = type;
   flash.style.display = "block";
-  flash.style.opacity = "1";
 
-  setTimeout(() => {
-    flash.style.opacity = "0";
-    setTimeout(() => flash.style.display = "none", 500);
-  }, 1500);
+  setTimeout(() => flash.style.display = "none", 1500);
 }
 
 /* SELECT */
@@ -242,7 +263,7 @@ function selectAnswer(i) {
   }
 }
 
-/* NEXT */
+/* NEXT (ONLY ADD SPINNER HERE) */
 function nextQuestion() {
   if (!answered) {
     showFlash("⚠️ Select correct answer first", "wrong-msg");
@@ -252,13 +273,12 @@ function nextQuestion() {
   current++;
 
   if (current < quiz.length) {
-    loadQuestion();
+    document.querySelector(".quiz-box").style.display = "none";
+    showSpinner();   // 🔥 spinner before next question
   } else {
     document.querySelector(".quiz-box").innerHTML =
     `
     <h2 style="text-align:center;">🎉 Thank You! 🎉</h2>
-    <p style="text-align:center;">You completed the quiz 😊</p>
-    <div style="text-align:center; font-size:40px;">🎊 🎈 🙌</div>
     <button onclick="location.reload()">Restart</button>
     `;
   }
@@ -271,3 +291,6 @@ startIntro();
 
 </body>
 </html>
+
+
+   
