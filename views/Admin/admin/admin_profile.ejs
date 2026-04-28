@@ -77,7 +77,7 @@ body::after {
   color:#64748b;
 }
 .spin-dial {
-  width:200px; height:200px; border-radius:50%;
+  width:320px; height:320px; border-radius:50%;
   background: conic-gradient(#f59e0b 0deg, #ef4444 90deg, #8b5cf6 180deg, #06b6d4 270deg, #f59e0b 360deg);
   display:flex; align-items:center; justify-content:center;
   cursor:pointer; position:relative;
@@ -94,11 +94,11 @@ body::after {
 }
 .spin-number {
   font-family:'Syne',sans-serif; font-weight:800;
-  font-size:52px; color:#fff; line-height:1;
+  font-size:80px; color:#fff; line-height:1;
 }
 .spin-tap { font-size:11px; color:#64748b; letter-spacing:3px; text-transform:uppercase; margin-top:4px; }
 @keyframes dialSpin { to { transform: rotate(360deg); } }
-.spinning { animation: dialSpin 0.35s linear infinite; }
+.spinning { animation: dialSpin 1.2s linear infinite; }
 
 /* ─── MAIN HEADING ─── */
 .main-heading {
@@ -299,10 +299,10 @@ body::after {
   <div id="options"></div>
 
   <div class="lifeline-box">
-    <div class="lifeline-title">Lifelines</div>
+    <div class="lifeline-title">Lifeline</div>
     <div class="extra-choices">
-      <button class="choice-btn" onclick="chooseOption(this,'poll')">👥 Audience Poll Right / Left</button>
-      <button class="choice-btn" onclick="chooseOption(this,'5050')">⚖️ 50 : 50</button>
+      <button class="choice-btn" onclick="chooseOption(this,'poll')">📊 Audience Poll</button>
+      <button class="choice-btn" onclick="chooseOption(this,'5050')">🎯 50 : 50</button>
     </div>
   </div>
 
@@ -372,18 +372,29 @@ function startSpin() {
   const interval = setInterval(() => {
     num.textContent = count;
     count = count > 30 ? 1 : count + 1;
-  }, 45);
+  }, 120);
 
   const stopTime = Math.random() * 2000 + 2000;
   setTimeout(() => {
     clearInterval(interval);
     dial.classList.remove("spinning");
     num.textContent = Math.floor(Math.random() * 30) + 1;
-    setTimeout(() => {
-      document.getElementById("spinnerScreen").style.display = "none";
-      document.getElementById("quizBox").style.display = "block";
-      loadQuestion();
-    }, 700);
+
+    // 10 second countdown before quiz opens
+    let countdown = 10;
+    const tap = dial.querySelector('.spin-tap');
+    tap.textContent = countdown;
+    const countInterval = setInterval(() => {
+      countdown--;
+      tap.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(countInterval);
+        tap.textContent = 'tap';
+        document.getElementById("spinnerScreen").style.display = "none";
+        document.getElementById("quizBox").style.display = "block";
+        loadQuestion();
+      }
+    }, 1000);
   }, stopTime);
 }
 
