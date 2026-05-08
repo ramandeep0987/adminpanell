@@ -8,7 +8,7 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-body { 
+body {
   font-family: 'DM Sans', sans-serif;
   background: #f7f3ee;
   min-height: 100vh;
@@ -18,170 +18,168 @@ body {
   overflow: hidden;
 }
 
-/* DECORATIVE BG BLOBS */
 body::before {
-  content:'';
-  position:fixed; top:-120px; right:-120px;
+  content:''; position:fixed; top:-120px; right:-120px;
   width:420px; height:420px; border-radius:50%;
   background: radial-gradient(circle, #ffe0b2 0%, #ffcc80 60%, transparent 100%);
   opacity:0.55; pointer-events:none;
 }
 body::after {
-  content:'';
-  position:fixed; bottom:-100px; left:-80px;
+  content:''; position:fixed; bottom:-100px; left:-80px;
   width:340px; height:340px; border-radius:50%;
   background: radial-gradient(circle, #b3e5fc 0%, #81d4fa 60%, transparent 100%);
   opacity:0.5; pointer-events:none;
 }
 
-/* ─── INTRO ─── */
+/* INTRO */
 #intro {
   position:fixed; inset:0; z-index:100;
   background: #1a1a2e;
   display:flex; flex-direction:column;
-  align-items:center; justify-content:center;
-  gap: 16px;
+  align-items:center; justify-content:center; gap:16px;
 }
-.intro-brand {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size: clamp(48px,8vw,80px);
-  letter-spacing:-2px;
-  color:#fff;
-}
+.intro-brand { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(48px,8vw,80px); letter-spacing:-2px; color:#fff; }
 .intro-brand span { color:#f59e0b; }
-#introTyped {
-  font-family:'DM Sans',sans-serif;
-  font-size: clamp(16px,2.5vw,22px);
-  color:#94a3b8;
-  letter-spacing:1px;
-  min-height:32px;
-}
-.cursor {
-  display:inline-block; width:2px; height:1.1em;
-  background:#f59e0b; margin-left:3px;
-  vertical-align:middle;
-  animation: blink .65s steps(1) infinite;
-}
+#introTyped { font-family:'DM Sans',sans-serif; font-size:clamp(16px,2.5vw,22px); color:#94a3b8; letter-spacing:1px; min-height:32px; }
+.cursor { display:inline-block; width:2px; height:1.1em; background:#f59e0b; margin-left:3px; vertical-align:middle; animation:blink .65s steps(1) infinite; }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* ─── SPINNER ─── */
+/* SPINNER */
 #spinnerScreen {
-  position:fixed; inset:0; z-index:90;
-  background:#1a1a2e;
-  display:none; flex-direction:column;
-  align-items:center; justify-content:center; gap:24px;
-}
-.spin-label {
-  font-family:'Syne',sans-serif; font-weight:700;
-  font-size:13px; letter-spacing:4px; text-transform:uppercase;
-  color:#64748b;
+  position:fixed; inset:0; z-index:90; background:#1a1a2e;
+  display:none; flex-direction:column; align-items:center; justify-content:center; gap:24px;
 }
 .spin-dial {
   width:320px; height:320px; border-radius:50%;
-  background: conic-gradient(#f59e0b 0deg, #ef4444 90deg, #8b5cf6 180deg, #06b6d4 270deg, #f59e0b 360deg);
+  background: conic-gradient(#f59e0b 0deg,#ef4444 90deg,#8b5cf6 180deg,#06b6d4 270deg,#f59e0b 360deg);
   display:flex; align-items:center; justify-content:center;
-  cursor:pointer; position:relative;
-  transition: transform 0.15s;
+  cursor:pointer; position:relative; transition:transform 0.15s;
 }
 .spin-dial:hover { transform:scale(1.04); }
-.spin-dial::after {
-  content:'';
-  position:absolute; inset:12px; border-radius:50%;
-  background:#1a1a2e;
-}
-.spin-inner {
-  position:relative; z-index:2; text-align:center;
-}
-.spin-number {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size:80px; color:#fff; line-height:1;
-}
+.spin-dial::after { content:''; position:absolute; inset:12px; border-radius:50%; background:#1a1a2e; }
+.spin-inner { position:relative; z-index:2; text-align:center; }
+.spin-number { font-family:'Syne',sans-serif; font-weight:800; font-size:80px; color:#fff; line-height:1; }
 .spin-tap { font-size:11px; color:#64748b; letter-spacing:3px; text-transform:uppercase; margin-top:4px; }
-@keyframes dialSpin { to { transform: rotate(360deg); } }
-.spinning { animation: dialSpin 1.2s linear infinite; }
+@keyframes dialSpin { to { transform:rotate(360deg); } }
+.spinning { animation:dialSpin 1.2s linear infinite; }
 
-/* ─── MAIN HEADING ─── */
+/* HEADING top fixed */
 .main-heading {
   position:fixed; top:20px; left:0; right:0;
   text-align:center; z-index:10; pointer-events:none;
 }
 .main-heading span {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size:clamp(20px,3vw,28px);
-  background: linear-gradient(135deg,#1a1a2e,#374151);
+  font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(20px,3vw,28px);
+  background:linear-gradient(135deg,#1a1a2e,#374151);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
 
-/* ─── QUIZ BOX ─── */
+/* OUTER WRAPPER */
+.game-wrapper {
+  display: none;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 60px;
+}
+
+/* LIFELINE PANEL */
+.lifeline-panel {
+  width: 249px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  padding: 0 0 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.lifeline-panel::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background: linear-gradient(90deg,#8b5cf6,#06b6d4);
+}
+
+/* Lifeline heading inside panel at top */
+.lifeline-panel-title {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:18px; letter-spacing:2px; text-transform:uppercase;
+  color:#1a1a2e; text-align:center;
+  padding: 22px 16px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 18px;
+}
+
+.choice-btn {
+  display:flex; align-items:center; gap:8px;
+  width: calc(102% - 32px);
+  margin: 0 16px 12px;
+  padding:12px 14px;
+  background:#f8fafc; border:1.5px solid #e2e8f0;
+  border-radius:12px; cursor:pointer;
+  font-size:13px; font-weight:600; color:#000;
+  font-family:'DM Sans',sans-serif;
+  transition:all .18s; text-align:left;
+}
+.choice-btn:last-of-type { margin-bottom:0; }
+.choice-btn:hover { background:#fef3c7; border-color:#f59e0b; color:#d97706; transform:translateX(3px); }
+.choice-btn.used { background:#f1f5f9; border-color:#e2e8f0; color:#cbd5e1; cursor:not-allowed; pointer-events:none; opacity:0.55; }
+
+/* QUIZ BOX */
 .quiz-box {
-  display:none;
   background:#fff;
   border-radius:24px;
-  width: min(720px, 96vw);
-  padding: 40px 44px 36px;
+  width: min(680px, 96vw);
+  padding: 36px 40px 32px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 1px 0 rgba(0,0,0,0.04);
-  position:relative;
-  overflow:hidden;
+  position:relative; overflow:hidden;
 }
-/* top colour strip */
 .quiz-box::before {
-  content:'';
-  position:absolute; top:0; left:0; right:0; height:5px;
-  background: linear-gradient(90deg,#f59e0b,#ef4444,#8b5cf6,#06b6d4);
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background:linear-gradient(90deg,#f59e0b,#ef4444,#8b5cf6,#06b6d4);
 }
 
 /* progress */
-.prog-row {
-  display:flex; align-items:center; gap:12px; margin-bottom:28px;
-}
-.prog-track {
-  flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden;
-}
-.prog-fill {
-  height:100%; border-radius:3px;
-  background: linear-gradient(90deg,#f59e0b,#ef4444);
-  transition: width .5s ease;
-}
-.prog-text {
-  font-size:12px; font-weight:600; color:#94a3b8; letter-spacing:.5px; white-space:nowrap;
-}
+.prog-row { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+.prog-track { flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden; }
+.prog-fill { height:100%; border-radius:3px; background:linear-gradient(90deg,#f59e0b,#ef4444); transition:width .5s ease; }
+.prog-text { font-size:12px; font-weight:600; color:#94a3b8; letter-spacing:.5px; white-space:nowrap; }
 
-/* question */
 .q-chip {
-  display:inline-block;
-  background:#fef3c7; color:#d97706;
+  display:inline-block; background:#fef3c7; color:#d97706;
   font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-  padding:4px 12px; border-radius:20px; margin-bottom:12px;
+  padding:4px 12px; border-radius:20px; margin-bottom:10px;
 }
 #question {
   font-family:'Syne',sans-serif; font-weight:700;
-  font-size:clamp(16px,2.2vw,20px); color:#1a1a2e;
-  line-height:1.5; margin-bottom:28px;
+  font-size:clamp(15px,2vw,19px); color:#1a1a2e;
+  line-height:1.5; margin-bottom:22px;
 }
+
+#flash {
+  background:#fef9c3; border:1px solid #fde047; color:#854d0e;
+  border-radius:10px; padding:10px 14px; font-size:14px; font-weight:600;
+  text-align:center; margin-bottom:14px; display:none;
+}
+#flash.correct-msg { background:#dcfce7; border-color:#86efac; color:#166534; }
+#flash.wrong-msg   { background:#fee2e2; border-color:#fca5a5; color:#991b1b; }
 
 /* options */
-.options-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;
-}
-@media(max-width:520px){ .options-grid{ grid-template-columns:1fr; } }
+.options-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+@media(max-width:480px){ .options-grid{ grid-template-columns:1fr; } }
 
 .option {
-  background:#f8fafc;
-  border:1.5px solid #e2e8f0;
-  padding:14px 16px;
-  border-radius:14px;
-  cursor:pointer;
-  font-size:14px; font-weight:500; color:#334155;
-  display:flex; align-items:center; gap:12px;
-  transition: all .18s;
+  background:#f8fafc; border:1.5px solid #e2e8f0;
+  padding:13px 14px; border-radius:14px; cursor:pointer;
+  font-size:14px; font-weight:500; color:#000;
+  display:flex; align-items:center; gap:10px; transition:all .18s;
 }
 .option:hover { border-color:#f59e0b; background:#fffbeb; color:#1a1a2e; transform:translateY(-2px); box-shadow:0 4px 12px rgba(245,158,11,.15); }
 .option-letter {
   width:28px; height:28px; border-radius:8px; flex-shrink:0;
   background:#e2e8f0; color:#64748b;
   font-size:12px; font-weight:700;
-  display:flex; align-items:center; justify-content:center;
-  transition: all .18s;
+  display:flex; align-items:center; justify-content:center; transition:all .18s;
 }
 .option:hover .option-letter { background:#f59e0b; color:#fff; }
 .option.correct { border-color:#22c55e !important; background:#f0fdf4 !important; color:#166534 !important; transform:none; }
@@ -189,78 +187,45 @@ body::after {
 .option.wrong { border-color:#ef4444 !important; background:#fef2f2 !important; }
 .option.wrong .option-letter { background:#ef4444; color:#fff; }
 .option.disabled { cursor:default; pointer-events:none; }
+.option.hidden { visibility:hidden; pointer-events:none; }
 
-/* flash */
-#flash {
-  background:#fef9c3; border:1px solid #fde047;
-  color:#854d0e; border-radius:10px;
-  padding:10px 14px; font-size:14px; font-weight:600;
-  text-align:center; margin-bottom:16px;
-  display:none;
-}
-#flash.correct-msg { background:#dcfce7; border-color:#86efac; color:#166534; }
-#flash.wrong-msg   { background:#fee2e2; border-color:#fca5a5; color:#991b1b; }
-
-/* lifeline */
-.lifeline-box { text-align:center; margin-bottom:16px; }
-.lifeline-title {
-  font-family:'Syne',sans-serif; font-weight:700;
-  font-size:29px; letter-spacing:2px; text-transform:uppercase;
-  color:#2a2e34; margin-bottom:10px;
-}
-.extra-choices { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
-.choice-btn {
-  padding:9px 86px;
-  background:#f1f5f9; border:1.5px solid #e2e8f0;
-  border-radius:20px; cursor:pointer;
-  font-size:13px; font-weight:600; color:#475569;
-  font-family:'DM Sans',sans-serif;
-  transition: all .18s;
-}
-.choice-btn:hover { background:#fef3c7; border-color:#f59e0b; color:#d97706; }
-.choice-btn.active { background:#d1fae5; border-color:#6ee7b7; color:#065f46; }
-
-/* next button */
+.next-btn-wrap { text-align:center; margin-top:14px; }
 .next-btn {
-  display:block; width:100%; margin-top:8px;
-  padding:14px;
-  background: linear-gradient(135deg,#f59e0b,#ef4444);
-  color:#fff; border:none; border-radius:14px;
-  font-family:'Syne',sans-serif; font-size:15px; font-weight:700;
-  letter-spacing:1px; cursor:pointer;
-  transition: all .2s;
-  box-shadow: 0 4px 16px rgba(245,158,11,.3);
+  display:inline-block; padding:12px 48px;
+  background:linear-gradient(135deg,#f59e0b,#ef4444);
+  color:#fff; border:none; border-radius:50px;
+  font-family:'Syne',sans-serif; font-size:13px; font-weight:700;
+  letter-spacing:1px; cursor:pointer; transition:all .2s;
+  box-shadow:0 4px 16px rgba(245,158,11,.3);
 }
 .next-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,158,11,.4); }
 .next-btn:active { transform:translateY(0); }
 
-/* end screen */
-.end-wrap {
-  text-align:center; padding:8px 0;
-}
+/* end */
+.end-wrap { text-align:center; padding:8px 0; }
 .end-trophy { font-size:64px; margin-bottom:16px; }
-.end-title {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size:32px; color:#1a1a2e; margin-bottom:6px;
-}
+.end-title { font-family:'Syne',sans-serif; font-weight:800; font-size:32px; color:#1a1a2e; margin-bottom:6px; }
 .end-sub { font-size:15px; color:#64748b; margin-bottom:28px; }
 .end-score {
-  font-family:'Syne',sans-serif; font-weight:800;
-  font-size:72px; line-height:1;
-  background: linear-gradient(135deg,#f59e0b,#ef4444);
+  font-family:'Syne',sans-serif; font-weight:800; font-size:72px; line-height:1;
+  background:linear-gradient(135deg,#f59e0b,#ef4444);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
 .end-of { font-size:14px; color:#94a3b8; margin-top:4px; letter-spacing:1px; }
 .restart-btn {
-  margin-top:32px; display:inline-block;
-  padding:14px 48px;
-  background:#1a1a2e; color:#fff;
-  border:none; border-radius:14px;
+  margin-top:32px; display:inline-block; padding:14px 48px;
+  background:#1a1a2e; color:#fff; border:none; border-radius:14px;
   font-family:'Syne',sans-serif; font-size:15px; font-weight:700;
-  cursor:pointer; letter-spacing:1px;
-  transition: all .2s;
+  cursor:pointer; letter-spacing:1px; transition:all .2s;
 }
 .restart-btn:hover { background:#374151; transform:translateY(-2px); }
+
+@media(max-width:700px){
+  .game-wrapper { flex-direction:column; align-items:stretch; }
+  .lifeline-panel { width:100%; }
+  .lifeline-panel-title { padding: 14px 16px 12px; font-size:15px; }
+  .choice-btn { width:calc(50% - 24px); display:inline-flex; margin:0 8px 10px; }
+}
 </style>
 </head>
 <body>
@@ -273,7 +238,6 @@ body::after {
 
 <!-- SPINNER -->
 <div id="spinnerScreen">
-  <div class="spin-label">Round</div>
   <div class="spin-dial" id="spinDial" onclick="startSpin()">
     <div class="spin-inner">
       <div class="spin-number" id="spinNumber">?</div>
@@ -285,28 +249,32 @@ body::after {
 <!-- HEADING -->
 <div class="main-heading"><span>techX Spark</span></div>
 
-<!-- QUIZ -->
-<div class="quiz-box" id="quizBox">
-  <div class="prog-row">
-    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
-    <div class="prog-text" id="progText">1 / 16</div>
-  </div>
+<!-- GAME WRAPPER -->
+<div class="game-wrapper" id="gameWrapper">
 
-  <div id="flash"></div>
-
-  <div class="q-chip" id="qChip">Question 01</div>
-  <h2 id="question"></h2>
-  <div id="options"></div>
-
-  <div class="lifeline-box">
-    <div class="lifeline-title">Lifeline</div>
-    <div class="extra-choices">
-      <button class="choice-btn" onclick="chooseOption(this,'poll')">📊 Audience Poll  Left / Right</button>
-      <button class="choice-btn" onclick="chooseOption(this,'5050')">🎯 50 : 50</button>
+  <!-- LEFT: Lifeline Panel -->
+  <div class="lifeline-panel">
+    <div class="lifeline-panel-title">Lifelines</div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <button class="choice-btn" id="btn-poll" onclick="useAudiencePoll(this)">🧑‍🤝‍🧑 Audience Poll left and Right</button>
+      <div style="height:16px;"></div>
+      <button class="choice-btn" id="btn-5050" onclick="use5050(this)">⚖️ 50 : 50</button>
     </div>
   </div>
 
-  <button class="next-btn" onclick="nextQuestion()">Next →</button>
+  <!-- RIGHT: Quiz Box -->
+  <div class="quiz-box" id="quizBox">
+    <div class="prog-row">
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+      <div class="prog-text" id="progText">1 / 16</div>
+    </div>
+    <div id="flash"></div>
+    <div class="q-chip" id="qChip">Question 01</div>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <div class="next-btn-wrap"><button class="next-btn" onclick="nextQuestion()">Next →</button></div>
+  </div>
+
 </div>
 
 <script>
@@ -329,154 +297,117 @@ const quiz = [
   {q:"What is the full form of COMPUTER?", options:["Common Operating Machine Particularly Used for Technical Education and Research","Central Output Machine Processing User Terminal","Control Output Memory Program Understanding Technology Electronic Resource","Common Online Machine Providing Useful Technology Education Router"], answer:0},
 ];
 
-const letters = ['A','B','C','D'];
-let current = 0, score = 0, answered = false;
+const letters=['A','B','C','D'];
+let current=0, score=0, answered=false, pollUsed=false, fiftyUsed=false;
 
-/* INTRO */
-function startIntro() {
-  const text = "Welcome to techX Spark 😊";
-  let i = 0;
-  const el = document.getElementById("introTyped");
-  el.innerHTML = '<span class="cursor"></span>';
-  function type() {
-    if (i < text.length) {
-      el.innerHTML = text.slice(0, i+1) + '<span class="cursor"></span>';
-      i++;
-      setTimeout(type, 80);
-    } else {
-      setTimeout(() => {
-        document.getElementById("intro").style.opacity = "0";
-        document.getElementById("intro").style.transition = "opacity .5s";
-        setTimeout(() => {
-          document.getElementById("intro").style.display = "none";
-          showSpinner();
-        }, 500);
-      }, 900);
-    }
+function startIntro(){
+  const text="Welcome to techX Spark 😊"; let i=0;
+  const el=document.getElementById("introTyped");
+  el.innerHTML='<span class="cursor"></span>';
+  function type(){
+    if(i<text.length){ el.innerHTML=text.slice(0,i+1)+'<span class="cursor"></span>'; i++; setTimeout(type,80); }
+    else { setTimeout(()=>{ document.getElementById("intro").style.cssText="opacity:0;transition:opacity .5s"; setTimeout(()=>{ document.getElementById("intro").style.display="none"; showSpinner(); },500); },900); }
   }
   type();
 }
 
-/* SPINNER */
-function showSpinner() {
-  document.getElementById("spinnerScreen").style.display = "flex";
-}
+function showSpinner(){ document.getElementById("spinnerScreen").style.display="flex"; }
 
-function startSpin() {
-  const dial = document.getElementById("spinDial");
-  const num  = document.getElementById("spinNumber");
-  if (dial.classList.contains('spinning')) return;
-
+function startSpin(){
+  const dial=document.getElementById("spinDial"), num=document.getElementById("spinNumber");
+  if(dial.classList.contains('spinning')) return;
   dial.classList.add("spinning");
-  let count = 1;
-  const interval = setInterval(() => {
-    num.textContent = count;
-    count = count > 30 ? 1 : count + 1;
-  }, 120);
-
-  const stopTime = Math.random() * 2000 + 2000;
-  setTimeout(() => {
-    clearInterval(interval);
-    dial.classList.remove("spinning");
-    num.textContent = Math.floor(Math.random() * 30) + 1;
-
-    // 10 second countdown before quiz opens
-    let countdown = 10;
-    const tap = dial.querySelector('.spin-tap');
-    tap.textContent = countdown;
-    const countInterval = setInterval(() => {
-      countdown--;
-      tap.textContent = countdown;
-      if (countdown <= 0) {
-        clearInterval(countInterval);
-        tap.textContent = 'tap';
-        document.getElementById("spinnerScreen").style.display = "none";
-        document.getElementById("quizBox").style.display = "block";
+  let count=1;
+  const iv=setInterval(()=>{ num.textContent=count; count=count>30?1:count+1; },120);
+  setTimeout(()=>{
+    clearInterval(iv); dial.classList.remove("spinning");
+    num.textContent=Math.floor(Math.random()*30)+1;
+    let cd=5; const tap=dial.querySelector('.spin-tap'); tap.textContent=cd;
+    const ci=setInterval(()=>{
+      cd--; tap.textContent=cd;
+      if(cd<=0){
+        clearInterval(ci); tap.textContent='tap';
+        document.getElementById("spinnerScreen").style.display="none";
+        document.getElementById("gameWrapper").style.display="flex";
         loadQuestion();
       }
-    }, 1000);
-  }, stopTime);
+    },1000);
+  }, Math.random()*2000+2000);
 }
 
-/* LOAD QUESTION */
-function loadQuestion() {
-  answered = false;
-  const q = quiz[current];
-  const pct = Math.round((current / quiz.length) * 100);
-
-  document.getElementById("progFill").style.width = pct + "%";
-  document.getElementById("progText").textContent = `${current+1} / ${quiz.length}`;
-  document.getElementById("qChip").textContent = `Question ${String(current+1).padStart(2,'0')}`;
-  document.getElementById("question").textContent = q.q;
-
-  const flash = document.getElementById("flash");
-  flash.style.display = "none"; flash.className = "";
-
-  let html = '<div class="options-grid">';
-  q.options.forEach((opt, i) => {
-    html += `<div class="option" id="opt${i}" onclick="selectAnswer(${i})">
-      <div class="option-letter">${letters[i]}</div>
-      <span>${opt}</span>
-    </div>`;
-  });
-  html += '</div>';
-  document.getElementById("options").innerHTML = html;
+function loadQuestion(){
+  answered=false;
+  const q=quiz[current];
+  document.getElementById("progFill").style.width=Math.round((current/quiz.length)*100)+"%";
+  document.getElementById("progText").textContent=`${current+1} / ${quiz.length}`;
+  document.getElementById("qChip").textContent=`Question ${String(current+1).padStart(2,'0')}`;
+  document.getElementById("question").textContent=q.q;
+  const flash=document.getElementById("flash"); flash.style.display="none"; flash.className="";
+  document.getElementById('btn-poll').className='choice-btn'+(pollUsed?' used':'');
+  document.getElementById('btn-5050').className='choice-btn'+(fiftyUsed?' used':'');
+  let html='<div class="options-grid">';
+  q.options.forEach((opt,i)=>{ html+=`<div class="option" id="opt${i}" onclick="selectAnswer(${i})"><div class="option-letter">${letters[i]}</div><span>${opt}</span></div>`; });
+  html+='</div>';
+  document.getElementById("options").innerHTML=html;
 }
 
-/* FLASH */
-function showFlash(msg, cls) {
-  const f = document.getElementById("flash");
-  f.textContent = msg;
-  f.className = cls;
-  f.style.display = "block";
-  setTimeout(() => { f.style.display = "none"; f.className = ""; }, 1500);
+function showFlash(msg,cls){
+  const f=document.getElementById("flash"); f.textContent=msg; f.className=cls; f.style.display="block";
+  setTimeout(()=>{ f.style.display="none"; f.className=""; },1800);
 }
 
-/* SELECT */
-function selectAnswer(i) {
-  if (answered) return;
-  if (i === quiz[current].answer) {
-    score++;
-    answered = true;
-    document.querySelectorAll('.option').forEach(o => o.classList.add('disabled'));
+function selectAnswer(i){
+  if(answered) return;
+  if(i===quiz[current].answer){
+    score++; answered=true;
+    document.querySelectorAll('.option').forEach(o=>o.classList.add('disabled'));
     document.getElementById("opt"+i).classList.add("correct");
-    showFlash("✅ Correct!", "correct-msg");
+    showFlash("✅ Correct!","correct-msg");
   } else {
     document.getElementById("opt"+i).classList.add("wrong");
-    showFlash("❌ Wrong! Try again.", "wrong-msg");
-    setTimeout(() => {
-      document.getElementById("opt"+i).classList.remove("wrong");
-    }, 900);
+    showFlash("❌ Wrong! Try again.","wrong-msg");
+    setTimeout(()=>{ document.getElementById("opt"+i).classList.remove("wrong"); },900);
   }
 }
 
-/* LIFELINE */
-function chooseOption(btn, val) {
-  btn.classList.toggle("active");
-  console.log("Selected:", val);
+function useAudiencePoll(btn){
+  if(pollUsed || answered) return;
+
+  pollUsed = true;
+  btn.className = 'choice-btn used';
+
+  showFlash("📊 Audience Poll Used!","correct-msg");
 }
 
-/* NEXT */
-function nextQuestion() {
-  if (!answered) {
-    showFlash("⚠️ Select the correct answer first!", "wrong-msg");
-    return;
-  }
+function use5050(btn){
+  if(fiftyUsed||answered) return;
+  fiftyUsed=true; btn.className='choice-btn used';
+  const correct=quiz[current].answer;
+  [0,1,2,3].filter(x=>x!==correct).sort(()=>Math.random()-.5).slice(0,2).forEach(i=>{
+    const el=document.getElementById("opt"+i); if(el) el.classList.add('hidden','disabled');
+  });
+  showFlash("🎯 Two wrong options removed!","correct-msg");
+}
+
+function nextQuestion(){
+  if(!answered){ showFlash("⚠️ Select the correct answer first!","wrong-msg"); return; }
   current++;
-  if (current < quiz.length) {
-    document.getElementById("quizBox").style.display = "none";
+  if(current<quiz.length){
+    document.getElementById("gameWrapper").style.display="none";
     document.getElementById("spinDial").classList.remove("spinning");
-    document.getElementById("spinNumber").textContent = "?";
+    document.getElementById("spinNumber").textContent="?";
     showSpinner();
   } else {
-    document.getElementById("quizBox").innerHTML = `
-      <div class="end-wrap">
-        <div class="end-trophy">🏆</div>
-        <div class="end-title">Well Done!</div>
-        <div class="end-sub">You completed techX Spark</div>
-        <div class="end-score">${score}</div>
-        <div class="end-of">out of ${quiz.length}</div>
-        <button class="restart-btn" onclick="location.reload()">Play Again</button>
+    document.getElementById("gameWrapper").innerHTML=`
+      <div class="quiz-box" style="width:min(680px,96vw)">
+        <div class="end-wrap">
+          <div class="end-trophy">🏆</div>
+          <div class="end-title">Well Done!</div>
+          <div class="end-sub">You completed techX Spark</div>
+          <div class="end-score">${score}</div>
+          <div class="end-of">out of ${quiz.length}</div>
+          <button class="restart-btn" onclick="location.reload()">Play Again</button>
+        </div>
       </div>`;
   }
 }
