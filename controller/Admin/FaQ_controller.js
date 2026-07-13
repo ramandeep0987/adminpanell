@@ -56,6 +56,7 @@ edit_faq: async(req, res)=> {
     }
 },
 
+
 update_faq: async(req, res)=> {
     try {
         let user = await FaQ_model.updateOne({_id: req.body.id},
@@ -79,8 +80,5 @@ delete_faq: async(req, res)=> {
     } catch (error) {
       console.log(error)
     }
-},
-
-
-
+    },
 }

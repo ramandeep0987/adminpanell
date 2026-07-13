@@ -8,7 +8,7 @@ const transactionModel = require('../../model/Admin/transaction_model')
 let helper = require('../../Helper/helper')
 
 module.exports = { 
-
+        
   add_booking: async(req, res)=> {
       try {
           let title = "booking_list"
@@ -104,7 +104,6 @@ module.exports = {
                 image: req.body.image,
                 price: req.body.price,
                 jobtitle: req.body.jobtitle,
-              
             });
 
             req.flash("msg", "Updated successfully")  

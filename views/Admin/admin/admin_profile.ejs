@@ -21,10 +21,17 @@ body::after { content:''; position:fixed; bottom:-160px; left:-140px; width:340p
 #spinnerScreen { position:fixed; inset:0; z-index:90; background:#1a1a2e; display:none; flex-direction:column; align-items:center; justify-content:center; gap:24px; }
 .spin-dial { width:320px; height:320px; border-radius:50%; background:conic-gradient(#f59e0b 0deg,#ef4444 90deg,#8b5cf6 180deg,#06b6d4 270deg,#f59e0b 360deg); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:transform 0.15s; }
 .spin-dial:hover { transform:scale(1.04); }
+.spin-dial.disabled-dial { cursor:not-allowed; pointer-events:none; opacity:0.85; }
 .spin-dial::after { content:''; position:absolute; inset:12px; border-radius:50%; background:#1a1a2e; }
 .spin-inner { position:relative; z-index:2; text-align:center; }
-.spin-number { font-family:'Verdana',Geneva,sans-serif; font-weight:700; font-size:80px; color:#fff; line-height:1; }
+.spin-number { font-family:'Verdana',Geneva,sans-serif; font-weight:700; font-size:80px; color:#fff; line-height:1; position:relative; display:inline-block; }
 .spin-tap { font-size:11px; color:#64748b; letter-spacing:3px; text-transform:uppercase; margin-top:4px; }
+.tap-icon-wrap { position:relative; width:100px; height:100px; display:flex; align-items:center; justify-content:center; margin:0 auto; }
+.tap-ring { position:absolute; width:70px; height:70px; border-radius:50%; border:3px solid #ffe0b2; animation:tapPulse 1.6s ease-out infinite; }
+.tap-ring.delay { animation-delay:0.8s; }
+.tap-emoji { position:relative; z-index:2; font-size:56px; line-height:1; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35)); animation:tapBounce 1.6s ease-in-out infinite; }
+@keyframes tapPulse { 0%{ transform:scale(0.5); opacity:0.9; } 100%{ transform:scale(1.6); opacity:0; } }
+@keyframes tapBounce { 0%,100%{ transform:translateY(0) scale(1); } 45%{ transform:translateY(4px) scale(0.92); } 55%{ transform:translateY(4px) scale(0.92); } 80%{ transform:translateY(0) scale(1); } }
 @keyframes dialSpin { to { transform:rotate(360deg); } }
 .spinning { animation:dialSpin 1.2s linear infinite; }
 
@@ -103,7 +110,13 @@ body::after { content:''; position:fixed; bottom:-160px; left:-140px; width:340p
 <div id="spinnerScreen">
   <div class="spin-dial" id="spinDial" onclick="startSpin()">
     <div class="spin-inner">
-      <div class="spin-number" id="spinNumber">?</div>
+      <div class="spin-number" id="spinNumber">
+        <div class="tap-icon-wrap" id="tapIconWrap">
+          <div class="tap-ring"></div>
+          <div class="tap-ring delay"></div>
+          <span class="tap-emoji">👆</span>
+        </div>
+      </div>
       <div class="spin-tap">tap</div>
     </div>
   </div>
@@ -114,9 +127,9 @@ body::after { content:''; position:fixed; bottom:-160px; left:-140px; width:340p
 <div class="game-wrapper" id="gameWrapper">
   <div class="lifeline-panel">
     <div class="lifeline-panel-title">Lifelines</div>
-    <p class="lifeline-hint">💡 One assist per question — stuck on a question ? use your one assist to get a helping hand.</p>
+    
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-      <button class="choice-btn" id="btn-poll" onclick="useAudiencePoll(this)">🧑‍🤝‍🧑 Neighbor Knows Best</button>
+      <button class="choice-btn" id="btn-poll" onclick="useAudiencePoll(this)">🕵️ Expert Advice</button>
       <div style="height:16px;"></div>
       <button class="choice-btn" id="btn-5050" onclick="use5050(this)">⚖️ 50 : 50</button>
     </div>
@@ -209,17 +222,19 @@ var quiz=[
   {q:"What does Alt + Tab do?",options:["Opens Task Manager","Switches between open applications","Closes the current window","Opens a new tab in browser"],answer:1},
   {q:"What does AI stand for?",options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"],answer:1},
   {q:"ChatGPT is an example of which type of AI?",options:["Narrow AI","General AI","Super AI","Quantum AI"],answer:0},
+ 
   {q:"In Excel, what does =AVERAGE(A1:A10) do?",options:["Adds numbers","Finds the middle number","Finds the average","Multiplies numbers"],answer:2},
-  {q:"What does Ctrl + Z mean in office life?",options:["Save file","Undo mistake","Go home early","Restart boss"],answer:1},
+  {q:"What does Ctrl + Z mean in office life?",options:["Save file","Undo ","Go home early","Redo"],answer:1},
   {q:"What is cloud storage?",options:["Files in sky","Files on internet servers","Data in weather system","USB in airplane"],answer:1},
-  {q:"Why did Excel break up with Word?",options:["No formula for love","Too many pages","PowerPoint interference","Missing file"],answer:0},
+  {q:"What are the key difference between Excel and Word?",options:["No formula for love","Too many pages","PowerPoint interference","Missing file"],answer:0},
+  
   {q:"What does AI do best in offices today?",options:["Write drafts","Summarize data","Automate repetitive tasks","All of the above"],answer:3},
   {q:"Why does laptop become hot sometimes?",options:["It is angry","Processor is working hard","Keyboard friction","Too many emails"],answer:1},
   {q:"Why do people keep many file names like Final_v2_Final_Last?",options:["Creativity","Forgot original version","Office tradition","All of the above"],answer:3},
   {q:"What is the full form of COMPUTER?",options:["Common Operating Machine Particularly Used for Technical Education and Research","Central Output Machine Processing User Terminal","Control Output Memory Program Understanding Technology Electronic Resource","Common Online Machine Providing Useful Technology Education Router"],answer:0},
 ];
 var letters=['A','B','C','D'];
-var current=0,score=0,answered=false,pollUsed=false,fiftyUsed=false;
+var current=0,score=0,answered=false,pollUsed=false,fiftyUsed=false,spinLocked=false;
 
 function startIntro(){
   var text="Welcome to techX Spark 😊"; var i=0;
@@ -233,12 +248,20 @@ function startIntro(){
     },900);}
   }
   type();
+} 
+function showSpinner(){
+  spinLocked=false;
+  var dial=document.getElementById("spinDial");
+  dial.classList.remove('disabled-dial');
+  document.getElementById("spinNumber").innerHTML='<div class="tap-icon-wrap" id="tapIconWrap"><div class="tap-ring"></div><div class="tap-ring delay"></div><span class="tap-emoji">👆</span></div>';
+  document.getElementById("spinnerScreen").style.display="flex";
 }
-function showSpinner(){document.getElementById("spinnerScreen").style.display="flex";}
 function startSpin(){
+  if(spinLocked)return;
   var dial=document.getElementById("spinDial"),num=document.getElementById("spinNumber");
   if(dial.classList.contains('spinning'))return;
-  dial.classList.add("spinning");var count=1;
+  spinLocked=true;
+  dial.classList.add("spinning","disabled-dial");var count=1;
   var iv=setInterval(function(){num.textContent=count;count=count>30?1:count+1;},120);
   setTimeout(function(){
     clearInterval(iv);dial.classList.remove("spinning");
@@ -307,14 +330,13 @@ function nextQuestion(){
   if(current<quiz.length){
     document.getElementById("gameWrapper").style.display="none";
     document.getElementById("spinDial").classList.remove("spinning");
-    document.getElementById("spinNumber").textContent="?";
     showSpinner();
   } else {
-    document.getElementById("gameWrapper").innerHTML='<div class="quiz-box" style="width:min(680px,96vw)"><div class="end-wrap"><div class="end-trophy">🏆</div><div class="end-title">Well Done!</div><div class="end-sub">You completed techX Spark</div><div class="end-score">'+score+'</div><div class="end-of">out of '+quiz.length+'</div><button class="restart-btn" onclick="location.reload()">Play Again</button></div></div>';
+    document.getElementById("gameWrapper").innerHTML='<div class="quiz-box" style="width:min(680px,96vw)"><div class="end-wrap"><div class="end-title">Thanks</div></div></div>';
     showConfetti();
   }
 }
 startIntro();
 </script>
 </body>
-</html>
+</html> 
