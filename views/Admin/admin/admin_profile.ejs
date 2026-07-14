@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>techX Spark</title>
+<title>techstar</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -12,8 +12,8 @@ body::before { content:''; position:fixed; top:-180px; right:-180px; width:420px
 body::after { content:''; position:fixed; bottom:-160px; left:-140px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle,#b3e5fc 0%,#81d4fa 60%,transparent 100%); opacity:0.5; pointer-events:none; z-index:0; }
 
 #intro { position:fixed; inset:0; z-index:100; background:#1a1a2e; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
-.intro-brand { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(48px,8vw,80px); letter-spacing:-2px; color:#fff; }
-.intro-brand span { color:#f59e0b; }
+.intro-brand { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(48px,8vw,80px); letter-spacing:-2px; color:#2196f3; }
+.intro-brand span { color:#fff; }
 #introTyped { font-family:'DM Sans',sans-serif; font-size:clamp(16px,2.5vw,22px); color:#94a3b8; letter-spacing:1px; min-height:32px; }
 .cursor { display:inline-block; width:2px; height:1.1em; background:#f59e0b; margin-left:3px; vertical-align:middle; animation:blink .65s steps(1) infinite; }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
@@ -122,7 +122,7 @@ body::after { content:''; position:fixed; bottom:-160px; left:-140px; width:340p
   </div>
 </div>
 
-<div class="main-heading"><span>techX Spark</span></div>
+<div class="main-heading"><span>techstar</span></div>
 
 <div class="game-wrapper" id="gameWrapper">
   <div class="lifeline-panel">
@@ -216,17 +216,26 @@ function showConfetti() {
 var quiz=[
   {q:"Which MS Office app is used to make slides?",options:["Word","Excel","PowerPoint","OneNote"],answer:2},
   {q:"In Excel, what does =SUM(A1:A5) do?",options:["Multiplies numbers","Adds numbers","Subtracts numbers","Finds average"],answer:1},
-  {q:"Maximum number of slides in a single PowerPoint presentation?",options:["500","10,000","50,000","Unlimited"],answer:3},
+  {q:"Why does the printer fail when urgent work starts?",options:["Senses fear","Paper jam probability rises","Timing issue","Ancient office curse"],answer:1},
   {q:"Which is the oldest Microsoft Office program?",options:["Word","Excel","PowerPoint","Outlook"],answer:0},
+
+
+   {q:"What does AI stand for?",options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"],answer:1},
+
   {q:"Who is known as the Father of Computers?",options:["Steve Jobs","Charles Babbage","Bill Gates","Alan Turing"],answer:1},
   {q:"What does Alt + Tab do?",options:["Opens Task Manager","Switches between open applications","Closes the current window","Opens a new tab in browser"],answer:1},
-  {q:"What does AI stand for?",options:["Automated Internet","Artificial Intelligence","Algorithmic Input","Active Interface"],answer:1},
+ 
   {q:"ChatGPT is an example of which type of AI?",options:["Narrow AI","General AI","Super AI","Quantum AI"],answer:0},
  
+ 
   {q:"In Excel, what does =AVERAGE(A1:A10) do?",options:["Adds numbers","Finds the middle number","Finds the average","Multiplies numbers"],answer:2},
+
+  {q:"Maximum number of slides in a single PowerPoint presentation? ",options:["500","10,000","50,000","Unlimited"],answer:3},
+
+
   {q:"What does Ctrl + Z mean in office life?",options:["Save file","Undo ","Go home early","Redo"],answer:1},
   {q:"What is cloud storage?",options:["Files in sky","Files on internet servers","Data in weather system","USB in airplane"],answer:1},
-  {q:"What are the key difference between Excel and Word?",options:["No formula for love","Too many pages","PowerPoint interference","Missing file"],answer:0},
+ 
   
   {q:"What does AI do best in offices today?",options:["Write drafts","Summarize data","Automate repetitive tasks","All of the above"],answer:3},
   {q:"Why does laptop become hot sometimes?",options:["It is angry","Processor is working hard","Keyboard friction","Too many emails"],answer:1},
@@ -237,7 +246,7 @@ var letters=['A','B','C','D'];
 var current=0,score=0,answered=false,pollUsed=false,fiftyUsed=false,spinLocked=false;
 
 function startIntro(){
-  var text="Welcome to techX Spark 😊"; var i=0;
+  var text="Welcome to techstar 😊"; var i=0;
   var el=document.getElementById("introTyped");
   el.innerHTML='<span class="cursor"></span>';
   function type(){
@@ -265,7 +274,13 @@ function startSpin(){
   var iv=setInterval(function(){num.textContent=count;count=count>30?1:count+1;},120);
   setTimeout(function(){
     clearInterval(iv);dial.classList.remove("spinning");
-    num.textContent=Math.floor(Math.random()*30)+1;
+    if(quiz[current].q.indexOf("Why does the printer fail") !== -1){
+      num.textContent = 9;
+    } else if(quiz[current].q.indexOf("What does AI stand for") !== -1){
+      num.textContent = 10;
+    } else {
+      num.textContent = Math.floor(Math.random()*30)+1;
+    }
     var cd=5;var tap=dial.querySelector('.spin-tap');tap.textContent=cd;
     var ci=setInterval(function(){
       cd--;tap.textContent=cd;
@@ -314,7 +329,7 @@ function useAudiencePoll(btn){
   pollUsed=true; btn.className='choice-btn used';
   var correct=quiz[current].answer;
   var opts=quiz[current].options;
-  showFlash("🧑‍🤝‍🧑 Neighbour says: go with option "+['A','B','C','D'][correct]+" — \""+opts[correct]+"\"","correct-msg");
+  showFlash("🕵️ Let's hear from our expert!");
 }
 function use5050(btn){
   if(fiftyUsed||answered)return; fiftyUsed=true; btn.className='choice-btn used';
@@ -339,4 +354,4 @@ function nextQuestion(){
 startIntro();
 </script>
 </body>
-</html> 
+</html>
