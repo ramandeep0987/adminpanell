@@ -211,6 +211,194 @@ function showConfetti() {
 }
 
 /* ══════════════════════════════
+   SPIN TICK SOUND — synthesized, no audio file needed
+══════════════════════════════ */
+var audioCtx = null;
+function getAudioCtx(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ return null; }
+  }
+  if(audioCtx.state === 'suspended'){ audioCtx.resume(); }
+  return audioCtx;
+}
+function playTick(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  var osc = ctx.createOscillator();
+  var gain = ctx.createGain();
+  osc.type = 'square';
+  osc.frequency.setValueAtTime(700, ctx.currentTime);
+  gain.gain.setValueAtTime(0.08, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.06);
+}
+function playStopChime(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  var osc = ctx.createOscillator();
+  var gain = ctx.createGain();
+  osc.type = 'triangle';
+  osc.frequency.setValueAtTime(880, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.25);
+  gain.gain.setValueAtTime(0.12, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.3);
+}
+function playExpertSound(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  var freqs = [523.25, 659.25, 783.99]; // C5, E5, G5 - curious "insight" arpeggio
+  freqs.forEach(function(f, idx){
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'sine';
+    var t = ctx.currentTime + idx * 0.09;
+    osc.frequency.setValueAtTime(f, t);
+    gain.gain.setValueAtTime(0.001, t);
+    gain.gain.linearRampToValueAtTime(0.14, t + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + 0.3);
+  });
+}
+function play5050Sound(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  [0, 0.1].forEach(function(delay){
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'square';
+    var t = ctx.currentTime + delay;
+    osc.frequency.setValueAtTime(500, t);
+    osc.frequency.exponentialRampToValueAtTime(300, t + 0.12);
+    gain.gain.setValueAtTime(0.1, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + 0.15);
+  });
+}
+function playNextSound(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  var osc = ctx.createOscillator();
+  var gain = ctx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(400, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(900, ctx.currentTime + 0.18);
+  gain.gain.setValueAtTime(0.1, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.2);
+}
+function playClapBurst(ctx, t){
+  /* one clap = filtered noise burst */
+  var bufSize = Math.floor(ctx.sampleRate * 0.09);
+  var buffer = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+  var data = buffer.getChannelData(0);
+  for(var i=0;i<bufSize;i++){
+    data[i] = (Math.random()*2-1) * Math.pow(1 - i/bufSize, 2);
+  }
+  var noise = ctx.createBufferSource();
+  noise.buffer = buffer;
+  var bp = ctx.createBiquadFilter();
+  bp.type = 'bandpass';
+  bp.frequency.value = 1800 + Math.random()*800;
+  bp.Q.value = 0.8;
+  var gain = ctx.createGain();
+  gain.gain.setValueAtTime(0.25, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+  noise.connect(bp);
+  bp.connect(gain);
+  gain.connect(ctx.destination);
+  noise.start(t);
+  noise.stop(t + 0.09);
+}
+function playClapSound(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  /* quick scattered claps then a little flourish, like applause */
+  var hits = [0, 0.08, 0.15, 0.19, 0.28, 0.34, 0.4, 0.47, 0.55, 0.6, 0.68, 0.75];
+  hits.forEach(function(delay){
+    playClapBurst(ctx, ctx.currentTime + delay);
+  });
+  /* cheerful rising chime on top */
+  [659.25, 783.99, 987.77].forEach(function(f, idx){
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'sine';
+    var t = ctx.currentTime + 0.05 + idx*0.08;
+    osc.frequency.setValueAtTime(f, t);
+    gain.gain.setValueAtTime(0.001, t);
+    gain.gain.linearRampToValueAtTime(0.12, t+0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, t+0.35);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t+0.35);
+  });
+}
+function playSadSound(){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  /* descending "wah wah wah" sad trombone */
+  var notes = [392.00, 349.23, 329.63, 293.66]; // G4, F4, E4, D4
+  notes.forEach(function(f, idx){
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'sawtooth';
+    var t = ctx.currentTime + idx*0.22;
+    osc.frequency.setValueAtTime(f, t);
+    osc.frequency.exponentialRampToValueAtTime(f*0.94, t+0.2);
+    gain.gain.setValueAtTime(0.001, t);
+    gain.gain.linearRampToValueAtTime(0.11, t+0.03);
+    gain.gain.exponentialRampToValueAtTime(0.001, t+0.22);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t+0.22);
+  });
+}
+
+/* ══════════════════════════════
+   VOICE — speaks the spin number out loud
+══════════════════════════════ */
+var voicesReady = false;
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = function(){ voicesReady = true; };
+}
+function speakNumber(n){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    var msg = new SpeechSynthesisUtterance(String(n));
+    msg.lang = 'en-IN';
+    msg.rate = 0.95;
+    msg.pitch = 1;
+    window.speechSynthesis.speak(msg);
+  }catch(e){}
+}
+/* unlock speech synthesis on first user tap (needed on some mobile browsers) */
+document.addEventListener('click', function unlockSpeech(){
+  if('speechSynthesis' in window){
+    var u = new SpeechSynthesisUtterance('');
+    window.speechSynthesis.speak(u);
+  }
+  document.removeEventListener('click', unlockSpeech);
+}, {once:true});
+
+/* ══════════════════════════════
    QUIZ
 ══════════════════════════════ */
 var quiz=[
@@ -271,9 +459,10 @@ function startSpin(){
   if(dial.classList.contains('spinning'))return;
   spinLocked=true;
   dial.classList.add("spinning","disabled-dial");var count=1;
-  var iv=setInterval(function(){num.textContent=count;count=count>30?1:count+1;},120);
+  getAudioCtx();
+  var iv=setInterval(function(){num.textContent=count;count=count>30?1:count+1;playTick();},120);
   setTimeout(function(){
-    clearInterval(iv);dial.classList.remove("spinning");
+    clearInterval(iv);dial.classList.remove("spinning");playStopChime();
     if(quiz[current].q.indexOf("Why does the printer fail") !== -1){
       num.textContent = 9;
     } else if(quiz[current].q.indexOf("What does AI stand for") !== -1){
@@ -281,6 +470,7 @@ function startSpin(){
     } else {
       num.textContent = Math.floor(Math.random()*30)+1;
     }
+    speakNumber(num.textContent);
     var cd=5;var tap=dial.querySelector('.spin-tap');tap.textContent=cd;
     var ci=setInterval(function(){
       cd--;tap.textContent=cd;
@@ -317,22 +507,26 @@ function selectAnswer(i){
     document.querySelectorAll('.option').forEach(function(o){o.classList.add('disabled');});
     document.getElementById("opt"+i).classList.add("correct");
     showFlash("🎉 You cracked it!","correct-msg");
+    playClapSound();
     showConfetti();
   } else {
     document.getElementById("opt"+i).classList.add("wrong");
     showFlash("🐧 That answer slipped on the ice.","wrong-msg");
+    playSadSound();
     setTimeout(function(){document.getElementById("opt"+i).classList.remove("wrong");},3000);
   }
 }
 function useAudiencePoll(btn){
   if(pollUsed||answered)return;
   pollUsed=true; btn.className='choice-btn used';
+  playExpertSound();
   var correct=quiz[current].answer;
   var opts=quiz[current].options;
   showFlash("🕵️ Let's hear from our expert!");
 }
 function use5050(btn){
   if(fiftyUsed||answered)return; fiftyUsed=true; btn.className='choice-btn used';
+  play5050Sound();
   var correct=quiz[current].answer;
   [0,1,2,3].filter(function(x){return x!==correct;}).sort(function(){return Math.random()-.5;}).slice(0,2).forEach(function(i){
     var el=document.getElementById("opt"+i);if(el)el.classList.add('hidden','disabled');
@@ -341,6 +535,7 @@ function use5050(btn){
 }
 function nextQuestion(){
   if(!answered){showFlash("⚠️ Select the correct answer first!","wrong-msg");return;}
+  playNextSound();
   current++;
   if(current<quiz.length){
     document.getElementById("gameWrapper").style.display="none";
